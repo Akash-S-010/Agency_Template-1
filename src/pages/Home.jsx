@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Preloader from "../components/ui/Preloader";
 import Hero from "../components/home/Hero";
-import About from "../components/home/About";
+import AboutSection  from "../components/home/AboutSection";
 import WorkWithUs from "../components/home/WorkWithUs";
 
 const Home = () => {
@@ -38,8 +38,8 @@ const Home = () => {
             transition={{ duration: 1 }}
           >
             <Hero />
-            <About />
             <WorkWithUs />
+            <AboutSection />
           </motion.div>
         )}
       </AnimatePresence>

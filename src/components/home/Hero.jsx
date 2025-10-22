@@ -50,8 +50,11 @@ const Hero = () => {
           </h1>
         </div>
         {/* Subtitle - aligned to the container's left padding */}
-        <p className="text-sm text-gray-500 font-body md:text-base tracking-wider font-normal absolute bottom-10 z-30 left-6 md:left-12 lg:left-20 uppercase">
-          WEBSITES • DIGITAL MARKETING • DESIGN
+        <p className="text-sm text-gray-500 font-body md:text-base tracking-wider font-normal absolute bottom-10 z-10 left-6 md:left-12 lg:left-20 uppercase">
+          WEBSITES <span className="text-primary">•</span> Mobile App <span className="text-primary">•</span> Development
+        </p>
+        <p className="text-sm text-gray-500 font-body md:text-base tracking-wider font-normal absolute bottom-10 z-10 right-6 md:right-12 lg:right-20 uppercase">
+          DIGITAL MARKETING <span className="text-primary">•</span> DESIGNING
         </p>
       </motion.div>
     </section>
