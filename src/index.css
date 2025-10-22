@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 /* Hide scrollbar for Firefox */
 html {
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: #be74fb #000000;
 }
 
 body{

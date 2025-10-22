@@ -2,7 +2,7 @@ import React from 'react'
 import LiquidText from '../ui/LiquidText.jsx';
 import backgroundImage from '../../assets/LiquidText_Background.jpg';
 
-const AboutSection = () => {
+const TextAnimeSection = () => {
     const texts = [
         "Creative Excellence",
         "Digital Mastery",
@@ -20,5 +20,5 @@ const AboutSection = () => {
     )
 }
 
-export default AboutSection
+export default TextAnimeSection
 

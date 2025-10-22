@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Preloader from "../components/ui/Preloader";
+import PreLoader from "../components/ui/PreLoader";
 import Hero from "../components/home/Hero";
-import AboutSection  from "../components/home/AboutSection";
+import TextAnimeSection  from "../components/home/TextAnimeSection";
 import WorkWithUs from "../components/home/WorkWithUs";
 
 const Home = () => {
@@ -29,7 +29,7 @@ const Home = () => {
     <div className="bg-black relative">
       <AnimatePresence mode="wait">
         {showPreloader || !isHeroLoaded ? (
-          <Preloader key="preloader" />
+          <PreLoader key="preloader" />
         ) : (
           <motion.div
             key="content"
@@ -38,8 +38,8 @@ const Home = () => {
             transition={{ duration: 1 }}
           >
             <Hero />
+            <TextAnimeSection />
             <WorkWithUs />
-            <AboutSection />
           </motion.div>
         )}
       </AnimatePresence>

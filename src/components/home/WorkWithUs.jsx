@@ -1,12 +1,12 @@
 import React from 'react'
 import Lamb from '../ui/Lamb'
 
-const About = () => {
+const WorkWithUs = () => {
   return (
-    <div>
+    <>
       <Lamb />
-    </div>
+    </>
   )
 }
 
-export default About
+export default WorkWithUs

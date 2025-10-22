@@ -14,7 +14,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-transparent text-white z-50 flex items-center justify-between px-6 py-4">
+    <header className="fixed top-0 left-0 right-0 bg-transparent text-white z-[60] flex items-center justify-between px-6 py-4">
       {/* Logo */}
       <Link to="/">
         <img src="/logo.png" alt="logo" className="w-36" />
