@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import PreLoader from "../components/ui/PreLoader";
+import Preloader from "../components/ui/Preloader";
 import Hero from "../components/home/Hero";
 import TextAnimeSection  from "../components/home/TextAnimeSection";
 import WorkWithUs from "../components/home/WorkWithUs";
@@ -29,7 +29,7 @@ const Home = () => {
     <div className="bg-black relative">
       <AnimatePresence mode="wait">
         {showPreloader || !isHeroLoaded ? (
-          <PreLoader key="preloader" />
+          <Preloader key="preloader" />
         ) : (
           <motion.div
             key="content"
