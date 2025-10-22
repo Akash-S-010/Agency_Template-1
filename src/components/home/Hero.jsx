@@ -30,7 +30,7 @@ const Hero = () => {
           </h1>
         </div>
           {/* Subtitle - aligned to the container's left padding like the screenshot */}
-          <p className="text-sm text-gray-300 font-body md:text-base tracking-wider font-normal absolute bottom-10 z-30 left-6 md:left-12 lg:left-20 uppercase">
+          <p className="text-sm text-gray-500 font-body md:text-base tracking-wider font-normal absolute bottom-10 z-30 left-6 md:left-12 lg:left-20 uppercase">
             WEBSITES • DIGITAL MARKETING • DESIGN
           </p>
       </div>

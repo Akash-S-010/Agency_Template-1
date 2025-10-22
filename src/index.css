@@ -6,8 +6,7 @@ body{
 }
 
 @theme {
-    --color-primary: #beff01;
+    --color-primary: #b45dfc;
     --color-muted: #6c757d;
-    --font-heading: "Epilogue", sans-serif; 
     --font-body: "Work Sans", sans-serif;  
 }
