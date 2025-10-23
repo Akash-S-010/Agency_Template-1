@@ -1,25 +1,29 @@
 import React from "react";
 import CardSwap, { Card } from "../ui/StackCardAnime";
-import { Button } from "../ui/Button";
+import Button from "../ui/Button";
 
 const AboutSection = () => {
   return (
     <div className="h-[95vh] bg-black text-white px-4 md:px-20 flex flex-col justify-center overflow-hidden">
       <div className="flex flex-col md:flex-row items-center gap-10">
         {/* Left Text Section */}
-        <div className="w-full md:w-1/2">
-          <h1 className="text-3xl md:text-6xl font-light mb-8 md:mb-12">
+        <div className="w-full md:w-5xl">
+          <h1 className="text-3xl md:text-7xl font-light mb-8 md:mb-12">
             Who We Are.
           </h1>
-          <p className="text-lg md:text-2xl leading-relaxed font-thin text-gray-200">
-            Founded in <span className="text-primary font-semibold">2025</span>,
-            Velvetbyte is an innovative IT solutions company based in Kochi,
-            Kerala — empowering startups, SMEs, and enterprises to thrive in the
-            digital era. We deliver tailored, scalable, and future-ready digital
+          <p className="text-lg md:text-3xl leading-snug tracking-tight font-light text-gray-200">
+            <span className="text-primary font-semibold">Velvetbyte</span>, is
+            an innovative IT solutions company based in Kochi, Kerala founded in 2025, —
+            empowering startups, SMEs, and enterprises to thrive in the digital
+            era. We deliver tailored, scalable, and future-ready digital
             solutions that accelerate business growth and efficiency.
           </p>
           <div className="mt-8">
-            <Button variant="outline" size="lg" className="text-md font-light">
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-md font-light bg-black"
+            >
               Learn More About Us
             </Button>
           </div>
