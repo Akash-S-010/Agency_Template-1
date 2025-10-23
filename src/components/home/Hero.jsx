@@ -1,6 +1,7 @@
-import React, { useState, Suspense } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-const SplineBg = React.lazy(() => import("../ui/SplineBg"));
+import Spline from '@splinetool/react-spline';
+
 
 const Hero = () => {
   return (
@@ -17,9 +18,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="w-full h-full pointer-events-none">
           {/* SplineBg handles its own rendering */}
-          <Suspense fallback={<div>Loading...</div>}>
-            <SplineBg />
-          </Suspense>
+    <Spline scene="https://prod.spline.design/OHBu3Ty86SbiXAkg/scene.splinecode" />
         </div>
       </div>
 
