@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { motion } from "framer-motion";
-import SplineBg from "../ui/SplineBg";
+const SplineBg = React.lazy(() => import("../ui/SplineBg"));
 
 const Hero = () => {
   return (
@@ -17,7 +17,9 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="w-full h-full pointer-events-none">
           {/* SplineBg handles its own rendering */}
-          <SplineBg />
+          <Suspense fallback={<div>Loading...</div>}>
+            <SplineBg />
+          </Suspense>
         </div>
       </div>
 
