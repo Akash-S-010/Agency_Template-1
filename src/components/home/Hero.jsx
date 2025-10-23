@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Spline from '@splinetool/react-spline';
 
-
 const Hero = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black">
@@ -16,13 +15,14 @@ const Hero = () => {
 
       {/* Spline 3D Animation Background (replaced iframe with Spline component) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="w-full h-full pointer-events-none">
-          {/* SplineBg handles its own rendering */}
-    <Spline scene="https://prod.spline.design/OHBu3Ty86SbiXAkg/scene.splinecode" />
+        <div className="w-full h-full pointer-events-none spline-background">
+           <Spline
+        scene="https://prod.spline.design/85rA7GKedkop9ZLk/scene.splinecode" 
+      />
         </div>
       </div>
 
-      {/* Optimized Overlay (Removed backdrop-blur) */}
+      {/* Optimized Overlay*/}
       <div
         className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/60 to-black/30 z-10"
         style={{ willChange: "transform" }} // Optimize rendering
@@ -55,5 +55,4 @@ const Hero = () => {
   );
 };
 
-// Memoize the Hero component to prevent unnecessary re-renders
 export default React.memo(Hero);
