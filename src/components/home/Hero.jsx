@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Spline from '@splinetool/react-spline';
 
 const Hero = () => {
   return (
@@ -15,16 +14,20 @@ const Hero = () => {
 
       {/* Spline 3D Animation Background (replaced iframe with Spline component) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="w-full h-full pointer-events-none spline-background">
-           <Spline
-        scene="https://prod.spline.design/85rA7GKedkop9ZLk/scene.splinecode" 
-      />
+        <div className="w-full h-full pointer-events-none spline-background relative">
+          <iframe
+            src="https://my.spline.design/iridescenttorusanimation-oVmJQswQojm46rmNUzmPAOXd/"
+            frameborder="0"
+            width="100%"
+            height="100%"
+          ></iframe>
+          <div className="pointer-events-none absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black via-black/70 to-transparent" />
         </div>
       </div>
 
       {/* Optimized Overlay*/}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/60 to-black/30 z-10"
+        className="absolute inset-0  bg-gradient-to-r from-black/30 via-black/60 to-black/30 z-10"
         style={{ willChange: "transform" }} // Optimize rendering
       />
 
