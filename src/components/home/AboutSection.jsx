@@ -12,20 +12,14 @@ const AboutSection = () => {
             Who We Are.
           </h1>
           <p className="text-lg md:text-3xl leading-snug tracking-tight font-light text-gray-200">
-            <span className="text-primary font-semibold">Velvetbyte</span>, is
-            an innovative IT solutions company based in Kochi, Kerala founded in 2025, —
-            empowering startups, SMEs, and enterprises to thrive in the digital
-            era. We deliver tailored, scalable, and future-ready digital
-            solutions that accelerate business growth and efficiency.
+            <span className="text-primary font-semibold">Velvetbyte</span>{" "}
+            empowers startups and enterprises with smart, future-ready IT
+            solutions—driving innovation, scalability, and success in a rapidly
+            evolving digital world.
           </p>
+
           <div className="mt-8">
-            <Button
-              variant="outline"
-              size="lg"
-              className="text-md font-light bg-black"
-            >
-              Learn More About Us
-            </Button>
+            <Button text="Learn More About Us">Learn More About Us</Button>
           </div>
         </div>
 
