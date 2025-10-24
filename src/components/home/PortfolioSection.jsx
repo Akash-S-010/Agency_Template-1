@@ -1,67 +1,65 @@
-import { ReactLenis } from "lenis/react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { MoveRight, Sparkles } from "lucide-react";
+import { ExternalLink, Award } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
-/*  DATA – Unified dark background, refined content                   */
+/*  DATA – Portfolio Projects                                         */
 /* ------------------------------------------------------------------ */
-const services = [
+const projects = [
   {
-    title: "UI UX Design",
+    title: "FinTech Dashboard Redesign",
     description:
-      "We craft pixel-perfect, user-centered interfaces that drive engagement and growth.",
-    technologies: [
-      "UI UX Consulting",
-      "UX Research",
-      "Usability Testing",
-      "UX Audit",
-      "UI UX Design",
-      "Design System Audit",
-      "Visual Design",
-    ],
-    imageGrid: true,
-  },
-  {
-    title: "Web Design",
-    description:
-      "High-conversion websites that look stunning and perform flawlessly across all devices.",
-    technologies: [
-      "Website Strategy",
-      "UX Planning",
-      "Custom UX/UI Design",
-      "Responsive Design",
-      "Landing Page Design",
-      "Custom Web Development",
-      "Post-Launch & Maintenance",
+      "Redesigned a complex financial dashboard for 50K+ users, improving task completion rates by 47% and reducing support tickets.",
+    category: "Web Application",
+    tools: ["Figma", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    metrics: { completion: "+47%", satisfaction: "4.8/5", users: "50K+" },
+    images: [
+      "https://picsum.photos/400/500?random=1",
+      "https://picsum.photos/400/500?random=2",
+      "https://picsum.photos/400/500?random=3",
+      "https://picsum.photos/400/500?random=4",
     ],
   },
   {
-    title: "Build Product (MVP)",
+    title: "E-Commerce Platform",
     description:
-      "Launch fast. Validate ideas. Scale smart. We build MVPs that get real user feedback.",
-    technologies: [
-      "Discovery & MVP Strategy",
-      "UX/UI Design for MVP",
-      "Prototypes & Wireframes",
-      "Front & Back Development",
-      "Third-Party API & Integration",
-      "Quality Assurance & Testing",
-      "Launch & Post-MVP Iteration",
+      "Built a high-conversion e-commerce platform with advanced filtering, personalized recommendations, and seamless checkout flow.",
+    category: "E-Commerce",
+    tools: ["Next.js", "Shopify", "Stripe", "PostgreSQL", "Redis"],
+    metrics: { conversion: "+34%", revenue: "$2.1M", speed: "0.8s" },
+    images: [
+      "https://picsum.photos/400/500?random=5",
+      "https://picsum.photos/400/500?random=6",
+      "https://picsum.photos/400/500?random=7",
+      "https://picsum.photos/400/500?random=8",
     ],
   },
   {
-    title: "Webflow",
+    title: "Healthcare Mobile App",
     description:
-      "No-code, high-performance websites with enterprise-grade design and animations.",
-    technologies: [
-      "Figma to Webflow Build",
-      "Full Webflow Design + Dev",
-      "CMS Architecture",
-      "Animations & Interactions",
-      "Webflow SEO Setup",
-      "No-code Integrations",
-      "Enterprise Webflow Builds",
+      "Designed and developed a HIPAA-compliant telehealth app connecting patients with doctors for virtual consultations.",
+    category: "Mobile App",
+    tools: ["React Native", "Node.js", "WebRTC", "AWS", "MongoDB"],
+    metrics: { appointments: "10K+", rating: "4.9/5", uptime: "99.9%" },
+    images: [
+      "https://picsum.photos/400/500?random=9",
+      "https://picsum.photos/400/500?random=10",
+      "https://picsum.photos/400/500?random=11",
+      "https://picsum.photos/400/500?random=12",
+    ],
+  },
+  {
+    title: "SaaS Analytics Platform",
+    description:
+      "Created a real-time analytics dashboard for marketing teams to track campaigns, visualize data, and generate automated reports.",
+    category: "SaaS Product",
+    tools: ["Vue.js", "Python", "D3.js", "Docker", "Kubernetes"],
+    metrics: { customers: "500+", queries: "1M/day", retention: "92%" },
+    images: [
+      "https://picsum.photos/400/500?random=13",
+      "https://picsum.photos/400/500?random=14",
+      "https://picsum.photos/400/500?random=15",
+      "https://picsum.photos/400/500?random=16",
     ],
   },
 ];
@@ -77,169 +75,154 @@ export default function PortfolioSection() {
   });
 
   return (
-    <ReactLenis root options={{ smoothWheel: true, lerp: 0.07 }}>
-      <main ref={container} className="relative bg-[#0a0a0a]">
-        {services.map((s, i) => {
-          const targetScale = 1 - (services.length - 1 - i) * 0.05;
-          return (
-            <Card
-              key={i}
-              i={i}
-              {...s}
-              progress={scrollYProgress}
-              range={[i * 0.25, 1]}
-              targetScale={targetScale}
-            />
-          );
-        })}
-      </main>
-    </ReactLenis>
+    <main ref={container} className="relative bg-[#0a0a0a]">
+      {projects.map((project, i) => {
+        const targetScale = 1 - (projects.length - 1 - i) * 0.02;
+        return (
+          <Card
+            key={i}
+            i={i}
+            {...project}
+            progress={scrollYProgress}
+            range={[i * 0.25, 1]}
+            targetScale={targetScale}
+          />
+        );
+      })}
+    </main>
   );
 }
 
 /* ------------------------------------------------------------------ */
-/*  CARD COMPONENT – Solid Dark BG, Premium UI                        */
+/*  CARD COMPONENT – Consistent sizing and solid backgrounds          */
 /* ------------------------------------------------------------------ */
 const Card = ({
   i,
   title,
   description,
-  technologies,
+  category,
+  tools,
+  metrics,
+  images,
   progress,
   range,
   targetScale,
-  imageGrid,
 }) => {
   const cardRef = useRef(null);
-
   const scale = useTransform(progress, range, [1, targetScale]);
-  const y = useTransform(progress, range, [0, -100]);
-  const opacity = useTransform(progress, range, [1, 0.9]);
 
   return (
-    <div
-      ref={cardRef}
-      className="h-screen flex items-center justify-center sticky top-0"
-    >
+    <div className="h-screen flex items-center justify-center sticky top-0">
       <motion.div
+        ref={cardRef}
         style={{
-          backgroundColor: "#0a0a0a", // Solid dark background
           scale,
-          y,
-          opacity,
-          top: `calc(${i * 20}px)`,
+          top: `calc(${i * 25}px)`,
         }}
-        className="absolute inset-0 text-white flex flex-col lg:flex-row items-center justify-center px-6 md:px-12 lg:px-20 py-16 overflow-hidden"
+        className="relative w-full h-full overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#1a0a1a] to-[#0a0a1a]"
       >
-        {/* Subtle Gradient Overlay */}
-        <div className="absolute inset-0 opacity-50 pointer-events-none">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-purple-900 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-900 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        {/* Accent gradient overlays */}
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-primary/30 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* LEFT: Content */}
-          <div className="space-y-8">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium border border-white/20">
-              <Sparkles size={16} className="text-yellow-400" />
-              Service {i + 1} of {services.length}
-            </div>
+        {/* Content Grid */}
+        <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12 xl:p-16">
+          {/* LEFT: Project Info */}
+          {/* LEFT: Project Info */}
+          <div className="flex flex-col h-full max-w-2xl">
+            {/* Top Section: Badge, Title, Description, Metrics, Tools */}
+            <div className="space-y-6 lg:space-y-8">
+              {/* Category Badge */}
+              <div className="inline-flex text-gray-400 items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-light border border-white/10">
+                <Award size={16} className="text-primary" />
+                {category}
+              </div>
 
-            {/* Title */}
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              {title}
-            </h2>
+              {/* Title */}
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight">
+                {title}
+              </h2>
 
-            {/* Description */}
-            <p className="text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed">
-              {description}
-            </p>
+              {/* Description */}
+              <p className="text-lg md:text-xl font-light text-gray-400 leading-relaxed">
+                {description}
+              </p>
 
-            {/* Tech List */}
-            <ul className="space-y-3">
-              {technologies.map((tech, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-center gap-3 text-base md:text-lg text-gray-400"
-                >
-                  <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></div>
-                  {tech}
-                </li>
-              ))}
-            </ul>
-
-            {/* CTA */}
-            <button className="group mt-8 px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-3 bg-white text-black hover:bg-gray-100 transition-all hover:scale-105 hover:shadow-xl">
-              Get Started
-              <MoveRight
-                size={20}
-                className="group-hover:translate-x-1 transition-transform"
-              />
-            </button>
-          </div>
-
-          {/* RIGHT: Image Grid */}
-          <div className="flex justify-center lg:justify-end">
-            {imageGrid ? (
-              <div className="grid grid-cols-2 gap-4 md:gap-6 max-w-md">
-                {[
-                  "https://picsum.photos/320/420?random=20",
-                  "https://picsum.photos/320/420?random=21",
-                  "https://picsum.photos/320/420?random=22",
-                  "https://picsum.photos/320/420?random=23",
-                ].map((src, idx) => (
-                  <div
-                    key={idx}
-                    className={`relative overflow-hidden rounded-2xl shadow-2xl border border-white/10 ${
-                      idx === 1
-                        ? "translate-y-8"
-                        : idx === 2
-                        ? "-translate-y-6"
-                        : ""
-                    }`}
-                  >
-                    <img
-                      src={src}
-                      alt={`mock-${idx}`}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              {/* Metrics */}
+              <div className="grid grid-cols-3 gap-4">
+                {Object.entries(metrics).map(([key, value]) => (
+                  <div key={key} className="space-y-1">
+                    <div className="text-2xl md:text-3xl font-light text-white">
+                      {value}
+                    </div>
+                    <div className="text-sm text-gray-500 capitalize">
+                      {key}
+                    </div>
                   </div>
                 ))}
               </div>
-            ) : (
-              <div className="relative">
-                <img
-                  src="https://picsum.photos/400/600?random=24"
-                  alt="product"
-                  className="rounded-3xl shadow-2xl max-w-sm border border-white/10"
-                />
-                {i === 2 && (
-                  <div className="absolute -top-12 -right-12 bg-white p-4 rounded-2xl shadow-2xl border border-gray-200">
-                    <img
-                      src="https://picsum.photos/200/300?random=25"
-                      alt="phone"
-                      className="w-36 rounded-xl"
-                    />
-                  </div>
-                )}
+
+              {/* Technologies Used */}
+              <div className="pt-6">
+                <p className="text-sm text-gray-500 mb-3 font-medium">
+                  Technologies Used
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {tools.map((tool, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
               </div>
-            )}
+
+              {/* CTA Button – NOW directly below tools */}
+              <div className="mt-6">
+                <button className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-base bg-white text-black hover:bg-gray-100 transition-all hover:scale-[1.02]">
+                  View Case Study
+                  <ExternalLink
+                    size={18}
+                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                  />
+                </button>
+              </div>
+            </div>
+
+            {/* Optional: Spacer to push content up if needed on tall screens */}
+            <div className="flex-1" />
+          </div>
+
+          {/* RIGHT: Image Grid */}
+          <div className="flex items-center justify-end">
+            <div className="grid grid-cols-2 gap-3 max-w-[520px] w-full">
+              {images.map((src, idx) => (
+                <div
+                  key={idx}
+                  className={`relative overflow-hidden rounded-xl border border-white/10 aspect-[4/5] ${
+                    idx === 1
+                      ? "translate-y-8"
+                      : idx === 2
+                      ? "-translate-y-8"
+                      : ""
+                  }`}
+                >
+                  <img
+                    src={src}
+                    alt={`${title} screenshot ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-40"></div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* Subtle Grid */}
-        <div
-          className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, #ffffff20 1px, transparent 1px),
-              linear-gradient(to bottom, #ffffff20 1px, transparent 1px)
-            `,
-            backgroundSize: "60px 60px",
-          }}
-        />
       </motion.div>
     </div>
   );
