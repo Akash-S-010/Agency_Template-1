@@ -6,6 +6,7 @@ import Service from './pages/Service.jsx'
 import Portfolio from './pages/Portfolio.jsx'
 import Contact from './pages/Contact.jsx'
 import Header from './components/layout/Header.jsx'
+import Footer from './components/layout/Footer.jsx'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </Router>
   )
 }
