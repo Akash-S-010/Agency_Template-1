@@ -90,7 +90,7 @@ const Footer = () => {
         </div>
 
         {/* Brand Name */}
-        <div className="text-center mt-12 py-18 border-t border-line border-b border-gray-800 ">
+        <div className="text-center mt-12 py-8 md:py-18 border-t border-line border-b border-gray-800 ">
           <h1 className="text-2xl md:text-7xl font-medium text-muted">
             Unlock Your <span className="text-primary">Success</span>
           </h1>
