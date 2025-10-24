@@ -17,7 +17,7 @@ const Hero = () => {
         <div className="w-full h-full pointer-events-none spline-background relative">
           <iframe
             src="https://my.spline.design/iridescenttorusanimation-oVmJQswQojm46rmNUzmPAOXd/"
-            frameborder="0"
+            frameBorder="0"
             width="100%"
             height="100%"
           ></iframe>

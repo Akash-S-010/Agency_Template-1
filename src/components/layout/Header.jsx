@@ -14,7 +14,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-transparent text-white z-[60] flex items-center justify-between px-6 py-4">
+    <header className="fixed top-0 left-0 right-0 bg-transparent text-white z-[60] flex items-center justify-between px-2 md:px-6 py-4">
       {/* Logo */}
       <Link to="/">
         <img src="/logo.png" alt="logo" className="w-36" />
@@ -73,7 +73,7 @@ const Header = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 bg-black z-20 flex flex-col justify-center items-start px-18 space-y-6"
+          className="fixed inset-0 bg-black z-20 flex flex-col justify-center items-start px-10 md:px-18 space-y-6"
         >
           {menuItems.map((item, index) => (
             <motion.div
