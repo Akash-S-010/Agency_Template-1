@@ -7,6 +7,7 @@ import {
   FaBullhorn,
   FaMobileAlt,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 // Utility function for class merging
 const cn = (...classes) => classes.filter(Boolean).join(" ");
@@ -76,7 +77,7 @@ const ServiceCard = ({
     "group block relative min-h-[220px] w-full max-w-[400px] rounded-lg px-8 py-6 m-3 no-underline overflow-hidden cursor-pointer";
 
   return (
-    <a href={link} className={cn(base, config.container)}>
+    <Link to={link} className={cn(base, config.container)}>
       {/* Expanding Circle */}
       {config.circle?.show && (
         <div
@@ -128,7 +129,7 @@ const ServiceCard = ({
           )}
         </div>
       )}
-    </a>
+    </Link>
   );
 };
 

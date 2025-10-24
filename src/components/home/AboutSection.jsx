@@ -11,7 +11,7 @@ const AboutSection = () => {
           <h1 className="text-3xl md:text-7xl font-light mb-8 md:mb-12">
             Who We Are.
           </h1>
-          <p className="text-lg md:text-3xl leading-snug tracking-tight font-light text-gray-200">
+          <p className="text-lg md:text-3xl leading-snug tracking-tight font-light text-gray-400">
             <span className="text-primary font-semibold">Velvetbyte</span>{" "}
             empowers startups and enterprises with smart, future-ready IT
             solutions—driving innovation, scalability, and success in a rapidly

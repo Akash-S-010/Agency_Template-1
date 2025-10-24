@@ -78,14 +78,14 @@ const LampDemo = () => {
         }}
         className="w-full max-w-4xl"
       >
-        <h2 className="text-center text-sm font-medium tracking-widest text-slate-400 mb-16">
+        <h2 className="text-center text-sm font-normal tracking-widest text-slate-400 mb-16">
           WHY WORK WITH US?
         </h2>
 
         <div className="space-y-12 text-white">
           {/* 100% - Work completed in house */}
           <div className="flex items-center justify-between border-b border-primary/30 pb-12">
-            <div className="text-7xl md:text-8xl font-light">
+            <div className="text-7xl md:text-7xl font-light">
               100%
             </div>
             <div className="text-2xl md:text-3xl font-light text-right">
