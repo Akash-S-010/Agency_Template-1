@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   const menuItems = [
     { id: 1, label: "Homepage", path: "/" },
@@ -13,8 +15,46 @@ const Header = () => {
     { id: 5, label: "Contact Us", path: "/contact" },
   ];
 
+  /* ---------- SCROLL VISIBILITY (Hide on down, show on up) ---------- */
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY =
+
+ window.scrollY;
+      setIsVisible(currentScrollY <= 0 || currentScrollY < lastScrollY);
+      lastScrollY = currentScrollY;
+    };
+
+    if (isMenuOpen) {
+      setIsVisible(true);
+      window.removeEventListener("scroll", handleScroll);
+    } else {
+      setIsVisible(window.scrollY <= 0);
+      window.addEventListener("scroll", handleScroll);
+    }
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMenuOpen]);
+
+  /* ---------- BACKGROUND ON SCROLL (Transparent → Black) ---------- */
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 50); // Adjust 50 to your hero height
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 bg-transparent text-white z-[60] flex items-center justify-between px-2 md:px-6 py-4">
+    <motion.header
+      animate={{ y: isVisible ? 0 : -100 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className={`fixed top-0 left-0 right-0 text-white z-[60] flex items-center justify-between px-2 md:px-6 py-4 transition-all duration-300 ${
+        hasScrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
+      }`}
+    >
       {/* Logo */}
       <Link to="/">
         <img src="/logo.png" alt="logo" className="w-36" />
@@ -99,7 +139,7 @@ const Header = () => {
           ))}
         </motion.div>
       )}
-    </header>
+    </motion.header>
   );
 };
 
