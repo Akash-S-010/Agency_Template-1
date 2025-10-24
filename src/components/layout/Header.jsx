@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import headerBg from "../../assets/bgimg.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -113,30 +114,41 @@ const Header = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 bg-black z-20 flex flex-col justify-center items-start px-10 md:px-18 space-y-6"
+          className="fixed inset-0 z-20 flex items-center justify-start px-6 md:px-18"
         >
-          {menuItems.map((item, index) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative"
-            >
-              <Link
-                to={item.path}
-                onClick={() => setIsMenuOpen(false)}
-                className="flex items-center group"
+          {/* Background image for menu overlay */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${headerBg})` }}
+            aria-hidden="true"
+          />
+          {/* dark overlay to improve contrast */}
+          <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
+
+          <div className="relative z-10 flex flex-col justify-center items-start space-y-6 max-w-4xl w-full">
+            {menuItems.map((item, index) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative"
               >
-                <span className="text-gray-500 text-sm font-medium">
-                  0{item.id} ----
-                </span>
-                <div className="text-4xl md:text-6xl font-normal ml-4 relative hover:text-primary hover:scale-105 transition duration-300 ease-in-out">
-                  {item.label}
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                <Link
+                  to={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center group"
+                >
+                  <span className="text-gray-400 text-sm font-medium">
+                    0{item.id} ----
+                  </span>
+                  <div className="text-4xl md:text-6xl font-normal ml-4 relative hover:text-primary hover:scale-105 transition duration-300 ease-in-out text-white">
+                    {item.label}
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       )}
     </motion.header>
