@@ -4,6 +4,7 @@ import TextAnimeSection from "../components/home/TextAnimeSection";
 import WorkWithUs from "../components/home/WorkWithUs";
 import ServiceSection from "../components/home/ServiceSection";
 import PortfolioSection from "../components/home/PortfolioSection";
+import FaqSection from "../components/home/FaqSection";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <PortfolioSection />
       <WorkWithUs />
       <TextAnimeSection />
+      <FaqSection />
     </div>
   );
 };
