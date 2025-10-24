@@ -15,10 +15,10 @@ const projects = [
     tools: ["Figma", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     metrics: { completion: "+47%", satisfaction: "4.8/5", users: "50K+" },
     images: [
-      "https://picsum.photos/500/375?random=1",
-      "https://picsum.photos/500/375?random=2",
-      "https://picsum.photos/500/375?random=3",
-      "https://picsum.photos/500/375?random=4",
+      "https://i.pinimg.com/1200x/f6/c0/85/f6c085bbe773a14afea28a03307f9160.jpg",
+      "https://i.pinimg.com/1200x/95/42/dd/9542ddcc8d14fb92148084b5dcbfe894.jpg",
+      "https://i.pinimg.com/1200x/bd/5c/45/bd5c45d4f65ec7e6e8a09d7aee2f1f01.jpg",
+      "https://i.pinimg.com/1200x/9c/24/65/9c2465aa945b9c07e5542e213bfe18c4.jpg",
     ],
   },
   {
@@ -29,10 +29,10 @@ const projects = [
     tools: ["Next.js", "Shopify", "Stripe", "PostgreSQL", "Redis"],
     metrics: { conversion: "+34%", revenue: "$2.1M", speed: "0.8s" },
     images: [
-      "https://picsum.photos/500/375?random=5",
-      "https://picsum.photos/500/375?random=6",
-      "https://picsum.photos/500/375?random=7",
-      "https://picsum.photos/500/375?random=8",
+      "https://i.pinimg.com/1200x/a5/9f/77/a59f7703faef0d07c99b89909b5343c7.jpg",
+      "https://i.pinimg.com/736x/bd/cb/59/bdcb59330b04884ed3a141d517443c39.jpg",
+      "https://i.pinimg.com/736x/3a/cd/fe/3acdfe44f29d72b6748e4cdca7b6d57c.jpg",
+      "https://i.pinimg.com/736x/2d/f5/8a/2df58a6fd1aeac33a1b828e2c3f5d05d.jpg",
     ],
   },
   {
@@ -43,10 +43,10 @@ const projects = [
     tools: ["React Native", "Node.js", "WebRTC", "AWS", "MongoDB"],
     metrics: { appointments: "10K+", rating: "4.9/5", uptime: "99.9%" },
     images: [
-      "https://picsum.photos/500/375?random=9",
-      "https://picsum.photos/500/375?random=10",
-      "https://picsum.photos/500/375?random=11",
-      "https://picsum.photos/500/375?random=12",
+      "https://i.pinimg.com/736x/20/0e/69/200e69b73ee0c8d1cb0779f3b38fbecf.jpg",
+      "https://i.pinimg.com/1200x/12/ec/b7/12ecb7fdb10c9a0fa3476e52f39466f7.jpg",
+      "https://i.pinimg.com/1200x/16/2c/13/162c1308f21c5fc2142c389c19bd04a6.jpg",
+      "https://i.pinimg.com/736x/48/5d/87/485d87631bced669ecf444e6ab968a24.jpg",
     ],
   },
   {
@@ -57,10 +57,10 @@ const projects = [
     tools: ["Vue.js", "Python", "D3.js", "Docker", "Kubernetes"],
     metrics: { customers: "500+", queries: "1M/day", retention: "92%" },
     images: [
-      "https://picsum.photos/500/375?random=13",
-      "https://picsum.photos/500/375?random=14",
-      "https://picsum.photos/500/375?random=15",
-      "https://picsum.photos/500/375?random=16",
+      "https://i.pinimg.com/736x/b6/19/f9/b619f93df0ec6b70f5f0a16ad8bde795.jpg",
+      "https://i.pinimg.com/1200x/fc/a9/b6/fca9b63eb1e7d9dc13eb36bcd5f67632.jpg",
+      "https://i.pinimg.com/736x/00/38/53/00385325edb5535fb1918a34ec6a4650.jpg",
+      "https://i.pinimg.com/736x/96/99/73/96997380afba9be1d72818367e717790.jpg",
     ],
   },
 ];
@@ -165,7 +165,7 @@ const Card = memo(function Card({
                 </div>
               </div>
 
-              <button className="group mt-6 inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-base bg-white text-black hover:bg-gray-100 transition-all hover:scale-[1.02]">
+              <button className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-base bg-white text-black hover:bg-gray-100 transition-all hover:scale-[1.02]">
                 View Case Study
                 <ExternalLink
                   size={18}
@@ -191,7 +191,7 @@ const Card = memo(function Card({
                       src={src}
                       srcSet={`${lowRes} 20w, ${src} 500w`}
                       alt={`${title} screenshot ${idx + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top"
                       loading="lazy"
                       decoding="async"
                     />

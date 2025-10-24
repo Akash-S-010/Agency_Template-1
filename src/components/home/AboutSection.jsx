@@ -12,7 +12,7 @@ const AboutSection = () => {
             Who We Are.
           </h1>
           <p className="text-lg md:text-3xl leading-snug tracking-tight font-light text-gray-400">
-            <span className="text-primary font-semibold">Velvetbyte</span>{" "}
+            <span className="text-primary font-normal">Velvetbyte</span>{" "}
             empowers startups and enterprises with smart, future-ready IT
             solutions—driving innovation, scalability, and success in a rapidly
             evolving digital world.
@@ -38,20 +38,21 @@ const AboutSection = () => {
             <Card
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=800&q=80')",
+                  "url('https://i.pinimg.com/736x/ad/be/be/adbebe4152ab0f5627895a39e9d4b625.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                border: "2px solid gray",
               }}
             >
               {/* Dark Overlay + Top Gradient */}
               <div className="absolute inset-0 rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-black/60"></div>
+                <div className="absolute inset-0 bg-black/70"></div>
                 <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/80 to-transparent"></div>
               </div>
 
-              <div className="relative z-10 p-6 text-left">
-                <h3 className="text-3xl font-semibold mb-2">Web Development</h3>
-                <p className="text-lg text-gray-200">
+              <div className="relative z-10 px-8 py-14 text-left">
+                <h3 className="text-3xl text-gray-200 font-normal mb-2">Web Development</h3>
+                <p className="text-lg text-gray-300">
                   Modern, responsive, and scalable websites built for
                   performance and growth.
                 </p>
@@ -62,19 +63,20 @@ const AboutSection = () => {
             <Card
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80')",
+                  "url('https://i.pinimg.com/1200x/fe/e4/29/fee4296f057a5d5b17bd5ca60dba08a5.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                border: "2px solid gray",
               }}
             >
               <div className="absolute inset-0 rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-black/60"></div>
+                <div className="absolute inset-0 bg-black/70"></div>
                 <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/80 to-transparent"></div>
               </div>
 
-              <div className="relative z-10 p-6 text-left">
-                <h3 className="text-3xl font-semibold mb-2">App Development</h3>
-                <p className="text-lg text-gray-200">
+              <div className="relative z-10 px-8 py-14 text-left">
+                <h3 className="text-3xl text-gray-200 font-normal mb-2">App Development</h3>
+                <p className="text-lg text-gray-300">
                   Crafting seamless mobile experiences that engage and convert
                   on every device.
                 </p>
@@ -85,21 +87,22 @@ const AboutSection = () => {
             <Card
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80')",
+                  "url('https://i.pinimg.com/736x/d5/6f/52/d56f524554f367bb81ec84024bf1817b.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                border: "2px solid gray",
               }}
             >
               <div className="absolute inset-0 rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-black/60"></div>
+                <div className="absolute inset-0 bg-black/70"></div>
                 <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/80 to-transparent"></div>
               </div>
 
-              <div className="relative z-10 p-6 text-left">
-                <h3 className="text-3xl font-semibold mb-2">
+              <div className="relative z-10 px-8 py-14 text-left">
+                <h3 className="text-3xl text-gray-200 font-normal mb-2">
                   Digital Marketing
                 </h3>
-                <p className="text-lg text-gray-200">
+                <p className="text-lg text-gray-300">
                   Data-driven campaigns and SEO strategies that amplify your
                   brand visibility.
                 </p>
@@ -110,19 +113,20 @@ const AboutSection = () => {
             <Card
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80')",
+                  "url('https://i.pinimg.com/736x/1c/cc/8e/1ccc8ee0099b762c69330108410d6ab7.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                border: "2px solid gray",
               }}
             >
               <div className="absolute inset-0 rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-black/60"></div>
+                <div className="absolute inset-0 bg-black/70"></div>
                 <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/80 to-transparent"></div>
               </div>
 
-              <div className="relative z-10 p-6 text-left">
-                <h3 className="text-3xl font-semibold mb-2">Branding</h3>
-                <p className="text-lg text-gray-200">
+              <div className="relative z-10 px-8 py-14 text-left">
+                <h3 className="text-3xl text-gray-200 font-normal mb-2">Branding</h3>
+                <p className="text-lg text-gray-300">
                   Building strong, consistent brand identities that resonate and
                   inspire trust.
                 </p>
@@ -133,19 +137,20 @@ const AboutSection = () => {
             <Card
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=80')",
+                  "url('https://i.pinimg.com/736x/01/a5/6f/01a56feb9677a51b84f25a99762e9bdb.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                border: "2px solid gray",
               }}
             >
               <div className="absolute inset-0 rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-black/60"></div>
+                <div className="absolute inset-0 bg-black/70"></div>
                 <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/80 to-transparent"></div>
               </div>
 
-              <div className="relative z-10 p-6 text-left">
-                <h3 className="text-3xl font-semibold mb-2">Graphic Design</h3>
-                <p className="text-lg text-gray-200">
+              <div className="relative z-10 px-8 py-14 text-left">
+                <h3 className="text-3xl text-gray-200 font-normal mb-2">Graphic Design</h3>
+                <p className="text-lg text-gray-300">
                   Creative visuals and designs that elevate your brand presence
                   across platforms.
                 </p>
