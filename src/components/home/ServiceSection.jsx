@@ -3,10 +3,11 @@ import {
   FaPalette,
   FaShoppingCart,
   FaPencilRuler,
-  FaImage,
   FaBullhorn,
   FaMobileAlt,
+  FaCode,
 } from "react-icons/fa";
+import { FaP } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 // Utility function for class merging
@@ -135,7 +136,7 @@ const ServiceCard = ({
 
 const DEFAULT_SERVICES = [
   {
-    icon: FaPalette,
+    icon: FaCode,
     title: "Web Design & Development",
     description:
       "Creating stunning, responsive websites that combine beautiful design with seamless functionality to deliver exceptional user experiences.",
@@ -156,7 +157,7 @@ const DEFAULT_SERVICES = [
     link: "/services",
   },
   {
-    icon: FaImage,
+    icon: FaPalette,
     title: "Graphic Design",
     description:
       "Delivering creative visual solutions including marketing materials, social media graphics, and print designs that make your brand stand out.",
