@@ -31,7 +31,7 @@ const projects = [
     images: [
       "https://i.pinimg.com/1200x/a5/9f/77/a59f7703faef0d07c99b89909b5343c7.jpg",
       "https://i.pinimg.com/736x/bd/cb/59/bdcb59330b04884ed3a141d517443c39.jpg",
-      "https://i.pinimg.com/736x/3a/cd/fe/3acdfe44f29d72b6748e4cdca7b6d57c.jpg",
+      "https://i.pinimg.com/736x/3a/cd/fe/3acdfe44f29d72bcf748e4cdca7b6d57c.jpg",
       "https://i.pinimg.com/736x/2d/f5/8a/2df58a6fd1aeac33a1b828e2c3f5d05d.jpg",
     ],
   },
@@ -66,6 +66,39 @@ const projects = [
 ];
 
 /* ------------------------------------------------------------------ */
+/*  INTRO CARD – First sticky card (no images)                        */
+/* ------------------------------------------------------------------ */
+const IntroCard = memo(function IntroCard({ progress, range, targetScale }) {
+  const scale = useTransform(progress, range, [1, targetScale]);
+
+  return (
+    <div className="h-screen flex items-center justify-center sticky top-0">
+      <motion.div
+        style={{ scale, willChange: "transform" }}
+        className="relative w-full h-full overflow-hidden bg-[#0a0a0a] [transform:translateZ(0)] border-t border-b border-gray-600"
+      >
+        <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 lg:p-12 xl:p-16 text-center max-w-4xl mx-auto">
+          <h1 className="text-5xl lg:text-7xl font-light text-white leading-tight mb-6">
+            Portfolio
+          </h1>
+
+          <p className="text-lg md:text-3xl font-light text-gray-400 leading-relaxed max-w-3xl mb-8">
+            A curated selection of projects where I turned complex problems into intuitive,
+            high-impact digital experiences. Scroll down to explore the case studies.
+          </p>
+
+          <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-light border border-white/10 text-gray-400">
+            <Award size={16} className="text-purple-400" />
+            Featured Work
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+});
+IntroCard.displayName = "IntroCard";
+
+/* ------------------------------------------------------------------ */
 /*  MAIN COMPONENT                                                    */
 /* ------------------------------------------------------------------ */
 export default function PortfolioSection() {
@@ -75,17 +108,35 @@ export default function PortfolioSection() {
     offset: ["start start", "end end"],
   });
 
+  // Intro card: stays full size (no parallax shrink)
+  const introRange = [0, 1];
+  const introScale = 1;
+
   return (
     <main ref={containerRef} className="relative bg-[#0a0a0a]">
+      {/* 1. Intro Card */}
+      <IntroCard
+        progress={scrollYProgress}
+        range={introRange}
+        targetScale={introScale}
+      />
+
+      {/* 2. Project Cards */}
       {projects.map((project, i) => {
-        const targetScale = 1 - (projects.length - 1 - i) * 0.02;
-        const range = [i * 0.25, 1];
+        const idx = i + 1; // Start projects at index 1
+        const targetScale = 1 - (projects.length - idx) * 0.02;
+        const range = [idx * 0.25, 1];
 
         return (
           <Card
-            key={i}
-            i={i}
-            {...project}  // FIXED: This was missing!
+            key={idx}
+            i={idx}
+            title={project.title}
+            description={project.description}
+            category={project.category}
+            tools={project.tools}
+            metrics={project.metrics}
+            images={project.images}
             progress={scrollYProgress}
             range={range}
             targetScale={targetScale}
@@ -97,7 +148,7 @@ export default function PortfolioSection() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  CARD – NO GRADIENT, TOP & BOTTOM BORDER (gray-600)                */
+/*  CARD – Project Card (unchanged)                                   */
 /* ------------------------------------------------------------------ */
 const Card = memo(function Card({
   i,
@@ -111,13 +162,11 @@ const Card = memo(function Card({
   range,
   targetScale,
 }) {
-  const cardRef = useRef(null);
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
     <div className="h-screen flex items-center justify-center sticky top-0">
       <motion.div
-        ref={cardRef}
         style={{
           scale,
           willChange: "transform",
@@ -175,11 +224,11 @@ const Card = memo(function Card({
             </div>
           </div>
 
-          {/* RIGHT: Larger Image Grid with Full Gaps */}
+          {/* RIGHT: Image Grid */}
           <div className="flex items-center justify-center lg:justify-end">
             <div className="grid grid-cols-2 gap-6 max-w-lg w-full">
               {images.map((src, idx) => {
-                const lowRes = src.replace("500/375", "20/15");
+                // Low-res placeholder (Pinterest URLs don't support sizes, so we skip)
                 return (
                   <div
                     key={idx}
@@ -189,7 +238,6 @@ const Card = memo(function Card({
                   >
                     <img
                       src={src}
-                      srcSet={`${lowRes} 20w, ${src} 500w`}
                       alt={`${title} screenshot ${idx + 1}`}
                       className="w-full h-full object-cover object-top"
                       loading="lazy"
@@ -206,5 +254,4 @@ const Card = memo(function Card({
     </div>
   );
 });
-
 Card.displayName = "PortfolioCard";
