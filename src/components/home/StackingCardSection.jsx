@@ -62,7 +62,7 @@ function StackCard({ card, index, totalCards, activeIndex }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [index, totalCards]);
 
-  const topOffset = index * 25;
+  const topOffset = index * 10;
 
   return (
     <div
@@ -80,15 +80,16 @@ function StackCard({ card, index, totalCards, activeIndex }) {
         }}
       >
         <div className="h-full flex flex-col md:flex-row">
-          {/* Left Video - Overlay Removed */}
-          <div className="w-full md:w-1/2 h-48 md:h-full relative overflow-hidden">
+          {/* Left Video */}
+          <div className="w-full md:w-1/2 h-48 md:h-full relative overflow-hidden bg-black">
             <video
               src={card.video}
               autoPlay
               loop
               muted
               playsInline
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover block"
+              style={{ display: 'block' }}
             />
           </div>
 
