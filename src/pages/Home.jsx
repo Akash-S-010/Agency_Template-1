@@ -5,6 +5,7 @@ import WorkWithUs from "../components/home/WorkWithUs";
 import ServiceSection from "../components/home/ServiceSection";
 import PortfolioSection from "../components/home/PortfolioSection";
 import FaqSection from "../components/home/FaqSection";
+import StackingCardSection from "../components/home/StackingCardSection";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <PortfolioSection />
       <WorkWithUs />
       <TextAnimeSection />
+      <StackingCardSection />
       <FaqSection />
     </div>
   );
