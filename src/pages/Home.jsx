@@ -6,6 +6,7 @@ import ServiceSection from "../components/home/ServiceSection";
 import PortfolioSection from "../components/home/PortfolioSection";
 import FaqSection from "../components/home/FaqSection";
 import StackingCardSection from "../components/home/StackingCardSection";
+import ParallaxImage from "../components/ui/ParallaxImage";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <PortfolioSection />
       <WorkWithUs />
       <TextAnimeSection />
+      <ParallaxImage />
       <StackingCardSection />
       <FaqSection />
     </div>
