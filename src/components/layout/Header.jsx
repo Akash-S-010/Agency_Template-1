@@ -21,9 +21,7 @@ const Header = () => {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
-      const currentScrollY =
-
- window.scrollY;
+      const currentScrollY = window.scrollY;
       setIsVisible(currentScrollY <= 0 || currentScrollY < lastScrollY);
       lastScrollY = currentScrollY;
     };
@@ -42,89 +40,94 @@ const Header = () => {
   /* ---------- BACKGROUND ON SCROLL (Transparent → Black) ---------- */
   useEffect(() => {
     const handleScroll = () => {
-      setHasScrolled(window.scrollY > 50); // Adjust 50 to your hero height
+      setHasScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <motion.header
-      animate={{ y: isVisible ? 0 : -100 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-      className={`fixed top-0 left-0 right-0 text-white z-[60] flex items-center justify-between px-2 md:px-6 py-4 transition-all duration-300 ${
-        hasScrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
-      }`}
-    >
-      {/* Logo */}
-      <Link to="/">
-        <img src="/logo.png" alt="logo" className="w-36" />
-      </Link>
+    <>
+      {/* Header */}
+      <motion.header
+        animate={{ y: isVisible ? 0 : -100 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className={`fixed top-0 left-0 right-0 text-white z-[70] flex items-center justify-between px-2 md:px-6 py-4 transition-all duration-300 ${
+          hasScrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
+        }`}
+      >
+        {/* Logo */}
+        <Link to="/">
+          <img src="/logo.png" alt="logo" className="w-36" />
+        </Link>
 
-      {/* Menu Toggle - Hamburger */}
-      <div className="relative z-30">
-        <label className="hamburger cursor-pointer block">
-          <input
-            type="checkbox"
-            checked={isMenuOpen}
-            onChange={() => setIsMenuOpen(!isMenuOpen)}
-            className="hidden"
-          />
-          <svg
-            viewBox="0 0 32 32"
-            className="h-12 transition-transform duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-            style={{ transform: isMenuOpen ? "rotate(-45deg)" : "none" }}
-          >
-            <path
-              className="line line-top-bottom"
-              d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
-              style={{
-                fill: "none",
-                stroke: "white",
-                strokeLinecap: "round",
-                strokeLinejoin: "round",
-                strokeWidth: 3,
-                strokeDasharray: isMenuOpen ? "20 300" : "12 63",
-                strokeDashoffset: isMenuOpen ? "-32.42" : "0",
-                transition:
-                  "stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1)",
-              }}
+        {/* Hamburger */}
+        <div className="relative z-[80]">
+          <label className="hamburger cursor-pointer block">
+            <input
+              type="checkbox"
+              checked={isMenuOpen}
+              onChange={() => setIsMenuOpen(!isMenuOpen)}
+              className="hidden"
             />
-            <path
-              className="line"
-              d="M7 16 27 16"
-              style={{
-                fill: "none",
-                stroke: "white",
-                strokeLinecap: "round",
-                strokeLinejoin: "round",
-                strokeWidth: 3,
-                transition:
-                  "stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1)",
-              }}
-            />
-          </svg>
-        </label>
-      </div>
+            <svg
+              viewBox="0 0 32 32"
+              className="h-12 transition-transform duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+              style={{ transform: isMenuOpen ? "rotate(-45deg)" : "none" }}
+            >
+              <path
+                className="line line-top-bottom"
+                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+                style={{
+                  fill: "none",
+                  stroke: "white",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  strokeWidth: 3,
+                  strokeDasharray: isMenuOpen ? "20 300" : "12 63",
+                  strokeDashoffset: isMenuOpen ? "-32.42" : "0",
+                  transition:
+                    "stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1)",
+                }}
+              />
+              <path
+                className="line"
+                d="M7 16 27 16"
+                style={{
+                  fill: "none",
+                  stroke: "white",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  strokeWidth: 3,
+                  transition:
+                    "stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1)",
+                }}
+              />
+            </svg>
+          </label>
+        </div>
+      </motion.header>
 
-      {/* Menu Items - Overlay */}
+      {/* Fullscreen Menu Overlay */}
       {isMenuOpen && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-20 flex items-center justify-start px-6 md:px-18"
+          className="fixed inset-0 z-[60] flex items-center justify-start px-6 md:px-18 bg-black/90"
+          style={{
+            backdropFilter: "blur(8px)", // Optional: enhance separation
+          }}
         >
-          {/* Background image for menu overlay */}
+          {/* Background Image */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center opacity-50"
             style={{ backgroundImage: `url(${headerBg})` }}
             aria-hidden="true"
           />
-          {/* dark overlay to improve contrast */}
-          <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
 
+          {/* Menu Content */}
           <div className="relative z-10 flex flex-col justify-center items-start space-y-6 max-w-4xl w-full">
             {menuItems.map((item, index) => (
               <motion.div
@@ -149,9 +152,15 @@ const Header = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Close on backdrop click */}
+          <div
+            className="absolute inset-0 z-0"
+            onClick={() => setIsMenuOpen(false)}
+          />
         </motion.div>
       )}
-    </motion.header>
+    </>
   );
 };
 
