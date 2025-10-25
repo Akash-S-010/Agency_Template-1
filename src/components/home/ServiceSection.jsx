@@ -184,7 +184,7 @@ const ServiceSection = ({ variant = "card1", services = DEFAULT_SERVICES }) => (
     <div className="px-4 text-white">
       {/* Header - Left Aligned */}
       <div className="mb-14">
-        <h1 className="text-3xl md:text-7xl font-light mb-8 md:mb-8">Our Services</h1>
+        <h1 className="text-3xl md:text-7xl font-light mb-8 md:mb-8">What We Do</h1>
         <p className="text-gray-400 font-light max-w-3xl text-xl">
           Comprehensive digital solutions tailored to elevate your brand and drive business growth through innovative design and technology.
         </p>
