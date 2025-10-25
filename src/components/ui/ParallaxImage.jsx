@@ -48,14 +48,31 @@ export default function App() {
   const row4Images = Array.from({ length: 8 }, (_, i) => i + 36);
 
   return (
-    <> 
-      {/* Parallax Section with Diagonal Slope */}
-      <div className="w-full min-h-screen py-16 relative" style={{ transform: 'rotate(-3deg) scale(1.15)', transformOrigin: 'center center' }}>
-        <ParallaxRow images={row1Images} speed={400} direction={1} baseOffset={-300} />
-        <ParallaxRow images={row2Images} speed={500} direction={-1} baseOffset={100} />
-        <ParallaxRow images={row3Images} speed={450} direction={1} baseOffset={-200} />
-        <ParallaxRow images={row4Images} speed={550} direction={-1} baseOffset={50} />
+    <div className="bg-black overflow-hidden">
+      {/* Wrapper with slanted edges */}
+      <div 
+        className="relative w-full"
+        style={{
+          clipPath: 'polygon(0 0, 100% 4%, 100% 96%, 0 100%)',
+          marginTop: '-5vh',
+          marginBottom: '-5vh'
+        }}
+      >
+        {/* Parallax Section with Diagonal Slope */}
+        <div 
+          className="w-full min-h-screen py-32" 
+          style={{ 
+            transform: 'rotate(-18deg) scale(1.15)', 
+            transformOrigin: 'center center',
+            overflow: 'visible'
+          }}
+        >
+          <ParallaxRow images={row1Images} speed={400} direction={1} baseOffset={-300} />
+          <ParallaxRow images={row2Images} speed={500} direction={-1} baseOffset={100} />
+          <ParallaxRow images={row3Images} speed={450} direction={1} baseOffset={-200} />
+          <ParallaxRow images={row4Images} speed={550} direction={-1} baseOffset={50} />
+        </div>
       </div>
-    </>
+    </div>
   );
 }
