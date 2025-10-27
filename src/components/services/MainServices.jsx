@@ -132,7 +132,7 @@ const IntroCard = memo(function IntroCard({ progress, range, targetScale }) {
         className="w-full h-full overflow-hidden bg-white shadow-lg"
       >
         <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 lg:p-12 xl:p-16 text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-blue-600 leading-tight mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-primary leading-tight mb-6">
             Our Services
           </h1>
 
@@ -140,8 +140,8 @@ const IntroCard = memo(function IntroCard({ progress, range, targetScale }) {
             Comprehensive digital solutions tailored to elevate your brand and drive business growth through innovative design and technology.
           </p>
 
-          <div className="inline-flex items-center gap-2 bg-blue-600/10 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-light border border-blue-600/20 text-blue-600">
-            <Award size={16} className="text-blue-600" />
+          <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-light border border-blue-600/20 text-primary">
+            <Award size={16} className="text-primary" />
             Professional Services
           </div>
         </div>
@@ -179,12 +179,12 @@ const ServiceCard = memo(function ServiceCard({
         <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 p-6 md:p-8 lg:p-12 xl:p-16 min-h-full">
           <div className="flex flex-col justify-center max-w-2xl">
             <div className="space-y-4 md:space-y-6 lg:space-y-8">
-              <div className="inline-flex items-center gap-2 bg-blue-600/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-light border border-blue-600/20 text-blue-600">
-                <Award size={16} className="text-blue-600" />
+              <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-light border border-blue-600/20 text-primary">
+                <Award size={16} className="text-primary" />
                 {category}
               </div>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-blue-600 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-primary leading-tight">
                 {title}
               </h2>
 
@@ -195,7 +195,7 @@ const ServiceCard = memo(function ServiceCard({
               <div className="grid grid-cols-3 gap-3 md:gap-4">
                 {Object.entries(metrics).map(([key, value]) => (
                   <div key={key} className="space-y-1">
-                    <div className="text-xl md:text-2xl lg:text-3xl font-light text-blue-600">{value}</div>
+                    <div className="text-xl md:text-2xl lg:text-3xl font-light text-primary">{value}</div>
                     <div className="text-sm text-gray-600 capitalize">{key}</div>
                   </div>
                 ))}
@@ -207,7 +207,7 @@ const ServiceCard = memo(function ServiceCard({
                   {tools.map((tool, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1.5 bg-blue-600/10 border border-blue-600/20 rounded-lg text-sm text-blue-600"
+                      className="px-3 py-1.5 bg-primary/10 border border-blue-600/20 rounded-lg text-sm text-primary"
                     >
                       {tool}
                     </span>
@@ -230,7 +230,7 @@ const ServiceCard = memo(function ServiceCard({
               <div className="space-y-8">
                 {features.map((feature, idx) => (
                   <div key={idx} className="group flex flex-col">
-                    <span className="text-2xl md:text-3xl lg:text-[2.6rem] font-normal text-black group-hover:text-blue-600 transition-colors duration-300">
+                    <span className="text-2xl md:text-3xl lg:text-[2.6rem] font-normal text-black group-hover:text-primary transition-colors duration-300">
                       {feature}
                     </span>
                     <span className="mt-2 h-px w-full bg-gray-300 group-hover:bg-blue-600 transition-colors duration-300" />
