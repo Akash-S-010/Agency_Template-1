@@ -4,15 +4,15 @@ import Button from "../ui/Button";
 
 const AboutSection = () => {
   return (
-    <div className="h-[95vh] bg-black text-white px-4 md:px-20 flex flex-col justify-center overflow-hidden">
+    <div className="h-[95vh] text-black px-4 md:px-20 flex flex-col justify-center overflow-hidden">
       <div className="flex flex-col md:flex-row items-center gap-10">
         {/* Left Text Section */}
         <div className="w-full md:w-5xl">
-          <h1 className="text-3xl md:text-7xl font-light mb-8 md:mb-12">
+          <h1 className="text-3xl md:text-7xl font-normal mb-8 md:mb-12 text-primary">
             Who We Are.
           </h1>
-          <p className="text-lg md:text-3xl leading-snug tracking-tight font-light text-gray-400">
-            <span className="text-primary font-normal">Velvetbyte</span>{" "}
+          <p className="text-lg md:text-3xl leading-snug tracking-tight font-light text-muted">
+            <span className="text-black font-normal">Velvetbyte</span>{" "}
             empowers startups and enterprises with smart, future-ready IT
             solutions—driving innovation, scalability, and success in a rapidly
             evolving digital world.
@@ -46,7 +46,7 @@ const AboutSection = () => {
             >
               {/* Dark Overlay + Top Gradient */}
               <div className="absolute inset-0 rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-black/70"></div>
+                <div className="absolute inset-0 bg-primary/70"></div>
                 <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/80 to-transparent"></div>
               </div>
 
@@ -70,7 +70,7 @@ const AboutSection = () => {
               }}
             >
               <div className="absolute inset-0 rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-black/70"></div>
+                <div className="absolute inset-0 bg-primary/60"></div>
                 <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/80 to-transparent"></div>
               </div>
 
@@ -94,7 +94,7 @@ const AboutSection = () => {
               }}
             >
               <div className="absolute inset-0 rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-black/70"></div>
+                <div className="absolute inset-0 bg-primary/60"></div>
                 <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/80 to-transparent"></div>
               </div>
 
@@ -120,7 +120,7 @@ const AboutSection = () => {
               }}
             >
               <div className="absolute inset-0 rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-black/70"></div>
+                <div className="absolute inset-0 bg-primary/60"></div>
                 <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/80 to-transparent"></div>
               </div>
 
@@ -144,7 +144,7 @@ const AboutSection = () => {
               }}
             >
               <div className="absolute inset-0 rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-black/70"></div>
+                <div className="absolute inset-0 bg-primary/60"></div>
                 <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/80 to-transparent"></div>
               </div>
 

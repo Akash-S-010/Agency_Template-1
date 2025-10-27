@@ -9,7 +9,7 @@ const Button = ({ text, onClick, type, width, className }) => {
       className={`group flex ${
         width === "full" ? "w-full" : ""
       } items-center justify-center px-6 py-3 text-md hover:px-8 transition-all duration-300 cursor-pointer
-        border border-white text-white hover:bg-white hover:text-black ${className}`}
+        border border-primary text-primary hover:bg-primary hover:text-white ${className}`}
     >
       {text}
       <span className="inline-block ml-4 group-hover:translate-x-1 transition">

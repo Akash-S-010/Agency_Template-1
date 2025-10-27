@@ -81,7 +81,7 @@ const Header = () => {
         animate={{ y: isVisible ? 0 : -100 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-between px-2 md:px-6 py-4 transition-all duration-300 ${
-          hasScrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
+          hasScrolled ? "bg-black" : "bg-transparent"
         }`}
       >
         <Link to="/">

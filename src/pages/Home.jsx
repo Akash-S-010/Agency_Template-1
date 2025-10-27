@@ -10,7 +10,7 @@ import ParallaxImage from "../components/ui/ParallaxImage";
 
 const Home = () => {
   return (
-    <div className="bg-black relative">
+    <div className="bg-white relative">
       <Hero />
       <AboutSection />
       <ServiceSection />

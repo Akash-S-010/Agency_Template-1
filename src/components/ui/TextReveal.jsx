@@ -16,7 +16,7 @@ export function TextReveal({ className = "" }) {
       {/* Sticky viewport that holds the centered text */}
       <div className="sticky top-0 flex h-screen items-center justify-center bg-transparent px-6">
         <div className="max-w-3xl w-full">
-          <p className="flex flex-wrap text-left text-2xl leading-tight text-white/30 md:text-3xl lg:text-4xl xl:text-5xl">
+          <p className="flex flex-wrap text-left text-2xl leading-tight text-primary/30 md:text-3xl lg:text-4xl xl:text-5xl">
             {words.map((word, i) => {
               const start = i / words.length;
               const end = start + 1 / words.length;
@@ -44,14 +44,14 @@ function Word({ children, progress, range }) {
   return (
     <span className="relative mx-1 md:mx-1.5 lg:mx-2">
       {/* faint background copy */}
-      <span className="absolute inset-0 font-light text-white/20">
+      <span className="absolute inset-0 font-normal text-primary/20">
         {children}
       </span>
 
       {/* animated revealing word */}
       <motion.span
         style={{ opacity }}
-        className="font-light text-white"
+        className="font-normal text-primary"
       >
         {children}
       </motion.span>

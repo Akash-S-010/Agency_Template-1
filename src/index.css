@@ -4,7 +4,7 @@
 /* Hide scrollbar for Firefox */
 html {
   scrollbar-width: thin;
-  scrollbar-color: #be74fb #000000;
+  scrollbar-color: #111dbf #ffffff;
 }
 
 body{
@@ -13,7 +13,7 @@ body{
 }
 
 @theme {
-    --color-primary: #be74fb;
+    --color-primary: #111dbf;
     --color-muted: #6c757d;
     --font-body: "Work Sans", sans-serif;  
 }

@@ -98,7 +98,7 @@ function StackCard({ card, index, totalCards, activeIndex }) {
             <h2 className="text-3xl md:text-4xl font-normal mb-4 text-black">
               {card.title}
             </h2>
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+            <p className="text-muted text-base md:text-lg leading-relaxed">
               {card.description}
             </p>
           </div>
@@ -139,7 +139,7 @@ export default function StackingCards() {
   }, []);
 
   return (
-    <div className="bg-black">
+    <div className="bg-white">
       <main ref={containerRef} className="relative pt-20">
         <div className="flex max-w-7xl mx-auto">
           {/* Left Sticky Tracker */}
@@ -148,15 +148,15 @@ export default function StackingCards() {
               {cards.map((card, index) => (
                 <li key={index} className="relative flex items-center">
                   <div
-                    className={`absolute -left-6 w-1 h-10 bg-white rounded-full transition-all duration-300 ${
+                    className={`absolute -left-6 w-1 h-10 bg-primary rounded-full transition-all duration-300 ${
                       activeIndex === index ? "opacity-100" : "opacity-0"
                     }`}
                   />
                   <span
-                    className={`font-light text-lg cursor-pointer transition-all duration-300 ${
+                    className={`font-normal text-lg cursor-pointer transition-all duration-300 ${
                       activeIndex === index
-                        ? "text-white translate-x-2"
-                        : "text-gray-500 translate-x-0"
+                        ? "text-primary translate-x-2"
+                        : "text-gray-400 translate-x-0"
                     }`}
                   >
                     {card.title}

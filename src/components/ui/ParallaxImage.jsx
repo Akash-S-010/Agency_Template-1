@@ -48,7 +48,7 @@ export default function App() {
   const row4Images = Array.from({ length: 8 }, (_, i) => i + 36);
 
   return (
-    <div className="bg-black overflow-hidden">
+    <div className="bg-white overflow-hidden">
       {/* Wrapper with slanted edges */}
       <div 
         className="relative w-full"

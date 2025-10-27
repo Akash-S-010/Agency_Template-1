@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const LampContainer = ({ children }) => {
   return (
-    <div className="relative flex flex-col items-center w-full min-h-screen bg-black overflow-hidden py-20">
+    <div className="relative flex flex-col items-center w-full min-h-screen bg-white overflow-hidden py-20">
       {/* 💡 Lamp Glow Section */}
       <div className="relative flex items-center justify-center w-full py-32 z-0">
         {/* Left Glow Arc */}
@@ -16,8 +16,8 @@ const LampContainer = ({ children }) => {
           }}
           className="absolute right-1/2 h-56 w-[30rem] bg-gradient-conic from-primary via-transparent to-transparent [--conic-position:from_70deg_at_center_top]"
         >
-          <div className="absolute left-0 bottom-0 z-20 w-full h-40 bg-black [mask-image:linear-gradient(to_top,white,transparent)]" />
-          <div className="absolute left-0 bottom-0 z-20 w-40 h-full bg-black [mask-image:linear-gradient(to_right,white,transparent)]" />
+          <div className="absolute left-0 bottom-0 z-20 w-full h-40 bg-white [mask-image:linear-gradient(to_top,white,transparent)]" />
+          <div className="absolute left-0 bottom-0 z-20 w-40 h-full bg-white [mask-image:linear-gradient(to_right,white,transparent)]" />
         </motion.div>
 
         {/* Right Glow Arc */}
@@ -30,12 +30,12 @@ const LampContainer = ({ children }) => {
           }}
           className="absolute left-1/2 h-56 w-[30rem] bg-gradient-conic from-transparent via-transparent to-primary [--conic-position:from_290deg_at_center_top]"
         >
-          <div className="absolute right-0 bottom-0 z-20 w-full h-40 bg-black [mask-image:linear-gradient(to_top,white,transparent)]" />
-          <div className="absolute right-0 bottom-0 z-20 w-40 h-full bg-black [mask-image:linear-gradient(to_left,white,transparent)]" />
+          <div className="absolute right-0 bottom-0 z-20 w-full h-40 bg-white [mask-image:linear-gradient(to_top,white,transparent)]" />
+          <div className="absolute right-0 bottom-0 z-20 w-40 h-full bg-white [mask-image:linear-gradient(to_left,white,transparent)]" />
         </motion.div>
 
         {/* Lamp Center Blur and Highlights */}
-        <div className="absolute top-1/2 w-full h-48 translate-y-12 scale-x-150 bg-black blur-2xl"></div>
+        <div className="absolute top-1/2 w-full h-48 translate-y-12 scale-x-150 bg-white blur-2xl"></div>
         <div className="absolute top-1/2 z-50 w-full h-48 bg-transparent opacity-10 backdrop-blur-md"></div>
         <div className="absolute z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-primary opacity-50 blur-3xl"></div>
 
@@ -54,7 +54,7 @@ const LampContainer = ({ children }) => {
         />
 
         {/* Background Mask to Fade Lamp Bottom */}
-        <div className="absolute z-40 w-full h-44 -translate-y-[12.5rem] bg-black"></div>
+        <div className="absolute z-40 w-full h-44 -translate-y-[12.5rem] bg-white"></div>
       </div>
 
       {/* Content Section — add your content here */}
@@ -78,11 +78,11 @@ const LampDemo = () => {
         }}
         className="w-full max-w-4xl"
       >
-        <h2 className="text-center text-sm font-normal tracking-widest text-slate-400 mb-16">
+        <h2 className="text-center text-sm font-normal tracking-widest text-slate-600 mb-16">
           WHY WORK WITH US?
         </h2>
 
-        <div className="space-y-12 text-white">
+        <div className="space-y-12 text-black">
           {/* 100% - Work completed in house */}
           <div className="flex items-center justify-between border-b border-primary/30 pb-12">
             <div className="text-7xl md:text-7xl font-light">

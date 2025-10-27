@@ -16,8 +16,8 @@ const cn = (...classes) => classes.filter(Boolean).join(" ");
 // Variants configuration (only differences)
 const VARIANTS = {
   card1: {
-    container: "bg-black/80 z-0 border border-gray-800",
-    hover: "group-hover:text-black group-hover:font-normal",
+    container: "bg-white z-0 border border-gray-300 shadow-md",
+    hover: "group-hover:text-white",
     circle: {
       show: true,
       base: "absolute -z-10 -top-4 -right-4 bg-primary h-8 w-8 rounded-full origin-center transition-transform ease-out",
@@ -27,41 +27,6 @@ const VARIANTS = {
     corner: {
       show: true,
       bg: "bg-primary",
-    },
-  },
-  card2: {
-    container:
-      "bg-black/80 border border-gray-800 transition-all duration-200 ease-out hover:shadow-[0px_4px_8px_rgba(74,222,128,0.2)] hover:-translate-y-1 hover:border-primary hover:bg-black/90",
-    circle: {
-      show: true,
-      base: "absolute -z-10 -top-4 -right-4 bg-primary h-8 w-8 rounded-full origin-center transition-transform ease-out",
-      hover: "duration-150 group-hover:scale-[2.15]",
-      initial: "scale-[2]",
-    },
-    corner: {
-      show: true,
-      bg: "bg-primary",
-    },
-  },
-  card3: {
-    container:
-      "bg-black/80 border border-gray-800 hover:border-primary hover:shadow-[0px_0px_999px_999px_rgba(0,0,0,0.5)] hover:z-[500]",
-    hover: "group-hover:text-primary",
-    circle: { show: false },
-    corner: {
-      show: true,
-      bg: "bg-primary",
-    },
-  },
-  card4: {
-    container: "bg-black/80 border border-gray-800 hover:border-primary",
-    circle: { show: false },
-    corner: { show: false },
-    skew: {
-      show: true,
-      wrapper:
-        "flex items-start justify-center absolute h-full w-4 overflow-hidden top-0 right-0 bg-gradient-to-br from-green-600 to-green-400 rounded-none skew-x-6 -mr-9 pr-[9px] transition-all duration-300 group-hover:-mr-3",
-      icon: "-skew-x-6 text-white -ml-[2px] mt-[9px] opacity-0 transition-opacity duration-300 group-hover:opacity-100",
     },
   },
 };
@@ -93,7 +58,7 @@ const ServiceCard = ({
       {/* Content */}
       <h3
         className={cn(
-          "text-3xl font-light leading-7 text-white mb-4 transition-all duration-300",
+          "text-3xl font-normal leading-7 text-black mb-4 transition-all duration-300",
           config.hover
         )}
       >
@@ -101,7 +66,7 @@ const ServiceCard = ({
       </h3>
       <p
         className={cn(
-          "font-light text-gray-400 leading-6 text-gray-400 transition-all duration-300",
+          "font-light text-muted leading-6 transition-all duration-300",
           config.hover
         )}
       >
@@ -180,12 +145,12 @@ const DEFAULT_SERVICES = [
 ];
 
 const ServiceSection = ({ variant = "card1", services = DEFAULT_SERVICES }) => (
-  <div className="min-h-screen bg-black py-20 px-4 md:px-20">
-    <div className="px-4 text-white">
+  <div className="min-h-screen py-20 px-4 md:px-20">
+    <div className="px-4 text-black">
       {/* Header - Left Aligned */}
       <div className="mb-14">
-        <h1 className="text-3xl md:text-7xl font-light mb-8 md:mb-8">What We Do</h1>
-        <p className="text-gray-400 font-light max-w-3xl text-xl">
+        <h1 className="text-3xl md:text-7xl font-normal mb-3 md:mb-6 text-primary">What We Do.</h1>
+        <p className="text-muted font-light max-w-3xl text-xl">
           Comprehensive digital solutions tailored to elevate your brand and drive business growth through innovative design and technology.
         </p>
       </div>

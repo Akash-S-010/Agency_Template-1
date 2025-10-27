@@ -55,7 +55,7 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="min-h-screen bg-black text-white flex items-center justify-center py-16 px-6 md:px-12 lg:px-24">
+    <section className="min-h-screen bg-white text-black flex items-center justify-center py-16 px-6 md:px-12 lg:px-24">
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
           {/* Left Column - Header */}
@@ -63,14 +63,14 @@ const FaqSection = () => {
             <h2 className="text-4xl md:text-7xl font-light leading-tight mb-8">
               FAQs
             </h2>
-            <p className="text-gray-400 text-xl font-light">
+            <p className="text-muted text-xl font-light">
               Got questions? We’ve got answers.
             </p>
-            <p className="text-gray-400 hidden md:block">
+            <p className="text-muted hidden md:block">
               Still unsure?{" "}
               <a
                 href="#"
-                className="text-white font-medium underline-offset-4 hover:underline transition"
+                className="text-primary font-medium underline-offset-4 hover:underline transition"
               >
                 Let’s talk
               </a>
@@ -86,14 +86,14 @@ const FaqSection = () => {
               >
                 <button
                   onClick={() => toggle(item.id)}
-                  className="w-full flex justify-between items-center py-5 text-left text-white font-medium text-base md:text-lg hover:text-gray-300 transition-colors focus:outline-none cursor-pointer"
+                  className="w-full flex justify-between items-center py-5 text-left text-black font-medium text-base md:text-lg hover:text-gray-700 transition-colors focus:outline-none cursor-pointer"
                 >
                   {item.question}
                   <motion.div
                     animate={{ rotate: openId === item.id ? 180 : 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <ChevronDown className="h-5 w-5 text-gray-500" />
+                    <ChevronDown className="h-5 w-5 text-primary" />
                   </motion.div>
                 </button>
 
@@ -106,7 +106,7 @@ const FaqSection = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-6 pr-8 text-gray-300 font-light leading-relaxed">
+                      <div className="pb-6 pr-8 text-muted font-light leading-relaxed">
                         {item.answer}
                       </div>
                     </motion.div>
@@ -118,11 +118,11 @@ const FaqSection = () => {
         </div>
 
         {/* Mobile CTA */}
-        <p className="mt-12 text-gray-400 text-center md:hidden">
+        <p className="mt-12 text-muted text-center md:hidden">
           Still unsure?{" "}
           <a
             href="#"
-            className="text-white font-medium underline-offset-4 hover:underline transition"
+            className="text-primary font-medium underline-offset-4 hover:underline transition"
           >
             Let’s talk
           </a>
