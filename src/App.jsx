@@ -7,10 +7,12 @@ import Portfolio from './pages/Portfolio.jsx'
 import Contact from './pages/Contact.jsx'
 import Header from './components/layout/Header.jsx'
 import Footer from './components/layout/Footer.jsx'
+import ScrollToTop from './components/ui/ScrollToTop.jsx'
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

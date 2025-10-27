@@ -1,21 +1,19 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export function TextReveal({ className = "" }) {
+export function TextReveal({ text, className = "" }) {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  const text =
-    "We believe in a world where technology fosters your everyday experiences. And our mission is to make it happen!";
   const words = text.split(" ");
 
   return (
     <div ref={targetRef} className={`relative z-0 h-[200vh] ${className}`}>
       {/* Sticky viewport that holds the centered text */}
       <div className="sticky top-0 flex h-screen items-center justify-center bg-transparent px-6">
-        <div className="max-w-3xl w-full">
+        <div className="max-w-4xl w-full">
           <p className="flex flex-wrap text-left text-2xl leading-tight text-primary/30 md:text-3xl lg:text-4xl xl:text-5xl">
             {words.map((word, i) => {
               const start = i / words.length;

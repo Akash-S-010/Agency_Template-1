@@ -33,7 +33,7 @@ const CompanyData = () => {
     <div className="py-20 border-t border-gray-200">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         <div className="col-span-12 md:col-span-8">
-          <p className="text-xs md:text-sm uppercase text-gray-500 tracking-wider mb-6">
+          <p className="text-xs md:text-sm uppercase text-muted tracking-wider mb-6">
             In a nutshell
           </p>
           <p className="text-3xl md:text-4xl font-normal leading-tight text-black">
