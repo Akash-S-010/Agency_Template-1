@@ -39,11 +39,11 @@ const Hero = () => {
             <span className="ml-0 md:ml-20">Brilliance.</span>
           </h1>
         </div>
-        <p className="text-sm text-black font-body md:text-base tracking-wider font-normal absolute bottom-10 z-10 left-6 md:left-12 lg:left-20 uppercase">
+        <p className="text-sm text-blue-400 font-body md:text-base tracking-wider font-normal absolute bottom-10 z-10 left-6 md:left-12 lg:left-20 uppercase">
           WEBSITES <span className="text-white">•</span> Mobile App{" "}
           <span className="text-white">•</span> Development
         </p>
-        <p className="text-sm text-black font-body md:text-base tracking-wider font-normal absolute bottom-10 z-10 right-6 md:right-12 lg:right-20 uppercase">
+        <p className="text-sm text-blue-400 font-body md:text-base tracking-wider font-normal absolute bottom-10 z-10 right-6 md:right-12 lg:right-20 uppercase">
           DIGITAL MARKETING <span className="text-white">•</span> DESIGNING
         </p>
       </motion.div>

@@ -30,7 +30,7 @@ const images = [
 
 const CompanyData = () => {
   return (
-    <div className="py-20 border-t border-gray-200">
+    <div className="py-20 border-t border-gray-200 bg-white">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         <div className="col-span-12 md:col-span-8">
           <p className="text-xs md:text-sm uppercase text-muted tracking-wider mb-6">
