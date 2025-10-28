@@ -13,7 +13,10 @@ const Button = ({ text, onClick, type, width, className }) => {
     >
       {text}
       <span className="inline-block ml-4 group-hover:translate-x-1 transition">
-        <MoveRight size={22} className="text-primary" />
+        <MoveRight
+          size={22}
+          className="text-primary transition-colors duration-300 group-hover:text-white"
+        />
       </span>
     </button>
   );
