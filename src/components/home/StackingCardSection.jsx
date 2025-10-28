@@ -36,23 +36,58 @@ const cards = [
 
 function StackCard({ card, index, totalCards, activeIndex }) {
   const cardRef = useRef(null);
+  const videoRef = useRef(null);
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (videoRef.current) {
+            if (entry.isIntersecting) {
+              videoRef.current.play();
+            } else {
+              videoRef.current.pause();
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (!cardRef.current) return;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          if (!cardRef.current) return;
 
-      const rect = cardRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const cardTop = rect.top;
+          const rect = cardRef.current.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          const cardTop = rect.top;
 
-      if (cardTop <= 0) {
-        const progress = Math.abs(cardTop) / windowHeight;
-        const targetScale = 1 - (totalCards - index) * 0.05;
-        const currentScale = Math.max(targetScale, 1 - progress * 0.05);
-        setScale(currentScale);
-      } else {
-        setScale(1);
+          if (cardTop <= 0) {
+            const progress = Math.abs(cardTop) / windowHeight;
+            const targetScale = 1 - (totalCards - index) * 0.05;
+            const currentScale = Math.max(targetScale, 1 - progress * 0.05);
+            setScale(currentScale);
+          } else {
+            setScale(1);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
@@ -83,8 +118,8 @@ function StackCard({ card, index, totalCards, activeIndex }) {
           {/* Left Video */}
           <div className="w-full md:w-1/2 h-48 md:h-full relative overflow-hidden bg-black">
             <video
+              ref={videoRef}
               src={card.video}
-              autoPlay
               loop
               muted
               playsInline
@@ -113,23 +148,30 @@ export default function StackingCards() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (!containerRef.current) return;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          if (!containerRef.current) return;
 
-      const container = containerRef.current;
-      const scrollTop = window.pageYOffset;
-      const containerTop = container.offsetTop;
-      const containerHeight = container.offsetHeight;
+          const container = containerRef.current;
+          const scrollTop = window.pageYOffset;
+          const containerTop = container.offsetTop;
+          const containerHeight = container.offsetHeight;
 
-      const scrollProgress =
-        (scrollTop - containerTop) / (containerHeight - window.innerHeight);
-      const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
+          const scrollProgress =
+            (scrollTop - containerTop) / (containerHeight - window.innerHeight);
+          const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
 
-      const index = Math.min(
-        Math.floor(clampedProgress * cards.length),
-        cards.length - 1
-      );
-      setActiveIndex(Math.max(0, index));
+          const index = Math.min(
+            Math.floor(clampedProgress * cards.length),
+            cards.length - 1
+          );
+          setActiveIndex(Math.max(0, index));
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll);

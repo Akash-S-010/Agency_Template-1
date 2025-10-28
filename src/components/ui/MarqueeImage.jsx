@@ -33,7 +33,7 @@ const ParallaxRow = ({ images, speed, direction, baseOffset }) => {
       className="flex gap-5 mb-5 will-change-transform"
     >
       {/* Duplicate images for seamless loop */}
-      {[...images, ...images, ...images].map((img, idx) => (
+      {[...images, ...images].map((img, idx) => (
         <ImageCard key={idx} index={img} />
       ))}
     </motion.div>
@@ -42,10 +42,10 @@ const ParallaxRow = ({ images, speed, direction, baseOffset }) => {
 
 export default function App() {
   // Generate image indices for each row
-  const row1Images = Array.from({ length: 8 }, (_, i) => i);
-  const row2Images = Array.from({ length: 8 }, (_, i) => i + 12);
-  const row3Images = Array.from({ length: 8 }, (_, i) => i + 24);
-  const row4Images = Array.from({ length: 8 }, (_, i) => i + 36);
+  const row1Images = Array.from({ length: 4 }, (_, i) => i);
+  const row2Images = Array.from({ length: 4 }, (_, i) => i + 4);
+  const row3Images = Array.from({ length: 4 }, (_, i) => i + 8);
+  const row4Images = Array.from({ length: 4 }, (_, i) => i + 12);
 
   return (
     <div className="bg-white overflow-hidden">
@@ -67,10 +67,10 @@ export default function App() {
             overflow: 'visible'
           }}
         >
-          <ParallaxRow images={row1Images} speed={400} direction={1} baseOffset={-300} />
-          <ParallaxRow images={row2Images} speed={500} direction={-1} baseOffset={100} />
-          <ParallaxRow images={row3Images} speed={450} direction={1} baseOffset={-200} />
-          <ParallaxRow images={row4Images} speed={550} direction={-1} baseOffset={50} />
+          <ParallaxRow images={row1Images} speed={200} direction={1} baseOffset={-300} />
+          <ParallaxRow images={row2Images} speed={250} direction={-1} baseOffset={100} />
+          <ParallaxRow images={row3Images} speed={225} direction={1} baseOffset={-200} />
+          <ParallaxRow images={row4Images} speed={275} direction={-1} baseOffset={50} />
         </div>
       </div>
     </div>
