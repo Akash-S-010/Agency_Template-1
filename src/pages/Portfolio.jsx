@@ -1,73 +1,30 @@
-import { motion } from 'framer-motion';
+import React from "react";
+import PortfolioHero from "../components/portfolio/PortfolioHero";
+import PortfolioGallery from "../components/portfolio/PortfolioGallery";
+import Button from "../components/ui/Button";
 
 const Portfolio = () => {
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      category: "Web Development",
-      image: "https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Project+1"
-    },
-    {
-      title: "Mobile Banking App",
-      category: "UI/UX Design",
-      image: "https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Project+2"
-    },
-    {
-      title: "Brand Identity System",
-      category: "Branding",
-      image: "https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Project+3"
-    },
-    {
-      title: "SaaS Dashboard",
-      category: "Web Application",
-      image: "https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Project+4"
-    },
-    {
-      title: "Marketing Campaign",
-      category: "Digital Marketing",
-      image: "https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Project+5"
-    },
-    {
-      title: "Corporate Website",
-      category: "Web Development",
-      image: "https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Project+6"
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-black text-white">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="container mx-auto px-6 py-20"
-      >
-        <h1 className="text-5xl md:text-7xl font-bold mb-12">Portfolio</h1>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group cursor-pointer"
-            >
-              <div className="overflow-hidden rounded-lg bg-gray-900">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <div className="mt-4">
-                <p className="text-gray-400 text-sm">{project.category}</p>
-                <h3 className="text-xl font-semibold mt-1">{project.title}</h3>
-              </div>
-            </motion.div>
-          ))}
+    <main className="bg-white text-black px-4 md:px-20">
+      <PortfolioHero />
+      <PortfolioGallery />
+
+      <section className="py-16 text-black">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <h2 className="text-3xl md:text-4xl font-heading font-normal">
+            Ready to Elevate Your Next Launch?
+          </h2>
+          <p className="text-xl text-gray-700 leading-relaxed">
+            Partner with our multidisciplinary team to bring clarity, polish, and measurable
+            outcomes to your digital initiatives.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button text="Start a Project" />
+            <span className="text-sm text-gray-500">Let’s build momentum together.</span>
+          </div>
         </div>
-      </motion.div>
-    </div>
+      </section>
+    </main>
   );
 };
 
