@@ -5,7 +5,6 @@ import heroBg from "../../assets/hero_bg.jpg";
 const Hero = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden ">
-      {/* Loading Fallback */}
       <motion.div
         className="absolute inset-0 z-0 flex items-center justify-center bg"
         initial={{ opacity: 1 }}
@@ -14,9 +13,9 @@ const Hero = () => {
       ></motion.div>
 
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="w-full h-full pointer-events-none bg-cover bg-center relative" style={{ backgroundImage: `url(${heroBg})` }}>
-        </div>
+      <div className="absolute inset-0 z-0 overflow-hidden bg-primary">
+        {/* <div className="w-full h-full pointer-events-none bg-cover bg-center relative" style={{ backgroundImage: `url(${heroBg})` }}>
+        </div> */}
       </div>
 
       {/* Optimized Overlay*/}
@@ -33,19 +32,19 @@ const Hero = () => {
         transition={{ delay: 0.8, duration: 0.5 }}
         style={{ willChange: "opacity" }} // Optimize animation
       >
-        <div className="text-left font-heading text-primary">
+        <div className="text-left font-heading text-white">
           <h1 className="text-6xl md:text-9xl font-semibold leading-tight mb-8">
             Digital
             <br />
             <span className="ml-0 md:ml-20">Brilliance.</span>
           </h1>
         </div>
-        <p className="text-sm text-gray-500 font-body md:text-base tracking-wider font-normal absolute bottom-10 z-10 left-6 md:left-12 lg:left-20 uppercase">
-          WEBSITES <span className="text-primary">•</span> Mobile App{" "}
-          <span className="text-primary">•</span> Development
+        <p className="text-sm text-black font-body md:text-base tracking-wider font-normal absolute bottom-10 z-10 left-6 md:left-12 lg:left-20 uppercase">
+          WEBSITES <span className="text-white">•</span> Mobile App{" "}
+          <span className="text-white">•</span> Development
         </p>
-        <p className="text-sm text-gray-500 font-body md:text-base tracking-wider font-normal absolute bottom-10 z-10 right-6 md:right-12 lg:right-20 uppercase">
-          DIGITAL MARKETING <span className="text-primary">•</span> DESIGNING
+        <p className="text-sm text-black font-body md:text-base tracking-wider font-normal absolute bottom-10 z-10 right-6 md:right-12 lg:right-20 uppercase">
+          DIGITAL MARKETING <span className="text-white">•</span> DESIGNING
         </p>
       </motion.div>
     </section>
