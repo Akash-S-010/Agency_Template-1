@@ -1,33 +1,27 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import heroBg from "../../assets/hero_bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black">
+    <section className="relative h-screen w-full overflow-hidden ">
       {/* Loading Fallback */}
       <motion.div
-        className="absolute inset-0 z-0 flex items-center justify-center bg-black"
+        className="absolute inset-0 z-0 flex items-center justify-center bg"
         initial={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.5 }}
         style={{ willChange: "opacity" }} // Optimize animation
       ></motion.div>
 
-      {/* Spline 3D Animation Background (replaced iframe with Spline component) */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="w-full h-full pointer-events-none spline-background relative">
-          <iframe
-            src="https://my.spline.design/iridescenttorusanimation-oVmJQswQojm46rmNUzmPAOXd/"
-            frameBorder="0"
-            width="100%"
-            height="100%"
-          ></iframe>
-          <div className="pointer-events-none absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black via-black/70 to-transparent" />
+        <div className="w-full h-full pointer-events-none bg-cover bg-center relative" style={{ backgroundImage: `url(${heroBg})` }}>
         </div>
       </div>
 
       {/* Optimized Overlay*/}
       <div
-        className="absolute inset-0  bg-gradient-to-r from-black/30 via-black/60 to-black/30 z-10"
+        className="absolute inset-0  backdrop-blur-xs"
         style={{ willChange: "transform" }} // Optimize rendering
       />
 
@@ -39,7 +33,7 @@ const Hero = () => {
         transition={{ delay: 0.8, duration: 0.5 }}
         style={{ willChange: "opacity" }} // Optimize animation
       >
-        <div className="text-left font-heading text-white">
+        <div className="text-left font-heading text-primary">
           <h1 className="text-6xl md:text-9xl font-semibold leading-tight mb-8">
             Digital
             <br />
