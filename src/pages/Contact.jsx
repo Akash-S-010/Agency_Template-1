@@ -1,6 +1,14 @@
 import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Button from "../components/ui/Button";
+import { motion } from "framer-motion";
+
+const sectionRevealProps = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" },
+  viewport: { once: true, amount: 0.2 },
+};
 
 const contactDetails = [
   {
@@ -24,7 +32,10 @@ const Contact = () => {
   return (
     <main className="bg-white text-slate-900">
       {/* Hero Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
+      <motion.section
+        className="py-24 px-6 md:px-12 lg:px-20 bg-white"
+        {...sectionRevealProps}
+      >
         <div className="max-w-7xl mx-auto flex flex-col gap-6">
           <span className="text-xs uppercase tracking-[0.35em] text-primary/70">
             Contact
@@ -36,10 +47,13 @@ const Contact = () => {
             Share your vision and we’ll co-create a roadmap that links business goals with measurable outcomes. Expect a thoughtful response from our team within one business day.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Details & Form */}
-      <section className="py-24 bg-slate-50 px-6 md:px-12 lg:px-20">
+      <motion.section
+        className="py-24 bg-slate-50 px-6 md:px-12 lg:px-20"
+        {...sectionRevealProps}
+      >
         <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-[1fr_1.2fr] items-start">
           <div className="space-y-10">
             <div className="space-y-4">
@@ -133,10 +147,13 @@ const Contact = () => {
             </div>
           </form>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-20 text-slate-900">
+      <motion.section
+        className="py-24 px-6 md:px-12 lg:px-20 text-slate-900"
+        {...sectionRevealProps}
+      >
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-heading font-normal">
             Ready to kickstart your next project?
@@ -150,7 +167,7 @@ const Contact = () => {
             <span className="text-sm text-slate-500">Avg. response time: under 24 hours</span>
           </div>
         </div>
-      </section>
+      </motion.section>
     </main>
   );
 };

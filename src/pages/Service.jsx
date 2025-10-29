@@ -3,6 +3,7 @@ import ServicesHero from "../components/services/ServicesHero";
 import MainServices from "../components/services/MainServices";
 import ServicesCTA from "../components/services/ServicesCTA";
 import TechStackSection from "../components/services/TechStackSection";
+import ServiceFaqSection from "../components/services/ServiceFaqSection";
 
 const Service = () => {
   return (
@@ -23,6 +24,13 @@ const Service = () => {
       <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
           <TechStackSection />
+        </div>
+      </section>
+
+      {/* Service FAQ Section */}
+      <section className=" bg-white">
+        <div className="max-w-7xl mx-auto">
+          <ServiceFaqSection />
         </div>
       </section>
 
