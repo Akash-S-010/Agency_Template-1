@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, memo } from "react";
 import { ExternalLink, Award } from "lucide-react";
+import Button from "../ui/Button";
 
 /* ------------------------------------------------------------------ */
 /*  DATA – Portfolio Projects (4:3 images)                            */
@@ -75,11 +76,11 @@ const IntroCard = memo(function IntroCard({ progress, range, targetScale }) {
     <div className="h-screen flex items-center justify-center sticky top-0">
       <motion.div
         style={{ scale, willChange: "transform" }}
-        className="relative w-full h-full overflow-hidden bg-[#0a0a0a] [transform:translateZ(0)] border-t border-b border-gray-600"
+        className="relative w-full h-full overflow-hidden bg-white [transform:translateZ(0)] border-t border-b border-gray-600"
       >
         <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 lg:p-12 xl:p-16 text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl lg:text-7xl font-light text-white leading-tight mb-6">
-            What We’ve Done
+          <h1 className="text-5xl lg:text-7xl font-light text-black leading-tight mb-6">
+            What We've Done
           </h1>
 
           <p className="text-lg md:text-3xl font-light text-gray-400 leading-relaxed max-w-3xl mb-8">
@@ -87,8 +88,8 @@ const IntroCard = memo(function IntroCard({ progress, range, targetScale }) {
             high-impact digital experiences. Scroll down to explore the case studies.
           </p>
 
-          <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-light border border-white/10 text-gray-400">
-            <Award size={16} className="text-purple-400" />
+          <div className="inline-flex items-center gap-2 bg-white backdrop-blur-sm px-6 py-2 rounded-full text-sm font-light border border-black/10 text-gray-400">
+            <Award size={16} className="text-primary" />
             Featured Work
           </div>
         </div>
@@ -113,7 +114,7 @@ export default function PortfolioSection() {
   const introScale = 1;
 
   return (
-    <main ref={containerRef} className="relative bg-[#0a0a0a]">
+    <main ref={containerRef} className="relative bg-white">
       {/* 1. Intro Card */}
       <IntroCard
         progress={scrollYProgress}
@@ -163,6 +164,7 @@ const Card = memo(function Card({
   targetScale,
 }) {
   const scale = useTransform(progress, range, [1, targetScale]);
+  const bgColor = i % 2 === 0 ? "bg-blue-50" : "bg-white";
 
   return (
     <div className="h-screen flex items-center justify-center sticky top-0">
@@ -171,42 +173,42 @@ const Card = memo(function Card({
           scale,
           willChange: "transform",
         }}
-        className="relative w-full h-full overflow-hidden bg-[#0a0a0a] [transform:translateZ(0)] border-t border-b border-gray-600"
+        className={`relative w-full h-full overflow-hidden ${bgColor} [transform:translateZ(0)] border-t border-b border-gray-600`}
       >
         {/* Content Grid */}
         <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 p-8 lg:p-12 xl:p-16">
           {/* LEFT: Text */}
           <div className="flex flex-col max-w-2xl justify-center">
             <div className="space-y-6 lg:space-y-8">
-              <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-light border border-white/10 text-gray-400">
-                <Award size={16} className="text-purple-400" />
+              <div className="inline-flex items-center gap-2 bg-white backdrop-blur-sm px-4 py-2 rounded-full text-sm font-light border border-gray-400 text-black">
+                <Award size={16} className="text-primary" />
                 {category}
               </div>
 
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black leading-tight">
                 {title}
               </h2>
 
-              <p className="text-lg md:text-xl font-light text-gray-400 leading-relaxed">
+              <p className="text-lg md:text-xl font-light text-muted leading-relaxed">
                 {description}
               </p>
 
               <div className="grid grid-cols-3 gap-4">
                 {Object.entries(metrics).map(([key, value]) => (
                   <div key={key} className="space-y-1">
-                    <div className="text-2xl md:text-3xl font-light text-white">{value}</div>
-                    <div className="text-sm text-gray-500 capitalize">{key}</div>
+                    <div className="text-2xl md:text-3xl font-light text-black">{value}</div>
+                    <div className="text-sm text-muted capitalize">{key}</div>
                   </div>
                 ))}
               </div>
 
               <div className="pt-6">
-                <p className="text-sm text-gray-500 mb-3 font-medium">Technologies Used</p>
+                <p className="text-sm text-muted mb-3 font-medium">Technologies Used</p>
                 <div className="flex flex-wrap gap-2">
                   {tools.map((tool, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300"
+                      className="px-3 py-1.5 border border-black rounded-lg text-sm text-muted"
                     >
                       {tool}
                     </span>
@@ -214,13 +216,7 @@ const Card = memo(function Card({
                 </div>
               </div>
 
-              <button className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-base bg-white text-black hover:bg-gray-100 transition-all hover:scale-[1.02]">
-                View Case Study
-                <ExternalLink
-                  size={18}
-                  className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                />
-              </button>
+              <Button text="View Project" onClick={() => window.open("/portfolio")} />
             </div>
           </div>
 
@@ -228,11 +224,10 @@ const Card = memo(function Card({
           <div className="flex items-center justify-center lg:justify-end">
             <div className="grid grid-cols-2 gap-6 max-w-lg w-full">
               {images.map((src, idx) => {
-                // Low-res placeholder (Pinterest URLs don't support sizes, so we skip)
                 return (
                   <div
                     key={idx}
-                    className={`relative overflow-hidden rounded-2xl border border-white/10 aspect-[4/3] shadow-2xl ${
+                    className={`relative overflow-hidden rounded-2xl border border-black/10 aspect-[4/3] shadow-2xl ${
                       idx === 1 ? "translate-y-4" : idx === 2 ? "-translate-y-4" : ""
                     }`}
                   >

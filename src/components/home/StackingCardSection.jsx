@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 
 const cards = [
   {
@@ -38,6 +38,7 @@ function StackCard({ card, index, totalCards, activeIndex }) {
   const cardRef = useRef(null);
   const videoRef = useRef(null);
   const [scale, setScale] = useState(1);
+  const rafRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,7 +46,7 @@ function StackCard({ card, index, totalCards, activeIndex }) {
         entries.forEach((entry) => {
           if (videoRef.current) {
             if (entry.isIntersecting) {
-              videoRef.current.play();
+              videoRef.current.play().catch(() => {});
             } else {
               videoRef.current.pause();
             }
@@ -66,36 +67,41 @@ function StackCard({ card, index, totalCards, activeIndex }) {
     };
   }, []);
 
+  const updateScale = useCallback(() => {
+    if (!cardRef.current) return;
+
+    const rect = cardRef.current.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const cardTop = rect.top;
+
+    if (cardTop <= 0) {
+      const progress = Math.abs(cardTop) / windowHeight;
+      const targetScale = 1 - (totalCards - index) * 0.05;
+      const currentScale = Math.max(targetScale, 1 - progress * 0.05);
+      setScale(currentScale);
+    } else {
+      setScale(1);
+    }
+  }, [index, totalCards]);
+
   useEffect(() => {
-    let ticking = false;
     const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          if (!cardRef.current) return;
-
-          const rect = cardRef.current.getBoundingClientRect();
-          const windowHeight = window.innerHeight;
-          const cardTop = rect.top;
-
-          if (cardTop <= 0) {
-            const progress = Math.abs(cardTop) / windowHeight;
-            const targetScale = 1 - (totalCards - index) * 0.05;
-            const currentScale = Math.max(targetScale, 1 - progress * 0.05);
-            setScale(currentScale);
-          } else {
-            setScale(1);
-          }
-          ticking = false;
-        });
-        ticking = true;
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
       }
+      rafRef.current = requestAnimationFrame(updateScale);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    updateScale();
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [index, totalCards]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, [updateScale]);
 
   const topOffset = index * 10;
 
@@ -106,7 +112,7 @@ function StackCard({ card, index, totalCards, activeIndex }) {
       style={{ top: `${topOffset}px` }}
     >
       <div
-        className="bg-white rounded-3xl shadow-2xl overflow-hidden transition-transform duration-300 ease-out"
+        className="bg-white rounded-3xl shadow-2xl overflow-hidden will-change-transform"
         style={{
           transform: `scale(${scale})`,
           width: "90%",
@@ -123,6 +129,7 @@ function StackCard({ card, index, totalCards, activeIndex }) {
               loop
               muted
               playsInline
+              preload="metadata"
               className="w-full h-full object-cover block"
               style={{ display: 'block' }}
             />
@@ -146,39 +153,45 @@ function StackCard({ card, index, totalCards, activeIndex }) {
 export default function StackingCards() {
   const containerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const rafRef = useRef(null);
+
+  const updateActiveIndex = useCallback(() => {
+    if (!containerRef.current) return;
+
+    const container = containerRef.current;
+    const scrollTop = window.pageYOffset;
+    const containerTop = container.offsetTop;
+    const containerHeight = container.offsetHeight;
+
+    const scrollProgress =
+      (scrollTop - containerTop) / (containerHeight - window.innerHeight);
+    const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
+
+    const index = Math.min(
+      Math.floor(clampedProgress * cards.length),
+      cards.length - 1
+    );
+    setActiveIndex(Math.max(0, index));
+  }, []);
 
   useEffect(() => {
-    let ticking = false;
     const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          if (!containerRef.current) return;
-
-          const container = containerRef.current;
-          const scrollTop = window.pageYOffset;
-          const containerTop = container.offsetTop;
-          const containerHeight = container.offsetHeight;
-
-          const scrollProgress =
-            (scrollTop - containerTop) / (containerHeight - window.innerHeight);
-          const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
-
-          const index = Math.min(
-            Math.floor(clampedProgress * cards.length),
-            cards.length - 1
-          );
-          setActiveIndex(Math.max(0, index));
-          ticking = false;
-        });
-        ticking = true;
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
       }
+      rafRef.current = requestAnimationFrame(updateActiveIndex);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    updateActiveIndex();
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, [updateActiveIndex]);
 
   return (
     <div className="bg-white">
