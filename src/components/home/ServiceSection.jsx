@@ -1,11 +1,13 @@
 import React from "react";
 import {
   FaPalette,
-  FaShoppingCart,
-  FaPencilRuler,
+  FaSearch,
+  FaHashtag,
   FaBullhorn,
-  FaMobileAlt,
+  FaChartLine,
   FaCode,
+  FaUsers,
+  FaVideo,
 } from "react-icons/fa";
 import { FaP } from "react-icons/fa6";
 import { Link } from "react-router-dom";
@@ -101,62 +103,80 @@ const ServiceCard = ({
 
 const DEFAULT_SERVICES = [
   {
-    icon: FaCode,
-    title: "Web Design & Development",
+    icon: FaSearch,
+    title: "Search Engine Optimization",
     description:
-      "Creating stunning, responsive websites that combine beautiful design with seamless functionality to deliver exceptional user experiences.",
+      "Boost your visibility with proven SEO strategies that attract the right audience. From keyword optimization to technical audits, every detail drives organic growth.",
     link: "/services",
   },
   {
-    icon: FaShoppingCart,
-    title: "Ecommerce Development",
+    icon: FaHashtag,
+    title: "Social Media Marketing",
     description:
-      "Building robust online stores with secure payment gateways, inventory management, and optimized checkout experiences to boost your sales.",
+      "Build strong social media identities that connect with your audience and drive results. From content strategy to paid campaigns, every post is built to perform.",
     link: "/services",
   },
   {
-    icon: FaPencilRuler,
-    title: "Branding & Identity",
+    icon: FaChartLine,
+    title: "Performance Marketing",
     description:
-      "Crafting unique brand identities that resonate with your audience, from logo design to complete brand guidelines and visual systems.",
+      "Get measurable outcomes with data-driven campaigns designed to maximize ROI. From Google Ads to social media campaigns, we optimize every channel for impact.",
     link: "/services",
   },
   {
     icon: FaPalette,
-    title: "Graphic Design",
+    title: "Branding",
     description:
-      "Delivering creative visual solutions including marketing materials, social media graphics, and print designs that make your brand stand out.",
+      "Build a brand that speaks before you do. We craft powerful brand identities that stand out and stay remembered, from logo design to full brand strategy.",
+    link: "/services",
+  },
+  {
+    icon: FaUsers,
+    title: "Talent Management",
+    description:
+      "Connecting talent with opportunity. Our talent management solutions help brands and creators collaborate seamlessly, managing partnerships that deliver real impact.",
     link: "/services",
   },
   {
     icon: FaBullhorn,
-    title: "Digital Marketing",
+    title: "Digital PR",
     description:
-      "Strategic digital campaigns across SEO, social media, and paid advertising to increase your online visibility and drive meaningful results.",
+      "Shape perception, build authority, stay visible. We position your brand through online media, influencers, and digital storytelling built for the digital age.",
     link: "/services",
   },
   {
-    icon: FaMobileAlt,
-    title: "Mobile Application",
+    icon: FaCode,
+    title: "Web Development",
     description:
-      "Developing native and cross-platform mobile apps with intuitive interfaces and powerful features for iOS and Android devices.",
+      "From sleek design to powerful functionality, we create websites that perform. Every page is optimized for user experience, speed, and conversion.",
+    link: "/services",
+  },
+  {
+    icon: FaVideo,
+    title: "Production",
+    description:
+      "Creative production that captures attention. From concept to final cut, we produce visuals that tell your brand story with impact.",
     link: "/services",
   },
 ];
 
 const ServiceSection = ({ variant = "card1", services = DEFAULT_SERVICES }) => (
-  <div className="min-h-screen py-20 px-4 md:px-20">
-    <div className="px-4 text-black">
+  <section className="min-h-screen py-24 md:py-32 px-6 md:px-12 lg:px-20">
+    <div className="max-w-7xl mx-auto text-black">
       {/* Header - Left Aligned */}
       <div className="mb-14">
-        <h1 className="text-3xl md:text-7xl font-normal mb-3 md:mb-6 text-primary">What We Do.</h1>
+        <h1 className="text-3xl md:text-7xl font-normal mb-3 md:mb-6 text-primary">
+          What We Do.
+        </h1>
         <p className="text-muted font-light max-w-3xl text-xl">
-          Comprehensive digital solutions tailored to elevate your brand and drive business growth through innovative design and technology.
+          Comprehensive digital marketing solutions tailored to elevate your
+          brand and drive business growth through innovative strategies and
+          measurable results.
         </p>
       </div>
 
       {/* Cards Grid */}
-      <div className="flex flex-wrap justify-center lg:justify-start items-stretch max-w-7xl mx-auto">
+      <div className="flex flex-wrap justify-center lg:justify-start items-stretch">
         {services.map((service, i) => (
           <ServiceCard
             key={i}
@@ -169,7 +189,7 @@ const ServiceSection = ({ variant = "card1", services = DEFAULT_SERVICES }) => (
         ))}
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default ServiceSection;

@@ -8,14 +8,22 @@ const AboutSection = () => {
       <div className="flex flex-col md:flex-row items-center gap-10">
         {/* Left Text Section */}
         <div className="w-full md:w-5xl">
-          <h1 className="text-3xl md:text-7xl font-normal mb-8 md:mb-12 text-primary">
+          <h1
+            className="text-3xl md:text-7xl font-normal mb-8 md:mb-12 text-primary"
+            id="why-us-section"
+          >
             Who We Are.
           </h1>
-          <p className="text-lg md:text-3xl leading-snug tracking-tight font-light text-muted">
-            <span className="text-black font-normal">Velvetbyte</span>{" "}
-            empowers startups and enterprises with smart, future-ready IT
-            solutions—driving innovation, scalability, and success in a rapidly
-            evolving digital world.
+          <p className="text-lg md:text-2xl leading-snug tracking-tight font-light text-muted">
+            <span className="text-black font-normal">Beyond Agency</span> is the
+            best digital marketing agency in Dubai, blending creativity,
+            precision, and performance to help brands transform their online
+            presence and accelerate measurable growth.
+          </p>
+          <p className="text-lg md:text-2xl leading-snug tracking-tight font-light text-muted mt-4">
+            From SEO and social media to paid advertising and branding, we craft
+            strategies that connect the right audience, drive engagement, and
+            scale with confidence.
           </p>
 
           <div className="mt-8">
@@ -51,10 +59,12 @@ const AboutSection = () => {
               </div>
 
               <div className="relative z-10 px-8 py-14 text-left">
-                <h3 className="text-3xl text-gray-200 font-normal mb-2">Web Development</h3>
+                <h3 className="text-3xl text-gray-200 font-normal mb-2">
+                  SEO Services
+                </h3>
                 <p className="text-lg text-gray-300">
-                  Modern, responsive, and scalable websites built for
-                  performance and growth.
+                  Boost your visibility with proven SEO strategies that attract
+                  the right audience and drive organic growth.
                 </p>
               </div>
             </Card>
@@ -75,10 +85,12 @@ const AboutSection = () => {
               </div>
 
               <div className="relative z-10 px-8 py-14 text-left">
-                <h3 className="text-3xl text-gray-200 font-normal mb-2">App Development</h3>
+                <h3 className="text-3xl text-gray-200 font-normal mb-2">
+                  Social Media Marketing
+                </h3>
                 <p className="text-lg text-gray-300">
-                  Crafting seamless mobile experiences that engage and convert
-                  on every device.
+                  Build strong social media identities that connect with your
+                  audience and drive measurable results.
                 </p>
               </div>
             </Card>
@@ -100,11 +112,11 @@ const AboutSection = () => {
 
               <div className="relative z-10 px-8 py-14 text-left">
                 <h3 className="text-3xl text-gray-200 font-normal mb-2">
-                  Digital Marketing
+                  Performance Marketing
                 </h3>
                 <p className="text-lg text-gray-300">
-                  Data-driven campaigns and SEO strategies that amplify your
-                  brand visibility.
+                  Get measurable outcomes with data-driven campaigns designed to
+                  maximize ROI and business growth.
                 </p>
               </div>
             </Card>
@@ -125,7 +137,9 @@ const AboutSection = () => {
               </div>
 
               <div className="relative z-10 px-8 py-14 text-left">
-                <h3 className="text-3xl text-gray-200 font-normal mb-2">Branding</h3>
+                <h3 className="text-3xl text-gray-200 font-normal mb-2">
+                  Branding
+                </h3>
                 <p className="text-lg text-gray-300">
                   Building strong, consistent brand identities that resonate and
                   inspire trust.
@@ -149,10 +163,12 @@ const AboutSection = () => {
               </div>
 
               <div className="relative z-10 px-8 py-14 text-left">
-                <h3 className="text-3xl text-gray-200 font-normal mb-2">Graphic Design</h3>
+                <h3 className="text-3xl text-gray-200 font-normal mb-2">
+                  Web Development
+                </h3>
                 <p className="text-lg text-gray-300">
-                  Creative visuals and designs that elevate your brand presence
-                  across platforms.
+                  From sleek design to powerful functionality, we create
+                  websites that perform and convert.
                 </p>
               </div>
             </Card>

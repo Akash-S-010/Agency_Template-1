@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import heroBg from "../../assets/hero_bg.jpg";
+import Button from "../ui/Button";
 
 const Hero = () => {
   return (
@@ -32,20 +33,33 @@ const Hero = () => {
         transition={{ delay: 0.8, duration: 0.5 }}
         style={{ willChange: "opacity" }} // Optimize animation
       >
-        <div className="text-left font-heading text-white">
-          <h1 className="text-6xl md:text-9xl font-semibold leading-tight mb-8">
-            Digital
+        <div className="text-center font-heading text-white w-full max-w-6xl">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6">
+            The Best Digital Marketing
             <br />
-            <span className="ml-0 md:ml-20">Brilliance.</span>
+            Company in Dubai
           </h1>
+          <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-3xl mx-auto font-light">
+            Transform your online presence with innovative strategies and
+            measurable results. We craft marketing solutions that connect
+            audiences, drive engagement, and accelerate business growth.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button
+              text="Request a Quote"
+              className="min-w-[200px] bg-primary text-white border-white hover:bg-white hover:text-primary"
+            />
+            <Button
+              text="Why Us"
+              className="min-w-[200px] bg-transparent text-white border-white hover:bg-white hover:text-primary"
+              onClick={() =>
+                document
+                  .getElementById("why-us-section")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            />
+          </div>
         </div>
-        <p className="text-sm text-blue-400 font-body md:text-base tracking-wider font-normal absolute bottom-10 z-10 left-6 md:left-12 lg:left-20 uppercase">
-          WEBSITES <span className="text-white">•</span> Mobile App{" "}
-          <span className="text-white">•</span> Development
-        </p>
-        <p className="text-sm text-blue-400 font-body md:text-base tracking-wider font-normal absolute bottom-10 z-10 right-6 md:right-12 lg:right-20 uppercase">
-          DIGITAL MARKETING <span className="text-white">•</span> DESIGNING
-        </p>
       </motion.div>
     </section>
   );

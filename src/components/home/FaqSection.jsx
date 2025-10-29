@@ -5,45 +5,41 @@ import { ChevronDown } from "lucide-react";
 const faqData = [
   {
     id: "1",
-    question: "What services do you offer?",
+    question: "What services does Beyond Agency provide?",
     answer:
-      "We provide end-to-end digital solutions including Web Development, Mobile App Development (iOS & Android), Digital Marketing (SEO, PPC, Social Media), Branding, and Graphic Design. We help businesses build a strong online presence from strategy to execution.",
+      "Beyond Agency offers a complete range of top marketing services in Dubai, including SEO, social media marketing, paid advertising, branding, web design, and content marketing — all designed to help your business grow online.",
   },
   {
     id: "2",
-    question: "How long does it take to build a website?",
+    question:
+      "Why is Beyond Agency considered the best digital marketing agency in Dubai?",
     answer:
-      "A standard business website takes 4–6 weeks. Complex platforms (e.g., e-commerce, dashboards) may take 8–12 weeks. We provide a detailed timeline after understanding your requirements during the discovery phase.",
+      "We combine creativity, data-driven strategies, and a passionate team of specialists to deliver measurable results, making us recognized as the best digital marketing agency in Dubai.",
   },
   {
     id: "3",
-    question: "Do you offer custom mobile apps?",
+    question: "How experienced is Beyond Agency?",
     answer:
-      "Yes! We develop native and cross-platform mobile apps using React Native, Flutter, Swift, and Kotlin. From MVP to full-scale apps with backend integration, we deliver secure, scalable, and user-centric mobile solutions.",
+      "As a young yet dynamic company, we have quickly earned a reputation as the best marketing agency in Dubai, helping brands achieve visibility, engagement, and conversions through expert digital campaigns.",
   },
   {
     id: "4",
-    question: "What is your design and branding process?",
+    question:
+      "Can Beyond Agency manage end-to-end digital marketing strategies?",
     answer:
-      "Our branding process includes research, mood boards, logo design, color palette, typography, and brand guidelines. We ensure your visual identity reflects your mission and resonates with your target audience.",
+      "Absolutely. As the best digital marketing company in Dubai, we create integrated campaigns that include SEO, social media, paid ads, and content marketing to ensure cohesive and effective online growth.",
   },
   {
     id: "5",
-    question: "Can you help with SEO and digital marketing?",
+    question: "How does Beyond Agency measure success?",
     answer:
-      "Absolutely. We offer SEO audits, on-page optimization, content strategy, link building, Google Ads, and social media marketing. Our data-driven approach improves visibility, traffic, and conversions.",
+      "We track performance through key metrics such as website traffic, leads, conversions, and ROI to ensure that our top marketing services in Dubai deliver measurable results for every client.",
   },
   {
     id: "6",
-    question: "What technologies do you use for web development?",
+    question: "How can I start working with Beyond Agency?",
     answer:
-      "We use modern stacks: React, Next.js, Vue.js, Node.js, Laravel, WordPress, Shopify, and headless CMS. We choose the best tools based on performance, scalability, and your business goals.",
-  },
-  {
-    id: "7",
-    question: "Do you provide ongoing support and maintenance?",
-    answer:
-      "Yes. We offer monthly maintenance packages including updates, security monitoring, backups, performance optimization, and priority support. Keep your digital assets secure and running smoothly.",
+      "Getting started is easy. Contact our team via form, email, or phone, and our experts will provide a tailored strategy to help your business leverage the services of the best digital marketing agency in Dubai.",
   },
 ];
 
@@ -55,7 +51,7 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="min-h-screen bg-white text-black flex items-center justify-center py-16 px-6 md:px-12 lg:px-24">
+    <section className="min-h-screen bg-white text-black flex items-center justify-center py-24 md:py-32 px-6 md:px-12 lg:px-20">
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
           {/* Left Column - Header */}

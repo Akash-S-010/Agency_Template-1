@@ -1,35 +1,33 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const cards = [
   {
     title: "Highly Rated",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum illum aspernatur ipsam consequatur, enim provident corrupti quam, aliquid odio!",
-    video:"https://www.pexels.com/download/video/4199353/",
+    video: "https://www.pexels.com/download/video/4199353/",
     color: "from-blue-500 to-purple-600",
   },
   {
     title: "Fully Accredited",
     description:
       "With quality standard certifications like ISO and Google Partner, we're a trusted partner you can rely on.",
-    video:
-      "https://www.pexels.com/download/video/8971250/",
+    video: "https://www.pexels.com/download/video/8971250/",
     color: "from-emerald-500 to-teal-600",
   },
   {
     title: "Fully Bespoke",
     description:
       "Everything we create is custom-designed and developed by our team, tailored specifically to your needs. No templates, no generic designs, just something unique and made for you!",
-    video:
-      "https://www.pexels.com/download/video/19197449/",
+    video: "https://www.pexels.com/download/video/19197449/",
     color: "from-pink-500 to-rose-600",
   },
   {
     title: "Guaranteed Service",
     description:
       "Leading brands rely on us. Our service is fully guaranteed and backed by a warranty, ensuring complete support for every project we take on.",
-    video:
-      "https://www.pexels.com/download/video/7579950/",
+    video: "https://www.pexels.com/download/video/7579950/",
     color: "from-orange-500 to-red-600",
   },
 ];
@@ -37,8 +35,6 @@ const cards = [
 function StackCard({ card, index, totalCards, activeIndex }) {
   const cardRef = useRef(null);
   const videoRef = useRef(null);
-  const [scale, setScale] = useState(1);
-  const rafRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -67,43 +63,20 @@ function StackCard({ card, index, totalCards, activeIndex }) {
     };
   }, []);
 
-  const updateScale = useCallback(() => {
-    if (!cardRef.current) return;
-
-    const rect = cardRef.current.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const cardTop = rect.top;
-
-    if (cardTop <= 0) {
-      const progress = Math.abs(cardTop) / windowHeight;
-      const targetScale = 1 - (totalCards - index) * 0.05;
-      const currentScale = Math.max(targetScale, 1 - progress * 0.05);
-      setScale(currentScale);
-    } else {
-      setScale(1);
-    }
-  }, [index, totalCards]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (rafRef.current) {
-        cancelAnimationFrame(rafRef.current);
-      }
-      rafRef.current = requestAnimationFrame(updateScale);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    updateScale();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (rafRef.current) {
-        cancelAnimationFrame(rafRef.current);
-      }
-    };
-  }, [updateScale]);
-
   const topOffset = index * 10;
+  const targetScale = 1 - (totalCards - index) * 0.05;
+
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale]);
+  const smoothScale = useSpring(scale, {
+    stiffness: 180,
+    damping: 28,
+    mass: 0.5,
+  });
 
   return (
     <div
@@ -111,10 +84,10 @@ function StackCard({ card, index, totalCards, activeIndex }) {
       className="h-screen flex items-center justify-center sticky"
       style={{ top: `${topOffset}px` }}
     >
-      <div
+      <motion.div
         className="bg-white rounded-3xl shadow-2xl overflow-hidden will-change-transform"
         style={{
-          transform: `scale(${scale})`,
+          scale: smoothScale,
           width: "90%",
           maxWidth: "900px",
           height: "500px",
@@ -129,9 +102,9 @@ function StackCard({ card, index, totalCards, activeIndex }) {
               loop
               muted
               playsInline
-              preload="metadata"
+              preload="none"
               className="w-full h-full object-cover block"
-              style={{ display: 'block' }}
+              style={{ display: "block" }}
             />
           </div>
 
@@ -145,7 +118,7 @@ function StackCard({ card, index, totalCards, activeIndex }) {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
