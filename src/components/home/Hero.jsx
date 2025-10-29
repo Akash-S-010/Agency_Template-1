@@ -9,16 +9,16 @@ const Hero = () => {
     <section className="relative h-screen w-full overflow-hidden bg-slate-900">
       <GradientBarsBackground
         numBars={11}
-        gradientFrom="rgba(17, 29, 191, 0.8)"
+        gradientFrom="#111dbf"
         gradientTo="transparent"
-        animationDuration={2.2}
+        animationDuration={2}
       />
 
       {/* Optimized Overlay*/}
-      <div
+      {/* <div
         className="absolute inset-0 z-10 bg-gradient-to-b from-slate-900/60 via-slate-900/20 to-slate-900/80"
         style={{ willChange: "transform" }} // Optimize rendering
-      />
+      /> */}
 
       {/* Content */}
       <motion.div
