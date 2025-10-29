@@ -76,19 +76,19 @@ const IntroCard = memo(function IntroCard({ progress, range, targetScale }) {
     <div className="h-screen flex items-center justify-center sticky top-0">
       <motion.div
         style={{ scale, willChange: "transform" }}
-        className="relative w-full h-full overflow-hidden bg-white [transform:translateZ(0)] border-t border-b border-gray-600"
+        className="relative w-full h-full overflow-hidden bg-white [transform:translateZ(0)] border-t border-b border-gray-500"
       >
         <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 lg:p-12 xl:p-16 text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl lg:text-7xl font-light text-black leading-tight mb-6">
-            What We've Done
+          <h1 className="text-5xl lg:text-7xl font-normal text-primary leading-tight mb-6">
+            What We've Done.
           </h1>
 
-          <p className="text-lg md:text-3xl font-light text-gray-400 leading-relaxed max-w-3xl mb-8">
+          <p className="text-lg md:text-3xl font-light text-muted leading-relaxed max-w-3xl mb-8">
             A curated selection of projects where I turned complex problems into intuitive,
             high-impact digital experiences. Scroll down to explore the case studies.
           </p>
 
-          <div className="inline-flex items-center gap-2 bg-white backdrop-blur-sm px-6 py-2 rounded-full text-sm font-light border border-black/10 text-gray-400">
+          <div className="inline-flex items-center gap-2 bg-white backdrop-blur-sm px-6 py-2 rounded-full text-sm font-light border border-gray-500 text-muted">
             <Award size={16} className="text-primary" />
             Featured Work
           </div>
