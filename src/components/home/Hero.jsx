@@ -1,27 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import heroBg from "../../assets/hero_bg.jpg";
 import Button from "../ui/Button";
+import GradientBarsBackground from "../ui/GradientBarsBackground";
+import { MoveRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden ">
-      <motion.div
-        className="absolute inset-0 z-0 flex items-center justify-center bg"
-        initial={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
-        style={{ willChange: "opacity" }} // Optimize animation
-      ></motion.div>
-
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0 overflow-hidden bg-primary">
-        {/* <div className="w-full h-full pointer-events-none bg-cover bg-center relative" style={{ backgroundImage: `url(${heroBg})` }}>
-        </div> */}
-      </div>
+    <section className="relative h-screen w-full overflow-hidden bg-slate-900">
+      <GradientBarsBackground
+        numBars={11}
+        gradientFrom="rgba(17, 29, 191, 0.8)"
+        gradientTo="transparent"
+        animationDuration={2.2}
+      />
 
       {/* Optimized Overlay*/}
       <div
-        className="absolute inset-0  backdrop-blur-xs"
+        className="absolute inset-0 z-10 bg-gradient-to-b from-slate-900/60 via-slate-900/20 to-slate-900/80"
         style={{ willChange: "transform" }} // Optimize rendering
       />
 
@@ -45,19 +40,35 @@ const Hero = () => {
             audiences, drive engagement, and accelerate business growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              text="Request a Quote"
-              className="min-w-[200px] bg-primary text-white border-white hover:bg-white hover:text-primary"
-            />
-            <Button
-              text="Why Us"
-              className="min-w-[200px] bg-transparent text-white border-white hover:bg-white hover:text-primary"
+            <button
+              type="button"
+              className="group font-medium flex items-center justify-center px-6 py-3 text-md bg-primary text-white border-primary hover:bg-blue-600 hover:border-blue-600  transition-all duration-300 cursor-pointer min-w-[200px]"
+            >
+              Request a Quote
+              <span className="inline-block ml-4 group-hover:translate-x-1 transition">
+                <MoveRight
+                  size={22}
+                  className="text-white"
+                />
+              </span>
+            </button>
+            <button
+              type="button"
+              className="group font-medium flex items-center justify-center px-6 py-3 text-md bg-white text-primary border-white hover:bg-gray-100 hover:text-blue-600 hover:px-8 transition-all duration-300 cursor-pointer min-w-[200px]"
               onClick={() =>
                 document
                   .getElementById("why-us-section")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-            />
+            >
+              Why Us
+              <span className="inline-block ml-4 group-hover:translate-x-1 transition">
+                <MoveRight
+                  size={22}
+                  className="text-primary group-hover:text-blue-600"
+                />
+              </span>
+            </button>
           </div>
         </div>
       </motion.div>

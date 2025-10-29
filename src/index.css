@@ -3,8 +3,8 @@
 
 /* Hide scrollbar for Firefox */
 html {
-  scrollbar-width: thin;
-  scrollbar-color: #111dbf #ffffff;
+  scrollbar-width: none;
+  /* scrollbar-color: #111dbf #ffffff; */
 }
 
 body{
