@@ -37,11 +37,7 @@ const CompanyData = () => {
             In a nutshell
           </p>
           <p className="text-3xl md:text-4xl font-normal leading-tight text-black">
-            Our remote-first culture is at the heart of what makes us different.
-            By bringing together passionate specialists from around the globe,
-            we foster an environment of collaboration, creativity, and agility —
-            ensuring the best minds are working on your brand, no matter where
-            they are.
+            Our remote-first culture unites specialists across time zones, keeping collaboration sharp and execution agile so the right minds are always pushing your brand forward.
           </p>
         </div>
 

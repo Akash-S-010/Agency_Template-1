@@ -129,14 +129,14 @@ const IntroCard = memo(function IntroCard({ progress, range, targetScale }) {
     <div className="h-screen flex items-center justify-center sticky top-0">
       <motion.div
         style={{ scale, willChange: "transform" }}
-        className="w-full h-full overflow-hidden bg-white shadow-lg"
+        className="w-full h-full overflow-hidden bg-white border border-gray-200 shadow-sm"
       >
         <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 lg:p-12 xl:p-16 text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-primary leading-tight mb-6">
             Our Services
           </h1>
 
-          <p className="text-lg md:text-2xl lg:text-3xl font-light text-gray-700 leading-relaxed max-w-3xl mb-8">
+          <p className="text-lg md:text-2xl lg:text-3xl font-light text-slate-600 leading-relaxed max-w-3xl mb-8">
             Comprehensive digital solutions tailored to elevate your brand and drive business growth through innovative design and technology.
           </p>
 
@@ -172,14 +172,14 @@ const ServiceCard = memo(function ServiceCard({
           scale,
           willChange: "transform",
         }}
-        className={`w-full h-full border-t border-primary/40 overflow-hidden shadow-lg ${
-          i % 2 === 0 ? 'bg-white' : 'bg-blue-50'
+        className={`w-full h-full border border-gray-200 overflow-hidden shadow-sm ${
+          i % 2 === 0 ? 'bg-white' : 'bg-white'
         }`}
       >
         <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 p-6 md:p-8 lg:p-12 xl:p-16 min-h-full">
           <div className="flex flex-col justify-center max-w-2xl">
             <div className="space-y-4 md:space-y-6 lg:space-y-8">
-              <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-light border border-blue-600/20 text-primary">
+              <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-light border border-primary/20 text-primary">
                 <Award size={16} className="text-primary" />
                 {category}
               </div>
@@ -188,7 +188,7 @@ const ServiceCard = memo(function ServiceCard({
                 {title}
               </h2>
 
-              <p className="text-base md:text-lg lg:text-xl font-light text-gray-700 leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl font-light text-slate-600 leading-relaxed">
                 {description}
               </p>
 
@@ -196,18 +196,18 @@ const ServiceCard = memo(function ServiceCard({
                 {Object.entries(metrics).map(([key, value]) => (
                   <div key={key} className="space-y-1">
                     <div className="text-xl md:text-2xl lg:text-3xl font-light text-primary">{value}</div>
-                    <div className="text-sm text-gray-600 capitalize">{key}</div>
+                    <div className="text-sm text-slate-500 capitalize">{key}</div>
                   </div>
                 ))}
               </div>
 
               <div className="pt-4 md:pt-6">
-                <p className="text-sm text-gray-600 mb-3 font-medium">Tools & Technologies</p>
+                <p className="text-sm text-slate-500 mb-3 font-medium">Tools & Technologies</p>
                 <div className="flex flex-wrap gap-2">
                   {tools.map((tool, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1.5 bg-primary/10 border border-blue-600/20 rounded-lg text-sm text-primary"
+                      className="px-3 py-1.5 bg-primary/10 border border-primary/20 rounded-lg text-sm text-primary"
                     >
                       {tool}
                     </span>

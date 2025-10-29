@@ -2,24 +2,18 @@ import React from "react";
 
 const AboutHero = () => {
   return (
-    <div className="max-w-5xl flex flex-col pt-24">
-      <h2 className="font-heading text-primary font-normal text-2xl md:text-7xl leading-tight tracking-tight">
-        Digital Marketing in Dubai
-      </h2>
-      <p className="max-w-4xl text-lg md:text-xl text-gray-600 leading-relaxed mt-8">
-        In just one year, Beyond Agency has emerged as a trusted leader in
-        digital marketing in Dubai, delivering results-driven solutions for
-        businesses of all sizes. Though young, our agency has rapidly built a
-        reputation for creativity, innovation, and measurable impact — helping
-        brands grow stronger, smarter, and beyond expectations.
+    <div className="max-w-6xl flex flex-col gap-6 pt-32">
+      <span className="text-xs uppercase tracking-[0.35em] text-primary/70">
+        About
+      </span>
+      <h1 className="font-heading text-3xl md:text-6xl font-normal leading-tight text-slate-900">
+        Digital marketing leadership born in Dubai, built for global impact
+      </h1>
+      <p className="max-w-3xl text-base md:text-xl text-slate-600 leading-relaxed">
+        Beyond Agency blends creativity, precision, and performance to help brands grow stronger, smarter, and beyond expectations. In just one year we’ve become a trusted partner for ambitious teams across the region.
       </p>
-      <p className="max-w-4xl text-lg md:text-xl text-gray-600 leading-relaxed mt-6">
-        Recognized as one of the best advertising companies in Dubai, we
-        specialize in crafting comprehensive marketing strategies that connect
-        with audiences, boost visibility, and drive conversions. From search
-        engine optimization and social media campaigns to paid advertising and
-        branding, every solution we deliver is tailored to meet the unique needs
-        of our clients.
+      <p className="max-w-3xl text-base md:text-xl text-slate-600 leading-relaxed">
+        From SEO and social media to paid advertising and branding, every engagement is tailored to the outcomes that matter—connecting the right audiences, amplifying visibility, and unlocking measurable growth.
       </p>
     </div>
   );
