@@ -9,7 +9,7 @@ const About = () => {
   return (
     <main className="bg-white text-slate-900">
       {/* Hero Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
+      <section className="pb-24 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
           <AboutHero />
         </div>
