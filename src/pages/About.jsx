@@ -87,7 +87,7 @@ const About = () => {
 
       {/* Mission, Vision & Values */}
       <motion.section
-        className="py-24 px-6 md:px-12 lg:px-20 bg-slate-50"
+        className="py-24 px-6 md:px-12 lg:px-20 bg-white"
         {...sectionRevealProps}
       >
         <MissionVisionValues />

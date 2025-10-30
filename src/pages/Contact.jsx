@@ -37,9 +37,9 @@ const Contact = () => {
         {...sectionRevealProps}
       >
         <div className="max-w-7xl mx-auto flex flex-col gap-6">
-          <span className="text-xs uppercase tracking-[0.35em] text-primary/70">
-            Contact
-          </span>
+            <span className="inline-block px-4 py-2 text-primary text-xs uppercase font-light rounded-full">
+                /-- Contact Us
+              </span>
           <h1 className="font-heading text-3xl md:text-6xl font-normal leading-tight">
             Let’s build transformative digital experiences together
           </h1>
