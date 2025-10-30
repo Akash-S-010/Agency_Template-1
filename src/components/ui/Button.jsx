@@ -7,9 +7,9 @@ const Button = ({ text, onClick, type, width, className, variant = "primary" }) 
   const widthStyles = width === "full" ? "w-full" : "";
   const variants = {
     primary:
-      "bg-primary text-white border-primary hover:bg-blue-600 hover:border-blue-600 hover:px-8",
+      "bg-primary text-white border-primary hover:bg-blue-700 hover:border-blue-600 hover:px-8",
     inverted:
-      "bg-white text-primary border-white hover:bg-gray-100 hover:text-blue-600 hover:px-8",
+      "bg-white text-primary border border-primary hover:bg-primary hover:text-white hover:px-8",
   };
   return (
     <button
@@ -22,7 +22,7 @@ const Button = ({ text, onClick, type, width, className, variant = "primary" }) 
         <MoveRight
           size={22}
           className={`${
-            variant === "inverted" ? "text-white group-hover:text-primary" : "text-primary group-hover:text-white"
+            variant === "inverted" ? "text-primary group-hover:text-white" : "text-white"
           } transition-colors duration-300`}
         />
       </span>

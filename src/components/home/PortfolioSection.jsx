@@ -1,7 +1,7 @@
 // src/components/home/PortfolioSection.jsx
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, memo } from "react";
-import { ExternalLink, Award } from "lucide-react";
+import {  Award } from "lucide-react";
 import Button from "../ui/Button";
 
 /* ------------------------------------------------------------------ */

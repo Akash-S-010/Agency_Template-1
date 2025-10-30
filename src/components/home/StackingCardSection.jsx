@@ -1,82 +1,68 @@
-import React, { useRef, useState, useEffect, useCallback } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
 
 const cards = [
   {
     title: "Highly Rated",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum illum aspernatur ipsam consequatur, enim provident corrupti quam, aliquid odio!",
-    video: "https://www.pexels.com/download/video/4199353/",
+    video:"https://www.pexels.com/download/video/4199353/",
     color: "from-blue-500 to-purple-600",
   },
   {
     title: "Fully Accredited",
     description:
       "With quality standard certifications like ISO and Google Partner, we're a trusted partner you can rely on.",
-    video: "https://www.pexels.com/download/video/8971250/",
+    video:
+      "https://www.pexels.com/download/video/8971250/",
     color: "from-emerald-500 to-teal-600",
   },
   {
     title: "Fully Bespoke",
     description:
       "Everything we create is custom-designed and developed by our team, tailored specifically to your needs. No templates, no generic designs, just something unique and made for you!",
-    video: "https://www.pexels.com/download/video/19197449/",
+    video:
+      "https://www.pexels.com/download/video/19197449/",
     color: "from-pink-500 to-rose-600",
   },
   {
     title: "Guaranteed Service",
     description:
       "Leading brands rely on us. Our service is fully guaranteed and backed by a warranty, ensuring complete support for every project we take on.",
-    video: "https://www.pexels.com/download/video/7579950/",
+    video:
+      "https://www.pexels.com/download/video/7579950/",
     color: "from-orange-500 to-red-600",
   },
 ];
 
 function StackCard({ card, index, totalCards, activeIndex }) {
   const cardRef = useRef(null);
-  const videoRef = useRef(null);
+  const [scale, setScale] = useState(1);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (videoRef.current) {
-            if (entry.isIntersecting) {
-              videoRef.current.play().catch(() => {});
-            } else {
-              videoRef.current.pause();
-            }
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+    const handleScroll = () => {
+      if (!cardRef.current) return;
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
+      const rect = cardRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const cardTop = rect.top;
 
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+      if (cardTop <= 0) {
+        const progress = Math.abs(cardTop) / windowHeight;
+        const targetScale = 1 - (totalCards - index) * 0.05;
+        const currentScale = Math.max(targetScale, 1 - progress * 0.05);
+        setScale(currentScale);
+      } else {
+        setScale(1);
       }
     };
-  }, []);
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [index, totalCards]);
 
   const topOffset = index * 10;
-  const targetScale = 1 - (totalCards - index) * 0.05;
-
-  const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ["start end", "end start"],
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale]);
-  const smoothScale = useSpring(scale, {
-    stiffness: 180,
-    damping: 28,
-    mass: 0.5,
-  });
 
   return (
     <div
@@ -84,10 +70,10 @@ function StackCard({ card, index, totalCards, activeIndex }) {
       className="h-screen flex items-center justify-center sticky"
       style={{ top: `${topOffset}px` }}
     >
-      <motion.div
-        className="bg-white rounded-3xl shadow-2xl overflow-hidden will-change-transform"
+      <div
+        className="bg-white rounded-3xl shadow-2xl overflow-hidden transition-transform duration-300 ease-out"
         style={{
-          scale: smoothScale,
+          transform: `scale(${scale})`,
           width: "90%",
           maxWidth: "900px",
           height: "500px",
@@ -97,14 +83,13 @@ function StackCard({ card, index, totalCards, activeIndex }) {
           {/* Left Video */}
           <div className="w-full md:w-1/2 h-48 md:h-full relative overflow-hidden bg-black">
             <video
-              ref={videoRef}
               src={card.video}
+              autoPlay
               loop
               muted
               playsInline
-              preload="none"
               className="w-full h-full object-cover block"
-              style={{ display: "block" }}
+              style={{ display: 'block' }}
             />
           </div>
 
@@ -118,7 +103,7 @@ function StackCard({ card, index, totalCards, activeIndex }) {
             </p>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -126,45 +111,32 @@ function StackCard({ card, index, totalCards, activeIndex }) {
 export default function StackingCards() {
   const containerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const rafRef = useRef(null);
-
-  const updateActiveIndex = useCallback(() => {
-    if (!containerRef.current) return;
-
-    const container = containerRef.current;
-    const scrollTop = window.pageYOffset;
-    const containerTop = container.offsetTop;
-    const containerHeight = container.offsetHeight;
-
-    const scrollProgress =
-      (scrollTop - containerTop) / (containerHeight - window.innerHeight);
-    const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
-
-    const index = Math.min(
-      Math.floor(clampedProgress * cards.length),
-      cards.length - 1
-    );
-    setActiveIndex(Math.max(0, index));
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (rafRef.current) {
-        cancelAnimationFrame(rafRef.current);
-      }
-      rafRef.current = requestAnimationFrame(updateActiveIndex);
+      if (!containerRef.current) return;
+
+      const container = containerRef.current;
+      const scrollTop = window.pageYOffset;
+      const containerTop = container.offsetTop;
+      const containerHeight = container.offsetHeight;
+
+      const scrollProgress =
+        (scrollTop - containerTop) / (containerHeight - window.innerHeight);
+      const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
+
+      const index = Math.min(
+        Math.floor(clampedProgress * cards.length),
+        cards.length - 1
+      );
+      setActiveIndex(Math.max(0, index));
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    updateActiveIndex();
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (rafRef.current) {
-        cancelAnimationFrame(rafRef.current);
-      }
-    };
-  }, [updateActiveIndex]);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="bg-white">

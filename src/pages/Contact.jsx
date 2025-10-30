@@ -14,7 +14,7 @@ const contactDetails = [
   {
     icon: <Mail className="w-6 h-6 text-primary" />,
     title: "Email",
-    description: "hello@velvetbyte.com",
+    description: "hello@Beyond.com",
   },
   {
     icon: <Phone className="w-6 h-6 text-primary" />,
@@ -116,7 +116,7 @@ const Contact = () => {
                   type="text"
                   name="company"
                   className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-base text-black focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                  placeholder="Velvetbyte"
+                  placeholder="Beyond"
                 />
               </label>
               <label className="space-y-2">

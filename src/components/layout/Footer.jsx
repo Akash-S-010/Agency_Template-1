@@ -73,10 +73,10 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="mailto:support@velvetbyte.com"
+                  href="mailto:support@Beyond.com"
                   className="hover:text-primary"
                 >
-                  support@velvetbyte.com
+                  support@Beyond.com
                 </a>
               </li>
               <li>
@@ -99,7 +99,7 @@ const Footer = () => {
         <div className=" flex justify-between">
           {/* Copyright Notice */}
           <div className="text-center mt-8 text-sm">
-            <p>&copy; Copyright 2025, Velvetbyte</p>
+            <p>&copy; Copyright 2025, Beyond</p>
           </div>
 
           {/* Social Media Icons */}
@@ -111,7 +111,7 @@ const Footer = () => {
               <FaFacebook size={24} />
             </a>
             <a
-              href="https://www.linkedin.com/company/velvetbyte/posts/?feedView=all"
+              href="https://www.linkedin.com/company/Beyond/posts/?feedView=all"
               className="hover:text-primary"
             >
               <FaLinkedin size={24} />
