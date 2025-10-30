@@ -68,7 +68,7 @@ const ServiceBottom = () => {
           {capabilityColumns.map((column, index) => (
             <div
               key={column.title}
-              className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white/95 p-8 shadow-[0_28px_60px_-32px_rgba(15,23,42,0.2)] transition-all duration-300 hover:-translate-y-2 hover:border-primary/50"
+              className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white/95 p-8 shadow-md transition-all duration-300 hover:-translate-y-2 hover:border-primary/50"
             >
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-primary/70 to-primary/40 opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
               <div className="relative flex flex-1 flex-col gap-5 cursor-pointer">
