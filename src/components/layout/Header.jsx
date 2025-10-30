@@ -75,8 +75,6 @@ const Header = () => {
     return () => window.removeEventListener("keydown", onEsc);
   }, [isMenuOpen]);
 
-  const shouldShowSolidBackground = hasScrolled || !isHomepage;
-
   return (
     <>
       {/* ==== NAVBAR ==== */}
@@ -86,7 +84,7 @@ const Header = () => {
         className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-between px-2 md:px-6 py-4 ${
           isMenuOpen
             ? "bg-transparent"
-            : shouldShowSolidBackground
+            : hasScrolled
               ? "bg-white/95 shadow-md backdrop-blur"
               : "bg-transparent"
         }`}
@@ -120,7 +118,7 @@ const Header = () => {
                   fill: "none",
                   stroke: isMenuOpen 
                     ? "white" 
-                    : !shouldShowSolidBackground && isHomepage 
+                    : isHomepage && !hasScrolled 
                       ? "white" 
                       : "#111dbf",
                   strokeLinecap: "round",
@@ -140,7 +138,7 @@ const Header = () => {
                   fill: "none",
                   stroke: isMenuOpen 
                     ? "white" 
-                    : !shouldShowSolidBackground && isHomepage 
+                    : isHomepage && !hasScrolled 
                       ? "white" 
                       : "#111dbf",
                   strokeLinecap: "round",
