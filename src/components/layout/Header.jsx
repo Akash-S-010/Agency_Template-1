@@ -1,8 +1,6 @@
-// src/components/layout/Header.jsx
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import headerBg from "../../assets/bgimg.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -77,6 +75,8 @@ const Header = () => {
     return () => window.removeEventListener("keydown", onEsc);
   }, [isMenuOpen]);
 
+  const shouldShowSolidBackground = hasScrolled || !isHomepage;
+
   return (
     <>
       {/* ==== NAVBAR ==== */}
@@ -86,7 +86,7 @@ const Header = () => {
         className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-between px-2 md:px-6 py-4 ${
           isMenuOpen
             ? "bg-transparent"
-            : hasScrolled
+            : shouldShowSolidBackground
               ? "bg-white/95 shadow-md backdrop-blur"
               : "bg-transparent"
         }`}
@@ -120,7 +120,7 @@ const Header = () => {
                   fill: "none",
                   stroke: isMenuOpen 
                     ? "white" 
-                    : isHomepage && !hasScrolled 
+                    : !shouldShowSolidBackground && isHomepage 
                       ? "white" 
                       : "#111dbf",
                   strokeLinecap: "round",
@@ -140,7 +140,7 @@ const Header = () => {
                   fill: "none",
                   stroke: isMenuOpen 
                     ? "white" 
-                    : isHomepage && !hasScrolled 
+                    : !shouldShowSolidBackground && isHomepage 
                       ? "white" 
                       : "#111dbf",
                   strokeLinecap: "round",

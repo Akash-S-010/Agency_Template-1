@@ -30,7 +30,7 @@ const contactDetails = [
 
 const Contact = () => {
   return (
-    <main className="bg-white text-slate-900 mt-20">
+    <main className="bg-white text-slate-900 pt-20">
       {/* Hero Section */}
       <motion.section
         className="py-24 px-6 md:px-12 lg:px-20 bg-white"
