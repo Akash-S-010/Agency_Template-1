@@ -2,7 +2,7 @@ import React from "react";
 import ServicesHero from "../components/services/ServicesHero";
 import MainServices from "../components/services/MainServices";
 import ServicesCTA from "../components/services/ServicesCTA";
-import TechStackSection from "../components/services/TechStackSection";
+import ServiceBottom from "../components/services/ServiceBottom";
 import ServiceFaqSection from "../components/services/ServiceFaqSection";
 
 const Service = () => {
@@ -23,7 +23,7 @@ const Service = () => {
       {/* Tech Stack Section */}
       <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
-          <TechStackSection />
+          <ServiceBottom />
         </div>
       </section>
 

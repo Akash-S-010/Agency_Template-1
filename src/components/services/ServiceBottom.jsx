@@ -1,4 +1,5 @@
 import React from "react";
+import { FiCheckCircle } from "react-icons/fi";
 
 const capabilityColumns = [
   {
@@ -39,9 +40,9 @@ const capabilityColumns = [
   },
 ];
 
-const TechStackSection = () => {
+const ServiceBottom = () => {
   return (
-    <section className="py-24 border-t border-gray-200 bg-white">
+    <section className="pt-24 border-t border-gray-200 bg-white">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         <div className="col-span-12 md:col-span-8">
@@ -63,19 +64,31 @@ const TechStackSection = () => {
 
         <hr className="border-t border-gray-200" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
-          {capabilityColumns.map((column) => (
-            <div key={column.title} className="p-6 border border-gray-200 rounded-3xl shadow-sm bg-white">
-              <h3 className="text-lg font-semibold text-primary mb-4">
-                {column.title}
-              </h3>
-              <ul className="space-y-3 text-muted text-sm md:text-base">
-                {column.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+          {capabilityColumns.map((column, index) => (
+            <div
+              key={column.title}
+              className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white/95 p-8 shadow-[0_28px_60px_-32px_rgba(15,23,42,0.2)] transition-all duration-300 hover:-translate-y-2 hover:border-primary/50"
+            >
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-primary/70 to-primary/40 opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="relative flex flex-1 flex-col gap-5 cursor-pointer">
+                <div className="flex items-center justify-between">
+                  <p className="text-xs uppercase text-primary">
+                    /- {String(index + 1).padStart(2, "0")}
+                  </p>
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 leading-tight">
+                  {column.title}
+                </h3>
+                <ul className="flex flex-1 flex-col justify-start space-y-3 text-muted text-sm md:text-base">
+                  {column.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <FiCheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
@@ -84,4 +97,4 @@ const TechStackSection = () => {
   );
 };
 
-export default TechStackSection;
+export default ServiceBottom;
