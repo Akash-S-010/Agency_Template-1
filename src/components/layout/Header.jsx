@@ -86,11 +86,9 @@ const Header = () => {
         className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-between px-2 md:px-6 py-4 ${
           isMenuOpen
             ? "bg-transparent"
-            : isHomepage
-              ? hasScrolled 
-                ? "bg-white shadow-md" 
-                : "bg-transparent"
-              : "bg-white shadow-md"
+            : hasScrolled
+              ? "bg-white/95 shadow-md backdrop-blur"
+              : "bg-transparent"
         }`}
         style={{
           transition: "background-color 0.4s ease, box-shadow 0.4s ease"
