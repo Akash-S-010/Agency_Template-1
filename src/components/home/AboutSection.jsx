@@ -10,7 +10,7 @@ const AboutSection = () => {
       <div className="min-h-[95vh] px-4 md:px-20 flex flex-col justify-center overflow-hidden">
         <div className="flex flex-col md:flex-row items-center gap-10">
           {/* Left Text Section */}
-          <div className="w-full md:w-5xl">
+          <div className="w-full md:w-1/2">
             <h1
               className="text-3xl md:text-7xl font-normal mb-8 md:mb-12 text-primary"
               id="why-us-section"
@@ -178,14 +178,14 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Second Section - Image/Video Left, Content Right */}
+      {/* Second Section - Video Left, Content Right (Balanced) */}
       <div className="min-h-[90vh] px-4 md:px-20 flex items-center mt-10 md:mt-20">
-        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-          {/* Left - Video */}
+        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+          {/* Left - Video (Equal Width) */}
           <div className="w-full md:w-1/2">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] md:h-[500px]">
               <video
-                className="w-full h-auto"
+                className="w-full h-full object-cover"
                 autoPlay
                 loop
                 muted
@@ -196,8 +196,11 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Right - Content */}
+          {/* Right - Content (Equal Width) */}
           <div className="w-full md:w-1/2">
+            {/* <h2 className="text-3xl md:text-5xl font-normal mb-6 text-primary">
+              Excellence in Action.
+            </h2> */}
             <p className="text-lg md:text-2xl leading-relaxed tracking-tight font-light text-muted">
               As the <span className="text-black font-normal">best marketing agency in Dubai</span>, 
               our digital experts blend data, design, and strategy to deliver campaigns that convert. 
@@ -212,6 +215,120 @@ const AboutSection = () => {
 
             <div className="mt-8">
               <Button text="Discover Our Approach">Discover Our Approach</Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Third Section - Why Beyond Header */}
+      <div className="px-4 md:px-20 mt-20 mb-12">
+        <h2 className="text-3xl md:text-6xl font-normal mb-6 text-primary text-center">
+          Why Beyond?
+        </h2>
+        <p className="text-lg md:text-xl leading-relaxed tracking-tight font-light text-muted text-center max-w-4xl mx-auto">
+          Choosing the right marketing partner can make all the difference and Beyond Agency is built to help brands go further, faster. What sets us apart is not just what we do, but how we do it with creativity, precision, and passion driving every campaign.
+        </p>
+      </div>
+
+      {/* Creative-First Approach - Image Right, Content Left */}
+      <div className="min-h-[70vh] px-4 md:px-20 flex items-center py-16">
+        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+          {/* Left - Content */}
+          <div className="w-full md:w-1/2">
+            <h3 className="text-2xl md:text-4xl font-normal mb-6 text-black">
+              Creative-First Approach
+            </h3>
+            <p className="text-lg md:text-xl leading-relaxed tracking-tight font-light text-muted">
+              Every strategy begins with creativity. We design bold ideas that capture attention, connect emotionally, and inspire action ensuring your brand stands out in a crowded digital world.
+            </p>
+          </div>
+
+          {/* Right - Image */}
+          <div className="w-full md:w-1/2">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl h-[350px] md:h-[400px]">
+              <img
+                src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80"
+                alt="Creative design workspace"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Data-Driven Strategies - Image Left, Content Right */}
+      <div className="min-h-[70vh] px-4 md:px-20 flex items-center py-16 bg-gray-50">
+        <div className="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
+          {/* Right - Content */}
+          <div className="w-full md:w-1/2">
+            <h3 className="text-2xl md:text-4xl font-normal mb-6 text-black">
+              Data-Driven Strategies
+            </h3>
+            <p className="text-lg md:text-xl leading-relaxed tracking-tight font-light text-muted">
+              We do not guess we analyze. Every decision is backed by real data, helping you invest smarter and achieve measurable results that matter to your business.
+            </p>
+          </div>
+
+          {/* Left - Image */}
+          <div className="w-full md:w-1/2">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl h-[350px] md:h-[400px]">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                alt="Data analytics dashboard"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Remote-First Culture - Image Right, Content Left */}
+      <div className="min-h-[70vh] px-4 md:px-20 flex items-center py-16">
+        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+          {/* Left - Content */}
+          <div className="w-full md:w-1/2">
+            <h3 className="text-2xl md:text-4xl font-normal mb-6 text-black">
+              Remote-First Culture
+            </h3>
+            <p className="text-lg md:text-xl leading-relaxed tracking-tight font-light text-muted">
+              Our remote-first structure allows us to bring together top marketing minds from around the world. This flexibility fuels innovation, efficiency, and round-the-clock collaboration.
+            </p>
+          </div>
+
+          {/* Right - Image */}
+          <div className="w-full md:w-1/2">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl h-[350px] md:h-[400px]">
+              <img
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                alt="Remote team collaboration"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Passionate Team - Image Left, Content Right */}
+      <div className="min-h-[70vh] px-4 md:px-20 flex items-center py-16 bg-gray-50 mb-20">
+        <div className="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
+          {/* Right - Content */}
+          <div className="w-full md:w-1/2">
+            <h3 className="text-2xl md:text-4xl font-normal mb-6 text-black">
+              Passionate Team of Specialists
+            </h3>
+            <p className="text-lg md:text-xl leading-relaxed tracking-tight font-light text-muted">
+              From strategists and designers to SEO and social media experts, our team lives and breathes digital marketing. Passion drives us, results define us.
+            </p>
+          </div>
+
+          {/* Left - Image */}
+          <div className="w-full md:w-1/2">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl h-[350px] md:h-[400px]">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                alt="Passionate marketing team"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

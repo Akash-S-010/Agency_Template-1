@@ -2,7 +2,8 @@ import React from "react";
 import AboutHero from "../components/about/AboutHero";
 import CompanyData from "../components/about/CompanyData";
 import WhyChooseUs from "../components/about/WhyChooseUs";
-import Button from "../components/ui/Button";
+import MissionVisionValues from "../components/about/MissionVisionValues";
+import ReusableFAQ from "../components/ui/ReusableFAQ";
 import { motion } from "framer-motion";
 
 const sectionRevealProps = {
@@ -11,6 +12,45 @@ const sectionRevealProps = {
   transition: { duration: 0.8, ease: "easeOut" },
   viewport: { once: true, amount: 0.2 },
 };
+
+const aboutFaqData = [
+  {
+    id: "1",
+    question: "How did Beyond Agency start?",
+    answer:
+      "Beyond Agency was founded to help brands achieve success in digital marketing Dubai, combining creativity, strategy, and measurable results for impactful campaigns.",
+  },
+  {
+    id: "2",
+    question: "How long has Beyond Agency been in business?",
+    answer:
+      "Although just over a year old, our team has already earned a strong reputation as the best advertising company in Dubai, delivering innovative and effective marketing solutions.",
+  },
+  {
+    id: "3",
+    question: "What is Beyond Agency’s mission and vision?",
+    answer:
+      "Our mission is to empower businesses with creative strategies that drive growth, while our vision is to be recognized as a results-driven marketing partner, redefining modern marketing for every client.",
+  },
+  {
+    id: "4",
+    question: "What makes Beyond Agency unique?",
+    answer:
+      "We combine a creative-first approach with data-driven strategies. As a passionate team of specialists in digital marketing Dubai, we craft campaigns that go beyond ordinary marketing.",
+  },
+  {
+    id: "5",
+    question: "Who is part of the Beyond Agency team?",
+    answer:
+      "Our team consists of strategists, designers, SEO and social media experts, and content creators — all focused on delivering measurable results and helping brands grow in Dubai and beyond.",
+  },
+  {
+    id: "6",
+    question: "How does Beyond Agency approach client projects?",
+    answer:
+      "We use insight, creativity, and strategy to plan, execute, and optimize campaigns. This approach ensures every project delivers impactful results, reflecting our reputation as one of the best advertising companies in Dubai.",
+  },
+];
 
 const About = () => {
   return (
@@ -37,7 +77,7 @@ const About = () => {
 
       {/* Why Beyond */}
       <motion.section
-        className="px-6 md:px-12 lg:px-20 bg-white"
+        className="py-24 px-6 md:px-12 lg:px-20 bg-white"
         {...sectionRevealProps}
       >
         <div className="max-w-7xl mx-auto">
@@ -50,49 +90,21 @@ const About = () => {
         className="py-24 px-6 md:px-12 lg:px-20 bg-slate-50"
         {...sectionRevealProps}
       >
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="text-center space-y-3">
-              <h3 className="text-lg md:text-xl font-heading text-primary uppercase tracking-[0.2em]">
-                Mission
-              </h3>
-              <p className="text-slate-600 text-base">
-                Empower businesses with innovative marketing that drives measurable growth, strengthens brand presence, and leaves lasting impact.
-              </p>
-            </div>
-            <div className="text-center space-y-3">
-              <h3 className="text-lg md:text-xl font-heading text-primary uppercase tracking-[0.2em]">
-                Vision
-              </h3>
-              <p className="text-slate-600 text-base">
-                Become the forward-thinking, results-driven partner redefining modern marketing through creativity, strategy, and relentless execution.
-              </p>
-            </div>
-            <div className="text-center space-y-3">
-              <h3 className="text-lg md:text-xl font-heading text-primary uppercase tracking-[0.2em]">
-                Values
-              </h3>
-              <p className="text-slate-600 text-base">
-                We believe in creativity, data-led decisions, and collaboration. Innovation, adaptability, and passion guide every project from start to finish.
-              </p>
-            </div>
-          </div>
-        </div>
+        <MissionVisionValues />
       </motion.section>
 
-      {/* Call to Action */}
+      {/* FAQ Section */}
       <motion.section
-        className="py-24 px-6 md:px-12 lg:px-20 text-slate-900"
+        className="pb-24 px-6 md:px-12 lg:px-20 bg-white"
         {...sectionRevealProps}
       >
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-heading font-normal">
-            Ready to start your next chapter?
-          </h2>
-          <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
-            Let’s discuss how our team can help you achieve measurable growth with strategic marketing and digital experiences.
-          </p>
-          <Button text="Get in Touch" className="mx-auto" />
+        <div className="max-w-7xl mx-auto">
+          <ReusableFAQ
+            title="FAQs"
+            subtitle="Learn more about Beyond Agency’s story and approach."
+            ctaText="Need more details?"
+            faqData={aboutFaqData}
+          />
         </div>
       </motion.section>
     </main>
