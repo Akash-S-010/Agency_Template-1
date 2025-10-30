@@ -2,35 +2,21 @@ import React from "react";
 import PortfolioHero from "../components/portfolio/PortfolioHero";
 import PortfolioGallery from "../components/portfolio/PortfolioGallery";
 import Button from "../components/ui/Button";
-import { motion } from "framer-motion";
-
-const sectionRevealProps = {
-  initial: { opacity: 0, y: 40 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut" },
-  viewport: { once: true, amount: 0.2 },
-};
 
 const Portfolio = () => {
   return (
     <main className="bg-white text-slate-900">
-      <motion.div
-        className="px-6 md:px-12 lg:px-20"
-        {...sectionRevealProps}
-      >
+      <div className="px-6 md:px-12 lg:px-20">
         <PortfolioHero />
-      </motion.div>
+      </div>
 
-      <motion.section className="bg-slate-50" {...sectionRevealProps}>
+      <section className="bg-slate-50">
         <div className="px-6 md:px-12 lg:px-20">
           <PortfolioGallery />
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section
-        className="py-24 px-6 md:px-12 lg:px-20 text-slate-900"
-        {...sectionRevealProps}
-      >
+      <section className="py-24 px-6 md:px-12 lg:px-20 text-slate-900">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-heading font-normal">
             Ready to elevate your next launch?
@@ -43,7 +29,7 @@ const Portfolio = () => {
             <span className="text-sm text-slate-500">Let’s build momentum together.</span>
           </div>
         </div>
-      </motion.section>
+      </section>
     </main>
   );
 };
