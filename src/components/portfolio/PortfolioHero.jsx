@@ -1,4 +1,5 @@
 import React from "react";
+import BlurText from "../ui/BlurText";
 
 const PortfolioHero = () => {
   return (
@@ -8,7 +9,14 @@ const PortfolioHero = () => {
           /-- Portfolio
         </span>
         <h1 className="font-heading text-3xl md:text-6xl font-normal leading-tight text-slate-900">
-          Crafting digital products that inspire confidence
+          <BlurText
+            as="span"
+            text="Crafting digital products that inspire confidence"
+            animateBy="words"
+            direction="top"
+            delay={80}
+            className="block"
+          />
         </h1>
         <p className="max-w-3xl text-base md:text-xl text-slate-600 leading-relaxed">
           Explore a curated selection of our recent work across platforms,

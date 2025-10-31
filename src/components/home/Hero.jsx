@@ -1,8 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
-import Button from "../ui/Button";
 import GradientBarsBackground from "../ui/GradientBarsBackground";
 import { MoveRight } from "lucide-react";
+import BlurText from "../ui/BlurText";
 
 const Hero = () => {
   return (
@@ -21,19 +20,18 @@ const Hero = () => {
       /> */}
 
       {/* Content */}
-      <motion.div
+      <div
         className="relative z-20 h-full flex flex-col justify-center items-center px-6 md:px-12 lg:px-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8, duration: 0.5 }}
-        style={{ willChange: "opacity" }} // Optimize animation
       >
         <div className="text-center font-heading text-white w-full max-w-6xl">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6">
-            The Best Digital Marketing
-            <br />
-            Company in Dubai
-          </h1>
+          <BlurText
+            as="h1"
+            text="The Best Digital Marketing Company in Dubai"
+            animateBy="words"
+            direction="center"
+            delay={120}
+            className="text-4xl md:text-6xl text-center lg:text-7xl font-semibold leading-tight mb-6"
+          />
           <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-3xl mx-auto font-light">
             Transform your online presence with innovative strategies and
             measurable results. We craft marketing solutions that connect
@@ -46,10 +44,7 @@ const Hero = () => {
             >
               Request a Quote
               <span className="inline-block ml-4 group-hover:translate-x-1 transition">
-                <MoveRight
-                  size={22}
-                  className="text-white"
-                />
+                <MoveRight size={22} className="text-white" />
               </span>
             </button>
             <button
@@ -71,7 +66,7 @@ const Hero = () => {
             </button>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import BlurText from "../ui/BlurText";
 
 const bannerImage =
   "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&auto=format&fit=crop&q=80";
@@ -14,8 +15,22 @@ const AboutHero = () => {
                 /-- About us
               </span>
               <h1 className="font-heading text-5xl md:text-7xl lg:text-6xl font-light leading-tight text-slate-900">
-                Digital Marketing{" "}
-                <span className="text-primary block">in Dubai</span>
+                <BlurText
+                  as="span"
+                  text="Digital Marketing"
+                  animateBy="words"
+                  delay={80}
+                  direction="top"
+                  className="inline-block"
+                />
+                <BlurText
+                  as="span"
+                  text="in Dubai"
+                  animateBy="words"
+                  delay={200}
+                  direction="bottom"
+                  className="block text-primary"
+                />
               </h1>
             </div>
 

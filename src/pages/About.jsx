@@ -7,7 +7,7 @@ import ReusableFAQ from "../components/ui/ReusableFAQ";
 import { motion } from "framer-motion";
 
 const sectionRevealProps = {
-  initial: { opacity: 0, y: 40 },
+  initial: { opacity: 0, y: 60 },
   whileInView: { opacity: 1, y: 0 },
   transition: { duration: 0.8, ease: "easeOut" },
   viewport: { once: true, amount: 0.2 },
@@ -56,14 +56,13 @@ const About = () => {
   return (
     <main className="bg-white text-slate-900">
       {/* Hero Section */}
-      <motion.section
+      <section
         className="pb-24 px-6 md:px-12 lg:px-20 bg-white"
-        {...sectionRevealProps}
       >
         <div className="max-w-7xl mx-auto">
           <AboutHero />
         </div>
-      </motion.section>
+      </section>
 
       {/* Company Snapshot */}
       <motion.section

@@ -1,4 +1,5 @@
 import React from "react";
+import BlurText from "../ui/BlurText";
 
 const ServicesHero = () => {
   return (
@@ -7,7 +8,14 @@ const ServicesHero = () => {
         /-- Our Services
       </span>
       <h1 className="font-heading text-3xl md:text-6xl font-normal leading-tight text-slate-900">
-        Comprehensive digital solutions engineered for momentum
+        <BlurText
+          as="span"
+          text="Comprehensive digital solutions engineered for momentum"
+          animateBy="words"
+          direction="top"
+          delay={80}
+          className="block"
+        />
       </h1>
       <p className="max-w-3xl text-base md:text-xl text-slate-600 leading-relaxed">
         From strategy and creative to development and performance, we partner
