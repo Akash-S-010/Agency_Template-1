@@ -1,28 +1,40 @@
-import React from "react";
-import GradientBarsBackground from "../ui/GradientBarsBackground";
+import React, { useState } from "react";
+import ColorBends from "../ui/ColorBends";
 import { MoveRight } from "lucide-react";
 import BlurText from "../ui/BlurText";
 
 const Hero = () => {
+  const [pointerPos, setPointerPos] = useState({ x: 0, y: 0 });
+
+  const handlePointerMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / (rect.width || 1)) * 2 - 1;
+    const y = -(((event.clientY - rect.top) / (rect.height || 1)) * 2 - 1);
+    setPointerPos({ x, y });
+  };
+
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-slate-900">
-      <GradientBarsBackground
-        numBars={11}
-        gradientFrom="#111dbf"
-        gradientTo="transparent"
-        animationDuration={2}
+    <section
+      className="relative h-screen w-full overflow-hidden bg-primary"
+      onPointerMove={handlePointerMove}
+    >
+      <ColorBends
+        className="absolute inset-0 z-0 opacity-90"
+        colors={["#0c1dbf", "#1d33f5", "#000000"]}
+        rotation={28}
+        speed={0.25}
+        scale={1}
+        frequency={1}
+        warpStrength={1.05}
+        parallax={0.5}
+        noise={0.08}
+        transparent
+        pointerX={pointerPos.x}
+        pointerY={pointerPos.y}
       />
 
-      {/* Optimized Overlay*/}
-      {/* <div
-        className="absolute inset-0 z-10 bg-gradient-to-b from-slate-900/60 via-slate-900/20 to-slate-900/80"
-        style={{ willChange: "transform" }} // Optimize rendering
-      /> */}
-
-      {/* Content */}
-      <div
-        className="relative z-20 h-full flex flex-col justify-center items-center px-6 md:px-12 lg:px-20"
-      >
+      {/* Content - Higher z-index with pointer events */}
+      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center px-6 md:px-12 lg:px-20">
         <div className="text-center font-heading text-white w-full max-w-6xl">
           <BlurText
             as="h1"
@@ -40,7 +52,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               type="button"
-              className="group font-medium flex items-center justify-center px-6 py-3 text-md bg-primary text-white border-primary hover:bg-blue-600 hover:border-blue-600  transition-all duration-300 cursor-pointer min-w-[200px]"
+              className="group font-medium flex items-center justify-center px-6 py-3 text-md bg-primary text-white border border-white hover:bg-blue-700 hover:border-white transition-all duration-300 cursor-pointer min-w-[200px] relative z-20"
             >
               Request a Quote
               <span className="inline-block ml-4 group-hover:translate-x-1 transition">
@@ -49,7 +61,7 @@ const Hero = () => {
             </button>
             <button
               type="button"
-              className="group font-medium flex items-center justify-center px-6 py-3 text-md bg-white text-primary border-white hover:bg-gray-100 hover:text-blue-600 hover:px-8 transition-all duration-300 cursor-pointer min-w-[200px]"
+              className="group font-medium flex items-center justify-center px-6 py-3 text-md bg-white text-blue-600 border border-white hover:bg-gray-100 hover:text-blue-700 transition-all duration-300 cursor-pointer min-w-[200px] relative z-20"
               onClick={() =>
                 document
                   .getElementById("why-us-section")
@@ -60,7 +72,7 @@ const Hero = () => {
               <span className="inline-block ml-4 group-hover:translate-x-1 transition">
                 <MoveRight
                   size={22}
-                  className="text-primary group-hover:text-blue-600"
+                  className="text-blue-600 group-hover:text-blue-700"
                 />
               </span>
             </button>
