@@ -93,7 +93,17 @@ const Header = () => {
         }}
       >
         <Link to="/">
-          <h1 className="text-2xl text-white font-bold">beyond</h1>
+          <h1
+            className={`text-2xl font-bold transition-colors duration-300 ${
+              isMenuOpen
+                ? "text-white"
+                : isHomepage && !hasScrolled
+                  ? "text-white"
+                  : "text-primary"
+            }`}
+          >
+            beyond
+          </h1>
         </Link>
 
         {/* ==== HAMBURGER ICON (Light Theme Version) ==== */}
