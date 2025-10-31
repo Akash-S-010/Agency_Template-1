@@ -93,7 +93,7 @@ const Header = () => {
         }}
       >
         <Link to="/">
-          <img src="/logo.png" alt="logo" className="w-36" />
+          <h1 className="text-2xl text-white font-bold">beyond</h1>
         </Link>
 
         {/* ==== HAMBURGER ICON (Light Theme Version) ==== */}

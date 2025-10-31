@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Tagline */}
           <div>
-            <img src='./logo.png' alt="logo" className="w-42" />
+            <h1 className="text-2xl font-bold text-primary">beyond</h1>
           </div>
 
           {/* Quick Links */}
