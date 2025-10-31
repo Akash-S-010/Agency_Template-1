@@ -13,7 +13,7 @@ const PortfolioHero = () => {
             as="span"
             text="Crafting digital products that inspire confidence"
             animateBy="words"
-            direction="top"
+            direction="bottom"
             delay={80}
             className="block"
           />

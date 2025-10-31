@@ -12,7 +12,7 @@ const ServicesHero = () => {
           as="span"
           text="Comprehensive digital solutions engineered for momentum"
           animateBy="words"
-          direction="top"
+          direction="bottom"
           delay={80}
           className="block"
         />

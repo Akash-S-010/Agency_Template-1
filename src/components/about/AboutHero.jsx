@@ -20,7 +20,7 @@ const AboutHero = () => {
                   text="Digital Marketing"
                   animateBy="words"
                   delay={80}
-                  direction="top"
+                  direction="bottom"
                   className="inline-block"
                 />
                 <BlurText
