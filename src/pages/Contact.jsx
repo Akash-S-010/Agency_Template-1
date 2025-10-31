@@ -1,6 +1,7 @@
 import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Button from "../components/ui/Button";
+import BlurText from "../components/ui/BlurText";
 import { motion } from "framer-motion";
 
 const sectionRevealProps = {
@@ -40,7 +41,14 @@ const Contact = () => {
                 /-- Contact Us
               </span>
           <h1 className="font-heading text-3xl md:text-6xl font-normal leading-tight">
-            Let’s build transformative digital experiences together
+            <BlurText
+              as="span"
+              text="Let’s build transformative digital experiences together"
+              animateBy="words"
+              direction="bottom"
+              delay={80}
+              className="block"
+            />
           </h1>
           <p className="max-w-3xl text-base md:text-xl text-slate-600 leading-relaxed">
             Share your vision and we’ll co-create a roadmap that links business goals with measurable outcomes. Expect a thoughtful response from our team within one business day.
