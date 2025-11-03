@@ -76,8 +76,8 @@ const ServiceDetail = () => {
                   </div>
                 </div>
 
-                <div className="space-y-6">
-                  {section.list ? (
+                {Array.isArray(section.list) && section.list.length > 0 ? (
+                  <div className="space-y-6">
                     <ul className="space-y-6">
                       {section.list.map((item, itemIndex) => (
                         <li
@@ -97,13 +97,8 @@ const ServiceDetail = () => {
                         </li>
                       ))}
                     </ul>
-                  ) : (
-                    <p className="text-sm md:text-base leading-relaxed text-slate-600">
-                      {section.paragraphs?.[section.paragraphs.length - 1] ??
-                        "Discover how our specialists translate strategy into execution with measurable outcomes."}
-                    </p>
-                  )}
-                </div>
+                  </div>
+                ) : null}
               </article>
             );
           })}
