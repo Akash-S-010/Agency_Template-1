@@ -16,7 +16,8 @@ const Header = () => {
     { id: 2, label: "About Us", path: "/about" },
     { id: 3, label: "Services", path: "/services" },
     { id: 4, label: "Portfolio", path: "/portfolio" },
-    { id: 5, label: "Contact Us", path: "/contact" },
+    { id: 5, label: "Careers", path: "/careers" },
+    { id: 6, label: "Contact Us", path: "/contact" },
   ];
 
   /* ---------- HEADER HIDE / SHOW ON SCROLL ---------- */
