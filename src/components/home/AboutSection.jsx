@@ -7,7 +7,7 @@ const AboutSection = () => {
   return (
     <div className="text-black">
       {/* First Section - Cards and Text */}
-      <div className="min-h-[95vh] px-4 md:px-20 flex flex-col justify-center overflow-hidden">
+      <div className="min-h-[95vh] px-6 md:px-20 flex flex-col justify-center overflow-hidden">
         <div className="flex flex-col md:flex-row items-center gap-0 md:gap-10">
           {/* Left Text Section */}
           <div className="w-full pt-20 sm:pt-0 md:w-1/2">
@@ -179,7 +179,7 @@ const AboutSection = () => {
       </div>
 
       {/* Second Section - Video Left, Content Right (Balanced) */}
-      <div className="min-h-[90vh] px-4 md:px-20 flex items-center mt-10 md:mt-20">
+      <div className="min-h-[90vh] px-6 md:px-20 flex items-center mt-10 md:mt-20">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
           {/* Left - Video (Equal Width) */}
           <div className="w-full md:w-1/2">
@@ -221,7 +221,7 @@ const AboutSection = () => {
       </div>
 
       {/* Third Section - Why Beyond Header */}
-      <div className="px-4 md:px-20 mt-20 mb-12">
+      <div className="px-6 md:px-20 mt-20 mb-12">
         <h2 className="text-3xl md:text-6xl font-normal mb-6 text-primary text-center">
           Why Beyond?
         </h2>
@@ -231,7 +231,7 @@ const AboutSection = () => {
       </div>
 
       {/* Creative-First Approach - Image Right, Content Left */}
-      <div className="min-h-[70vh] px-4 md:px-20 flex items-center py-16">
+      <div className="min-h-[70vh] px-6 md:px-20 flex items-center py-16">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
           {/* Left - Content */}
           <div className="w-full md:w-1/2">
@@ -257,7 +257,7 @@ const AboutSection = () => {
       </div>
 
       {/* Data-Driven Strategies - Image Left, Content Right */}
-      <div className="min-h-[70vh] px-4 md:px-20 flex items-center py-16 bg-gray-50">
+      <div className="min-h-[70vh] px-6 md:px-20 flex items-center py-16 bg-gray-50">
         <div className="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
           {/* Right - Content */}
           <div className="w-full md:w-1/2">
@@ -283,7 +283,7 @@ const AboutSection = () => {
       </div>
 
       {/* Remote-First Culture - Image Right, Content Left */}
-      <div className="min-h-[70vh] px-4 md:px-20 flex items-center py-16">
+      <div className="min-h-[70vh] px-6 md:px-20 flex items-center py-16">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
           {/* Left - Content */}
           <div className="w-full md:w-1/2">
@@ -309,7 +309,7 @@ const AboutSection = () => {
       </div>
 
       {/* Passionate Team - Image Left, Content Right */}
-      <div className="min-h-[70vh] px-4 md:px-20 flex items-center py-16 bg-gray-50 mb-20">
+      <div className="min-h-[70vh] px-6 md:px-20 flex items-center py-16 bg-gray-50 mb-20">
         <div className="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
           {/* Right - Content */}
           <div className="w-full md:w-1/2">
