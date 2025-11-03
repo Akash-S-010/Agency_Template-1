@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useLenis } from "lenis/react";
 
 const ScrollToTop = () => {
   const location = useLocation();
+  const lenis = useLenis();
 
   useEffect(() => {
     const targetHash = location.hash;
@@ -14,8 +16,8 @@ const ScrollToTop = () => {
           const rect = element.getBoundingClientRect();
           const offsetTop = window.scrollY + rect.top;
 
-          if (window.lenis) {
-            window.lenis.scrollTo(offsetTop, { duration: 0.6 });
+          if (lenis) {
+            lenis.scrollTo(offsetTop, { immediate: true });
           } else {
             window.scrollTo({ top: offsetTop });
           }
@@ -23,8 +25,8 @@ const ScrollToTop = () => {
         }
       }
 
-      if (window.lenis) {
-        window.lenis.scrollTo(0, { duration: 0.6 });
+      if (lenis) {
+        lenis.scrollTo(0, { immediate: true });
       } else {
         window.scrollTo({ top: 0 });
       }
@@ -35,7 +37,7 @@ const ScrollToTop = () => {
     });
 
     return () => cancelAnimationFrame(rafId);
-  }, [location.pathname, location.hash]);
+  }, [lenis, location.pathname, location.hash]);
 
   return null;
 };
