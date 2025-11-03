@@ -79,7 +79,7 @@ const IntroCard = memo(function IntroCard({ progress, range, targetScale }) {
         className="relative w-full h-full overflow-hidden bg-white [transform:translateZ(0)] border-t border-b border-gray-600"
       >
         <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 lg:p-12 xl:p-16 text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl lg:text-7xl font-light text-black leading-tight mb-6">
+          <h1 className="text-5xl lg:text-7xl font-normal text-primary leading-tight mb-6">
             What We've Done
           </h1>
 
