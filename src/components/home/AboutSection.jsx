@@ -8,9 +8,9 @@ const AboutSection = () => {
     <div className="text-black">
       {/* First Section - Cards and Text */}
       <div className="min-h-[95vh] px-4 md:px-20 flex flex-col justify-center overflow-hidden">
-        <div className="flex flex-col md:flex-row items-center gap-10">
+        <div className="flex flex-col md:flex-row items-center gap-0 md:gap-10">
           {/* Left Text Section */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full pt-20 sm:pt-0 md:w-1/2">
             <h1
               className="text-3xl md:text-7xl font-normal mb-8 md:mb-12 text-primary"
               id="why-us-section"
@@ -35,8 +35,8 @@ const AboutSection = () => {
 
           {/* Right Animated Cards */}
           <div
-            style={{ height: "600px", position: "relative" }}
-            className="w-full md:w-1/2"
+            style={{ position: "relative" }}
+            className="w-full md:w-1/2 h-[250px] md:h-[600px]"
           >
             <CardSwap
               cardDistance={60}

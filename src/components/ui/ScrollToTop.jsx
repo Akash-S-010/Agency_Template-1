@@ -1,18 +1,41 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
-    // Scroll to top when route changes
-    window.scrollTo(0, 0);
+    const targetHash = location.hash;
 
-    // If using Lenis smooth scrolling, also reset Lenis scroll
-    if (window.lenis) {
-      window.lenis.scrollTo(0, { immediate: true });
-    }
-  }, [pathname]);
+    const scrollToPosition = () => {
+      if (targetHash) {
+        const element = document.querySelector(targetHash);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const offsetTop = window.scrollY + rect.top;
+
+          if (window.lenis) {
+            window.lenis.scrollTo(offsetTop, { duration: 0.6 });
+          } else {
+            window.scrollTo({ top: offsetTop });
+          }
+          return;
+        }
+      }
+
+      if (window.lenis) {
+        window.lenis.scrollTo(0, { duration: 0.6 });
+      } else {
+        window.scrollTo({ top: 0 });
+      }
+    };
+
+    const rafId = requestAnimationFrame(() => {
+      scrollToPosition();
+    });
+
+    return () => cancelAnimationFrame(rafId);
+  }, [location.pathname, location.hash]);
 
   return null;
 };
