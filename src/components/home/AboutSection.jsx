@@ -1,9 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import CardSwap, { Card } from "../ui/StackCardAnime";
 import Button from "../ui/Button";
 import video from "../../assets/marketing_video.mp4";
 
 const AboutSection = () => {
+  const navigate = useNavigate();
+
+  const handleNavigateAbout = () => {
+    navigate("/about");
+  };
+
   return (
     <div className="text-black">
       {/* First Section - Cards and Text */}
@@ -29,7 +36,9 @@ const AboutSection = () => {
             </p>
 
             <div className="mt-8">
-              <Button text="Learn More About Us">Learn More About Us</Button>
+              <Button text="Learn More About Us" onClick={handleNavigateAbout}>
+                Learn More About Us
+              </Button>
             </div>
           </div>
 
@@ -214,7 +223,9 @@ const AboutSection = () => {
             </p>
 
             <div className="mt-8">
-              <Button text="Discover Our Approach">Discover Our Approach</Button>
+              <Button text="Discover Our Approach" onClick={handleNavigateAbout}>
+                Discover Our Approach
+              </Button>
             </div>
           </div>
         </div>
