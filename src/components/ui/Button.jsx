@@ -9,7 +9,7 @@ const Button = ({ text, onClick, type, width, className, variant = "primary" }) 
     primary:
       "bg-primary text-white border-primary hover:bg-blue-700 hover:border-blue-600 hover:px-8",
     inverted:
-      "bg-white text-primary border border-primary hover:bg-primary hover:text-white hover:px-8",
+      "bg-white text-primary border border-white hover:bg-primary hover:text-white hover:px-8",
   };
   return (
     <button

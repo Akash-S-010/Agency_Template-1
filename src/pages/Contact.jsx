@@ -33,13 +33,11 @@ const Contact = () => {
   return (
     <main className="bg-white text-slate-900 pt-20">
       {/* Hero Section */}
-      <section
-        className="py-24 px-6 md:px-12 lg:px-20 bg-white"
-      >
+      <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col gap-6">
-            <span className="inline-block px-4 py-2 text-primary text-xs uppercase font-light rounded-full">
-                /-- Contact Us
-              </span>
+          <span className="inline-block px-4 py-2 text-primary text-xs uppercase font-light rounded-full">
+            /-- Contact Us
+          </span>
           <h1 className="font-heading text-3xl md:text-6xl font-normal leading-tight">
             <BlurText
               as="span"
@@ -51,7 +49,9 @@ const Contact = () => {
             />
           </h1>
           <p className="max-w-3xl text-base md:text-xl text-slate-600 leading-relaxed">
-            Share your vision and we’ll co-create a roadmap that links business goals with measurable outcomes. Expect a thoughtful response from our team within one business day.
+            Share your vision and we’ll co-create a roadmap that links business
+            goals with measurable outcomes. Expect a thoughtful response from
+            our team within one business day.
           </p>
         </div>
       </section>
@@ -68,7 +68,9 @@ const Contact = () => {
                 Reach out to our team
               </h2>
               <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-                We’re here to discuss goals, timelines, and success metrics. Tell us about your challenge and we’ll shape a tailored engagement model for you.
+                We’re here to discuss goals, timelines, and success metrics.
+                Tell us about your challenge and we’ll shape a tailored
+                engagement model for you.
               </p>
             </div>
 
@@ -82,7 +84,9 @@ const Contact = () => {
                     {detail.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-800">{detail.title}</h3>
+                    <h3 className="text-xl font-semibold text-gray-800">
+                      {detail.title}
+                    </h3>
                     <p className="text-gray-600 mt-1">{detail.description}</p>
                   </div>
                 </div>
@@ -90,9 +94,12 @@ const Contact = () => {
             </div>
 
             <div className="pt-4 border-t border-gray-200">
-              <h4 className="text-base md:text-lg font-semibold text-slate-900">Prefer a direct meeting?</h4>
+              <h4 className="text-base md:text-lg font-semibold text-slate-900">
+                Prefer a direct meeting?
+              </h4>
               <p className="text-slate-600 mt-2">
-                Schedule a discovery call and we’ll align on next steps to fast-track your initiative.
+                Schedule a discovery call and we’ll align on next steps to
+                fast-track your initiative.
               </p>
             </div>
           </div>
@@ -100,7 +107,9 @@ const Contact = () => {
           <form className="bg-white rounded-3xl border border-gray-200 shadow-xl p-6 md:p-10 space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <label className="space-y-2">
-                <span className="text-sm font-normal text-black">Full Name</span>
+                <span className="text-sm font-normal text-black">
+                  Full Name
+                </span>
                 <input
                   type="text"
                   name="name"
@@ -109,7 +118,9 @@ const Contact = () => {
                 />
               </label>
               <label className="space-y-2">
-                <span className="text-sm font-normal text-black">Email Address</span>
+                <span className="text-sm font-normal text-black">
+                  Email Address
+                </span>
                 <input
                   type="email"
                   name="email"
@@ -127,7 +138,9 @@ const Contact = () => {
                 />
               </label>
               <label className="space-y-2">
-                <span className="text-sm font-normal text-black">Phone Number</span>
+                <span className="text-sm font-normal text-black">
+                  Phone Number
+                </span>
                 <input
                   type="tel"
                   name="phone"
@@ -137,7 +150,9 @@ const Contact = () => {
               </label>
             </div>
             <label className="space-y-2 block">
-              <span className="text-sm font-normal text-black">Project Goals</span>
+              <span className="text-sm font-normal text-black">
+                Project Goals
+              </span>
               <textarea
                 name="message"
                 rows="5"
@@ -149,30 +164,11 @@ const Contact = () => {
             <div className="flex flex-col gap-3">
               <Button text="Submit Inquiry" type="submit" width="full" />
               <p className="text-sm text-slate-500">
-                By submitting this form, you consent to our team contacting you regarding your request.
+                By submitting this form, you consent to our team contacting you
+                regarding your request.
               </p>
             </div>
           </form>
-        </div>
-      </motion.section>
-
-      {/* CTA Section */}
-      <motion.section
-        className="py-24 px-6 md:px-12 lg:px-20 text-slate-900"
-        {...sectionRevealProps}
-      >
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-heading font-normal">
-            Ready to kickstart your next project?
-          </h2>
-          <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
-            We partner with ambitious teams to deliver digital products that create lasting impact.
-            Let’s map out a roadmap that transforms your ideas into results.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button text="Book a Discovery Call" />
-            <span className="text-sm text-slate-500">Avg. response time: under 24 hours</span>
-          </div>
         </div>
       </motion.section>
     </main>

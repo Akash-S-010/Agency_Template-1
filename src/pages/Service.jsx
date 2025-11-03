@@ -1,7 +1,7 @@
 import React from "react";
 import ServicesHero from "../components/services/ServicesHero";
 import MainServices from "../components/services/MainServices";
-import ServicesCTA from "../components/services/ServicesCTA";
+import PageCTA from "../components/ui/PageCTA";
 import ServiceBottom from "../components/services/ServiceBottom";
 import ServiceFaqSection from "../components/services/ServiceFaqSection";
 
@@ -35,7 +35,11 @@ const Service = () => {
       </section>
 
       {/* Call to Action */}
-      <ServicesCTA />
+      <PageCTA
+        title="Ready to transform your next chapter?"
+        description="Let’s explore how our multidisciplinary team can co-create campaigns, platforms, and products that drive momentum for your brand."
+        buttonText="Book a Strategy Call"
+      />
     </main>
   );
 };
