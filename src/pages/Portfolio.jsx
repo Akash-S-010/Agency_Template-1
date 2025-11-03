@@ -10,7 +10,7 @@ const Portfolio = () => {
         <PortfolioHero />
       </div>
 
-      <section className="bg-slate-50">
+      <section>
         <div className="px-6 md:px-12 lg:px-20">
           <PortfolioGallery />
         </div>

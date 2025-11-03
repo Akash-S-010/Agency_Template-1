@@ -2,7 +2,7 @@ import React from "react";
 
 const PortfolioFilter = ({ categories, activeCategory, onSelect }) => {
   return (
-    <div className="flex flex-wrap items-center gap-4">
+    <div className="flex items-center gap-4 overflow-x-auto whitespace-nowrap pr-4 md:flex-wrap md:whitespace-normal md:overflow-visible">
       {categories.map((category) => {
         const isActive = category === activeCategory;
         return (

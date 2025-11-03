@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ExternalLink, Award } from "lucide-react";
 
-import { servicesOverview } from "../../content/servicesContent.js";
+import { servicesOverview } from "./servicesContent.js";
 
 const services = servicesOverview.map((service) => {
   const descriptionArray = Array.isArray(service.description)

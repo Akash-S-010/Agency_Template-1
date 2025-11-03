@@ -1,6 +1,6 @@
 import React from "react";
 import ReusableFAQ from "../ui/ReusableFAQ";
-import { servicesPageFaqs } from "../../content/servicesContent.js";
+import { servicesPageFaqs } from "./servicesContent.js";
 
 const ServiceFaqSection = () => {
   const faqData = servicesPageFaqs.map((item, index) => ({

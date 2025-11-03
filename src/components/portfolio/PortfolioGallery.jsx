@@ -15,8 +15,8 @@ const PortfolioGallery = () => {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto space-y-10">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div className="space-y-2">
+        <div className="flex flex-col gap-6">
+          <div className="space-y-4 max-w-3xl mb-12">
             <h2 className="text-2xl md:text-4xl font-heading font-normal text-black">
               Selected Case Studies
             </h2>

@@ -3,7 +3,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import BlurText from "../components/ui/BlurText";
 import ReusableFAQ from "../components/ui/ReusableFAQ";
 import PageCTA from "../components/ui/PageCTA";
-import { serviceDetails } from "../content/servicesContent.js";
+import { serviceDetails } from "../components/services/servicesContent.js";
 
 const ServiceDetail = () => {
   const { slug } = useParams();
