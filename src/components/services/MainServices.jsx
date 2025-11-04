@@ -82,31 +82,30 @@ const ServiceCard = memo(function ServiceCard({
           i % 2 === 0 ? "bg-white" : "bg-white"
         }`}
       >
-        <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-y-0 lg:gap-x-8 px-8 md:px-12 lg:px-16 py-8 md:py-10 lg:py-12 min-h-full">
-          <div className="flex flex-col justify-center max-w-3xl space-y-6 md:space-y-8">
-            <div className="inline-flex w-fit items-center gap-2 bg-primary/10 backdrop-blur-sm px-4 py-2 rounded-full text-xs md:text-sm font-medium border border-primary/20 text-primary">
-              <Award size={16} className="text-primary" />
+        <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-y-0 lg:gap-x-6 px-6 md:px-12 lg:px-16 py-8 md:py-10 lg:py-12 min-h-full">
+          <div className="flex flex-col justify-center max-w-3xl space-y-4 md:space-y-8">
+            <p className="text-xs font-semibold tracking-wide text-primary/70 uppercase hidden md:block">
               {category}
-            </div>
+            </p>
 
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-primary leading-tight">
                 {title}
               </h2>
 
-              <p className="text-base font-light md:text-lg text-muted leading-relaxed">
+              <p className="text-base font-light md:text-lg text-muted leading-normal md:leading-relaxed">
                 {summary}
               </p>
 
               {supportingCopy && supportingCopy.length > 0 && (
-                <p className="text-base font-light md:text-lg text-muted leading-relaxed">
+                <p className="text-base font-light md:text-lg text-muted leading-normal md:leading-relaxed">
                   {supportingCopy[0]}
                 </p>
               )}
             </div>
 
             {Object.keys(metrics).length > 0 && (
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-3 md:gap-4">
                 {Object.entries(metrics).map(([key, value]) => (
                   <div key={key} className="space-y-1">
                     <div className="text-lg md:text-2xl font-semibold text-primary">
@@ -121,7 +120,7 @@ const ServiceCard = memo(function ServiceCard({
             )}
 
             {supportingCopy && supportingCopy.length > 1 && (
-              <div className="space-y-3 text-sm md:text-base text-slate-600 leading-relaxed">
+              <div className="space-y-2 md:space-y-3 text-sm md:text-base text-slate-600 leading-normal md:leading-relaxed">
                 {supportingCopy.slice(1).map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
@@ -141,10 +140,10 @@ const ServiceCard = memo(function ServiceCard({
           </div>
 
           <div className="flex items-center justify-start lg:justify-end">
-            <div className="w-full max-w-xl space-y-8">
+            <div className="w-full max-w-xl space-y-5 md:space-y-8">
               {features.map((feature, idx) => (
-                <div key={idx} className="border-b border-slate-200 pb-4">
-                  <p className="text-sm md:text-lg leading-relaxed text-black">
+                <div key={idx} className="border-b border-slate-200 pb-3 md:pb-4">
+                  <p className="text-sm md:text-lg leading-snug md:leading-relaxed text-black">
                     {feature}
                   </p>
                 </div>
