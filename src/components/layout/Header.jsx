@@ -20,6 +20,9 @@ const Header = () => {
     { id: 6, label: "Contact Us", path: "/contact" },
   ];
 
+  const useWhiteLogo = isMenuOpen || (isHomepage && !hasScrolled);
+  const logoSrc = useWhiteLogo ? "/logo_white.png" : "/logo_primary.png";
+
   /* ---------- HEADER HIDE / SHOW ON SCROLL ---------- */
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -93,18 +96,13 @@ const Header = () => {
           transition: "background-color 0.4s ease, box-shadow 0.4s ease"
         }}
       >
-        <Link to="/">
-          <h1
-            className={`text-2xl font-bold transition-colors duration-300 ${
-              isMenuOpen
-                ? "text-white"
-                : isHomepage && !hasScrolled
-                  ? "text-white"
-                  : "text-primary"
-            }`}
-          >
-            beyond
-          </h1>
+        <Link to="/" className="flex items-center">
+          <img
+            src={logoSrc}
+            alt="Beyond"
+            className="h-6 w-auto transition-opacity duration-300"
+          />
+          <span className="sr-only">Beyond</span>
         </Link>
 
         {/* ==== HAMBURGER ICON (Light Theme Version) ==== */}
