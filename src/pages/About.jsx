@@ -55,7 +55,7 @@ const aboutFaqData = [
 
 const About = () => {
   return (
-    <main className="bg-white text-slate-900">
+    <main className="bg-white text-black">
       {/* Hero Section */}
       <section
         className="pb-24 px-6 md:px-12 lg:px-20 bg-white"

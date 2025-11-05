@@ -69,13 +69,13 @@ const values = [
 
 const Careers = () => {
   return (
-    <main className="bg-white text-slate-900">
+    <main className="bg-white text-black">
       <section className="pt-32 pb-24 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-6xl mx-auto space-y-8">
           <span className="inline-block px-4 py-2 text-primary text-xs uppercase font-light rounded-full">
             /-- Careers at Beyond Agency
           </span>
-          <h1 className="font-title text-3xl md:text-6xl font-normal leading-tight text-slate-900">
+          <h1 className="font-title text-3xl md:text-6xl font-normal leading-tight text-black">
             <BlurText
               as="span"
               text="Do the best work of your career in Dubai’s most agile marketing team"
@@ -98,13 +98,13 @@ const Careers = () => {
 
       <section className="py-24 px-6 md:px-12 lg:px-20 bg-slate-50">
         <div className="max-w-6xl mx-auto space-y-12">
-          <h2 className="text-2xl md:text-4xl font-normal leading-tight text-slate-900">
+          <h2 className="text-2xl md:text-4xl font-normal leading-tight text-black">
             What you can expect when you join
           </h2>
           <ul className="grid gap-8 md:grid-cols-2">
             {benefits.map((item, index) => (
               <li key={index} className="space-y-2 border-l-2 border-primary/40 pl-5">
-                <p className="text-base md:text-lg font-medium text-slate-900">
+                <p className="text-base md:text-lg font-medium text-black">
                   {item.title}
                 </p>
                 <p className="text-sm md:text-base leading-relaxed text-slate-600">
@@ -118,13 +118,13 @@ const Careers = () => {
 
       <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-6xl mx-auto space-y-12">
-          <h2 className="text-2xl md:text-4xl font-normal leading-tight text-slate-900">
+          <h2 className="text-2xl md:text-4xl font-normal leading-tight text-black">
             How we show up every day
           </h2>
           <div className="space-y-8">
             {values.map((item, index) => (
               <article key={index} className="space-y-3 border-t border-slate-200 pt-6">
-                <h3 className="text-xl md:text-2xl font-medium text-slate-900">
+                <h3 className="text-xl md:text-2xl font-medium text-black">
                   {item.title}
                 </h3>
                 <p className="text-base md:text-lg leading-relaxed text-slate-600">
@@ -139,7 +139,7 @@ const Careers = () => {
       <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-4">
-            <h2 className="text-2xl md:text-4xl font-normal leading-tight text-slate-900">
+            <h2 className="text-2xl md:text-4xl font-normal leading-tight text-black">
               Open positions
             </h2>
             <p className="text-base md:text-lg leading-relaxed text-slate-600 max-w-3xl">
@@ -151,7 +151,7 @@ const Careers = () => {
               <article key={index} className="space-y-4 border-t border-slate-200 pt-6">
                 <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                   <div>
-                    <h3 className="text-xl md:text-2xl font-medium text-slate-900">
+                    <h3 className="text-xl md:text-2xl font-medium text-black">
                       {role.title}
                     </h3>
                   </div>

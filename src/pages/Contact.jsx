@@ -31,7 +31,7 @@ const contactDetails = [
 
 const Contact = () => {
   return (
-    <main className="bg-white text-slate-900 pt-20">
+    <main className="bg-white text-black pt-20">
       {/* Hero Section */}
       <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col gap-6">
@@ -64,7 +64,7 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-[1fr_1.2fr] items-start">
           <div className="space-y-10">
             <div className="space-y-4">
-              <h2 className="text-2xl md:text-4xl font-heading font-normal text-slate-900">
+              <h2 className="text-2xl md:text-4xl font-heading font-normal text-black">
                 Reach out to our team
               </h2>
               <p className="text-base md:text-lg text-slate-600 leading-relaxed">
@@ -94,7 +94,7 @@ const Contact = () => {
             </div>
 
             <div className="pt-4 border-t border-gray-200">
-              <h4 className="text-base md:text-lg font-semibold text-slate-900">
+              <h4 className="text-base md:text-lg font-semibold text-black">
                 Prefer a direct meeting?
               </h4>
               <p className="text-slate-600 mt-2">

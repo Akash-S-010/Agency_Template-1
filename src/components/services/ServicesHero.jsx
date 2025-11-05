@@ -7,7 +7,7 @@ const ServicesHero = () => {
       <span className="inline-block px-4 py-2 text-primary text-xs uppercase font-light rounded-full">
         /-- Our Services
       </span>
-      <h1 className="font-title text-3xl md:text-6xl font-normal leading-tight text-slate-900">
+      <h1 className="font-title text-3xl md:text-6xl font-normal leading-tight text-black">
         <BlurText
           as="span"
           text="Comprehensive digital solutions engineered for momentum"

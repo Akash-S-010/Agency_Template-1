@@ -33,7 +33,7 @@ const MissionVisionValues = () => {
     <section className="relative overflow-hidden rounded-[40px] bg-white text-muted">
       <div className="relative px-8">
         <div className="max-w-3xl space-y-4">
-          <h2 className="text-3xl font-light leading-tight md:text-5xl text-slate-900">
+          <h2 className="text-3xl font-light leading-tight md:text-5xl text-black">
             The beliefs that power every partnership at Beyond Agency.
           </h2>
           <p className="text-sm text-slate-600 md:text-base">
@@ -58,7 +58,7 @@ const MissionVisionValues = () => {
                     {pillar.kicker}
                   </p>
                 </div>
-                <h3 className="text-2xl font-semibold text-slate-900">
+                <h3 className="text-2xl font-semibold text-black">
                   {pillar.label}
                 </h3>
                 <p className="text-base leading-relaxed text-slate-600">

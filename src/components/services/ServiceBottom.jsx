@@ -77,7 +77,7 @@ const ServiceBottom = () => {
                     /- {String(index + 1).padStart(2, "0")}
                   </p>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 leading-tight">
+                <h3 className="text-xl font-semibold text-black leading-tight">
                   {column.title}
                 </h3>
                 <ul className="flex flex-1 flex-col justify-start space-y-3 text-muted text-sm md:text-base">

@@ -7,7 +7,7 @@ import ServiceFaqSection from "../components/services/ServiceFaqSection";
 
 const Service = () => {
   return (
-    <main className="bg-white text-slate-900">
+    <main className="bg-white text-black">
       {/* Hero Section */}
       <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">

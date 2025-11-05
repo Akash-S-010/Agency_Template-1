@@ -5,7 +5,7 @@ import PageCTA from "../components/ui/PageCTA";
 
 const Portfolio = () => {
   return (
-    <main className="bg-white text-slate-900">
+    <main className="bg-white text-black">
       <div className="px-6 md:px-12 lg:px-20">
         <PortfolioHero />
       </div>
