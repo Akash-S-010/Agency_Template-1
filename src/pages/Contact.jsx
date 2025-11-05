@@ -38,7 +38,7 @@ const Contact = () => {
           <span className="inline-block px-4 py-2 text-primary text-xs uppercase font-light rounded-full">
             /-- Contact Us
           </span>
-          <h1 className="font-heading text-3xl md:text-6xl font-normal leading-tight">
+          <h1 className="font-title text-3xl md:text-6xl font-normal leading-tight">
             <BlurText
               as="span"
               text="Let’s build transformative digital experiences together"
