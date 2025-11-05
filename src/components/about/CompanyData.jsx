@@ -63,7 +63,7 @@ const CompanyData = () => {
                 <p className="text-xs md:text-sm uppercase text-muted tracking-wider mb-6">
                   In a nutshell
                 </p>
-                <p className="text-3xl md:text-4xl font-normal leading-tight text-black">
+                <p className="text-3xl md:text-4xl font-normal leading-snug text-black">
                   Our remote-first culture unites specialists across time zones, keeping collaboration sharp and execution agile so the right minds are always pushing your brand forward.
                 </p>
               </div>
@@ -84,7 +84,7 @@ const CompanyData = () => {
                   <p className="text-xs md:text-sm uppercase text-muted tracking-wider mb-6">
                     {section.eyebrow}
                   </p>
-                  <p className="text-3xl md:text-4xl font-normal leading-tight text-black">
+                  <p className="text-3xl md:text-4xl font-normal leading-snug text-black">
                     {section.body}
                   </p>
                 </div>
