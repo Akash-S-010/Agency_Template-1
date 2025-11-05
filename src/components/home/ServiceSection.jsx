@@ -68,7 +68,7 @@ const ServiceCard = ({
       </h3>
       <p
         className={cn(
-          "font-normal text-muted leading-relaxed transition-all duration-300",
+          "font-normal text-muted leading-snug transition-all duration-300",
           config.hover
         )}
       >
