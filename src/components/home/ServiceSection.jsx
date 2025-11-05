@@ -68,7 +68,7 @@ const ServiceCard = ({
       </h3>
       <p
         className={cn(
-          "font-light text-muted leading-6 transition-all duration-300",
+          "font-normal text-muted leading-relaxed transition-all duration-300",
           config.hover
         )}
       >
@@ -165,10 +165,10 @@ const ServiceSection = ({ variant = "card1", services = DEFAULT_SERVICES }) => (
     <div className="max-w-7xl mx-auto text-black">
       {/* Header - Left Aligned */}
       <div className="mb-14">
-        <h1 className="text-3xl md:text-7xl font-normal mb-3 md:mb-6 text-primary">
+        <h1 className="font-title text-3xl md:text-7xl font-bold mb-3 md:mb-6 text-primary">
           What We Do.
         </h1>
-        <p className="text-muted font-light max-w-3xl text-xl">
+        <p className="text-muted font-normal max-w-3xl text-xl leading-relaxed">
           Comprehensive digital marketing solutions tailored to elevate your
           brand and drive business growth through innovative strategies and
           measurable results.

@@ -44,7 +44,7 @@ const Hero = () => {
             delay={120}
             className="text-4xl md:text-6xl text-center lg:text-7xl font-semibold leading-tight mb-6"
           />
-          <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-3xl mx-auto font-light">
+          <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed font-normal">
             Transform your online presence with innovative strategies and
             measurable results. We craft marketing solutions that connect
             audiences, drive engagement, and accelerate business growth.

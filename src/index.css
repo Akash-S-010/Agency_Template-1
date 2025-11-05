@@ -1,5 +1,7 @@
+@import url('https://fonts.cdnfonts.com/css/mersad');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
+
 
 /* Hide scrollbar for Firefox */
 html {
@@ -16,5 +18,5 @@ body{
     --color-primary: #121EC5;
     --color-white: #FDFEFF;
     --color-muted: #51565b;
-    --font-body: "Work Sans", sans-serif;  
+    --font-title: "Mersad", sans-serif;  
 }

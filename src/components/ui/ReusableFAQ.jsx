@@ -18,10 +18,10 @@ const ReusableFAQ = ({ faqData, title = "FAQs", subtitle = "Got questions? We’
             <h2 className="text-4xl md:text-7xl font-light leading-tight mb-8">
               {title}
             </h2>
-            <p className="text-muted text-xl font-light">
+            <p className="text-muted text-xl font-normal">
               {subtitle}
             </p>
-            <p className="text-muted hidden md:block">
+            <p className="text-muted font-normal hidden md:block">
               {ctaText}{" "}
               <a
                 href="#"
@@ -37,7 +37,7 @@ const ReusableFAQ = ({ faqData, title = "FAQs", subtitle = "Got questions? We’
             {faqData.map((item) => (
               <div
                 key={item.id}
-                className="border-b border-primary/30 last:border-b-0"
+                className="border-b border-gray-300 last:border-b-0"
               >
                 <button
                   onClick={() => toggle(item.id)}
@@ -48,7 +48,7 @@ const ReusableFAQ = ({ faqData, title = "FAQs", subtitle = "Got questions? We’
                     animate={{ rotate: openId === item.id ? 180 : 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <ChevronDown className="h-5 w-5 text-primary" />
+                    <ChevronDown className="h-5 w-5 text-black" />
                   </motion.div>
                 </button>
 
@@ -61,7 +61,7 @@ const ReusableFAQ = ({ faqData, title = "FAQs", subtitle = "Got questions? We’
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-6 pr-8 text-muted font-light leading-relaxed">
+                      <div className="pb-6 pr-8 text-muted font-normal leading-relaxed">
                         {item.answer}
                       </div>
                     </motion.div>

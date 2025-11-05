@@ -19,17 +19,17 @@ const AboutSection = () => {
           {/* Left Text Section */}
           <div className="w-full pt-20 sm:pt-0 md:w-1/2">
             <h1
-              className="text-3xl md:text-7xl font-normal mb-8 md:mb-12 text-primary"
+              className="font-title text-3xl md:text-7xl font-bold mb-8 text-primary"
               id="why-us-section"
             >
               Who We Are.
             </h1>
-            <p className="text-lg md:text-2xl leading-snug tracking-tight font-light text-muted">
+            <p className="text-lg md:text-2xl leading-relaxed font-normal text-muted">
               <span className="text-black font-normal">Beyond Agency</span> stands as the{" "}
               <span className="text-black font-normal">best digital marketing agency in Dubai</span>, 
               helping brands transform their online presence through innovative strategies and measurable results.
             </p>
-            <p className="text-lg md:text-2xl leading-snug tracking-tight font-light text-muted mt-4">
+            <p className="text-lg md:text-2xl leading-relaxed font-normal text-muted mt-4">
               Recognized for creativity, precision, and performance, we craft solutions 
               from SEO and social media to paid advertising and branding that connect 
               audiences, drive engagement, and accelerate growth.
@@ -210,13 +210,13 @@ const AboutSection = () => {
             {/* <h2 className="text-3xl md:text-5xl font-normal mb-6 text-primary">
               Excellence in Action.
             </h2> */}
-            <p className="text-lg md:text-2xl leading-relaxed tracking-tight font-light text-muted">
+            <p className="text-lg md:text-2xl leading-relaxed font-normal text-muted">
               As the <span className="text-black font-normal">best marketing agency in Dubai</span>, 
               our digital experts blend data, design, and strategy to deliver campaigns that convert. 
               With our <span className="text-black font-normal">top marketing services in Dubai</span>, 
               we empower businesses to reach the right audience, strengthen visibility, and scale with confidence.
             </p>
-            <p className="text-lg md:text-2xl leading-relaxed tracking-tight font-light text-muted mt-6">
+            <p className="text-lg md:text-2xl leading-relaxed font-normal text-muted mt-6">
               Going beyond ordinary marketing, we focus on building meaningful connections and lasting impact. 
               Every project is powered by insight, innovation, and a clear goal to take your brand 
               <span className="text-black font-normal"> further, faster, and beyond expectations.</span>
@@ -233,10 +233,10 @@ const AboutSection = () => {
 
       {/* Third Section - Why Beyond Header */}
       <div className="px-6 md:px-20 mt-20 mb-12">
-        <h2 className="text-3xl md:text-6xl font-normal mb-6 text-primary text-center">
+        <h2 className="font-title text-3xl md:text-7xl font-bold mb-6 text-primary text-center">
           Why Beyond?
         </h2>
-        <p className="text-lg md:text-xl leading-relaxed tracking-tight font-light text-muted text-center max-w-4xl mx-auto">
+        <p className="text-lg md:text-xl leading-relaxed font-normal text-muted text-center max-w-4xl mx-auto">
           Choosing the right marketing partner can make all the difference and Beyond Agency is built to help brands go further, faster. What sets us apart is not just what we do, but how we do it with creativity, precision, and passion driving every campaign.
         </p>
       </div>
@@ -249,7 +249,7 @@ const AboutSection = () => {
             <h3 className="text-2xl md:text-4xl font-normal mb-6 text-black">
               Creative-First Approach
             </h3>
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight font-light text-muted">
+            <p className="text-lg md:text-xl leading-relaxed font-normal text-muted">
               Every strategy begins with creativity. We design bold ideas that capture attention, connect emotionally, and inspire action ensuring your brand stands out in a crowded digital world.
             </p>
           </div>
@@ -275,7 +275,7 @@ const AboutSection = () => {
             <h3 className="text-2xl md:text-4xl font-normal mb-6 text-black">
               Data-Driven Strategies
             </h3>
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight font-light text-muted">
+            <p className="text-lg md:text-xl leading-relaxed font-normal text-muted">
               We do not guess we analyze. Every decision is backed by real data, helping you invest smarter and achieve measurable results that matter to your business.
             </p>
           </div>
@@ -301,7 +301,7 @@ const AboutSection = () => {
             <h3 className="text-2xl md:text-4xl font-normal mb-6 text-black">
               Remote-First Culture
             </h3>
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight font-light text-muted">
+            <p className="text-lg md:text-xl leading-relaxed font-normal text-muted">
               Our remote-first structure allows us to bring together top marketing minds from around the world. This flexibility fuels innovation, efficiency, and round-the-clock collaboration.
             </p>
           </div>
@@ -327,7 +327,7 @@ const AboutSection = () => {
             <h3 className="text-2xl md:text-4xl font-normal mb-6 text-black">
               Passionate Team of Specialists
             </h3>
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight font-light text-muted">
+            <p className="text-lg md:text-xl leading-relaxed font-normal text-muted">
               From strategists and designers to SEO and social media experts, our team lives and breathes digital marketing. Passion drives us, results define us.
             </p>
           </div>

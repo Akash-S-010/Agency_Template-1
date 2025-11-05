@@ -98,7 +98,7 @@ function StackCard({ card, index, totalCards, activeIndex }) {
             <h2 className="text-3xl md:text-4xl font-normal mb-4 text-black">
               {card.title}
             </h2>
-            <p className="text-muted text-base md:text-lg leading-relaxed">
+            <p className="text-lg font-normal text-muted leading-relaxed">
               {card.description}
             </p>
           </div>
