@@ -70,6 +70,12 @@ const ServiceCard = memo(function ServiceCard({
   targetScale,
 }) {
   const scale = useTransform(progress, range, [1, targetScale]);
+  const isAlternateBackground = i % 2 === 0;
+  const cardBackgroundClass = isAlternateBackground ? "bg-blue-50" : "bg-white";
+  const paragraphClass =
+    "text-base md:text-lg font-normal text-muted leading-relaxed md:leading-loose";
+  const featureParagraphClass =
+    "text-base md:text-lg text-black leading-relaxed";
 
   return (
     <div className="h-screen flex items-center justify-center sticky top-0">
@@ -78,14 +84,12 @@ const ServiceCard = memo(function ServiceCard({
           scale,
           willChange: "transform",
         }}
-        className={`w-full h-full border border-gray-200 overflow-hidden shadow-sm ${
-          i % 2 === 0 ? "bg-white" : "bg-white"
-        }`}
+        className={`w-full h-full border border-gray-200 overflow-hidden shadow-sm ${cardBackgroundClass}`}
       >
-        <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-y-0 lg:gap-x-6 px-6 md:px-12 lg:px-16 py-8 md:py-10 lg:py-12 min-h-full">
+        <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-y-0 lg:gap-x-6 px-6 md:px-12 lg:px-16 py-8 md:py-10 lg:py-12 min-h-full border-t border-b border-gray-200">
           <div className="flex flex-col justify-center max-w-3xl space-y-4 md:space-y-8">
-            <p className="text-xs font-semibold tracking-wide text-primary/70 uppercase hidden md:block">
-              {category}
+            <p className="text-xs font-normal tracking-wide text-primary/70 uppercase hidden md:block">
+              - {category}
             </p>
 
             <div className="space-y-4 md:space-y-6">
@@ -93,14 +97,10 @@ const ServiceCard = memo(function ServiceCard({
                 {title}
               </h2>
 
-              <p className="text-base font-light md:text-lg text-muted leading-normal md:leading-relaxed">
-                {summary}
-              </p>
+              <p className={paragraphClass}>{summary}</p>
 
               {supportingCopy && supportingCopy.length > 0 && (
-                <p className="text-base font-light md:text-lg text-muted leading-normal md:leading-relaxed">
-                  {supportingCopy[0]}
-                </p>
+                <p className={paragraphClass}>{supportingCopy[0]}</p>
               )}
             </div>
 
@@ -120,9 +120,11 @@ const ServiceCard = memo(function ServiceCard({
             )}
 
             {supportingCopy && supportingCopy.length > 1 && (
-              <div className="space-y-2 md:space-y-3 text-sm md:text-base text-slate-600 leading-normal md:leading-relaxed">
+              <div className="space-y-2 md:space-y-3">
                 {supportingCopy.slice(1).map((paragraph, idx) => (
-                  <p key={idx}>{paragraph}</p>
+                  <p key={idx} className={secondaryParagraphClass}>
+                    {paragraph}
+                  </p>
                 ))}
               </div>
             )}
@@ -142,10 +144,11 @@ const ServiceCard = memo(function ServiceCard({
           <div className="flex items-center justify-start lg:justify-end">
             <div className="w-full max-w-xl space-y-5 md:space-y-8">
               {features.map((feature, idx) => (
-                <div key={idx} className="border-b border-slate-200 pb-3 md:pb-4">
-                  <p className="text-sm md:text-lg leading-snug md:leading-relaxed text-black">
-                    {feature}
-                  </p>
+                <div
+                  key={idx}
+                  className="border-b border-slate-200 pb-3 md:pb-4"
+                >
+                  <p className={featureParagraphClass}>{feature}</p>
                 </div>
               ))}
             </div>
