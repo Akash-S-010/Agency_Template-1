@@ -76,7 +76,7 @@ const IntroCard = memo(function IntroCard({ progress, range, targetScale }) {
     <div className="h-screen flex items-center justify-center sticky top-0">
       <motion.div
         style={{ scale, willChange: "transform" }}
-        className="relative w-full h-full overflow-hidden bg-white [transform:translateZ(0)] border-t border-b border-gray-600"
+        className="relative w-full h-full overflow-hidden bg-white [transform:translateZ(0)] border-t border-b border-gray-300"
       >
         <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 lg:p-12 xl:p-16 text-center max-w-4xl mx-auto">
           <h1 className="font-title text-3xl md:text-7xl font-bold text-primary mb-6">
@@ -173,7 +173,7 @@ const Card = memo(function Card({
           scale,
           willChange: "transform",
         }}
-        className={`relative w-full h-full overflow-hidden ${bgColor} [transform:translateZ(0)] border-t border-b border-gray-600`}
+        className={`relative w-full h-full overflow-hidden ${bgColor} [transform:translateZ(0)] border-t border-b border-gray-300`}
       >
         {/* Content Grid */}
         <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 p-8 lg:p-12 xl:p-16">
