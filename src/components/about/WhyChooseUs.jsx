@@ -43,7 +43,7 @@ const WhyChooseUs = () => {
     <section className=" bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-heading text-primary font-normal mb-4">
+          <h2 className="font-title text-2xl md:text-4xl font-bold text-primary mb-4">
             Why Beyond?
           </h2>
           <p className="text-xl text-muted max-w-3xl mx-auto">
