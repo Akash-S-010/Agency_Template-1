@@ -4,42 +4,47 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-gray-600 py-12 px-2 md:px-12 lg:px-20 border-t border-gray-300">
+    <footer className="bg-primary text-white py-12 px-2 md:px-12 lg:px-20 border-t border-primary/40">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Tagline */}
           <div>
-            <h1 className="text-2xl font-bold text-primary">beyond</h1>
+            <img src="../logo_white.png" alt="logo" className="h-10 w-auto"/>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">
+            <h4 className="text-xl font-semibold text-white mb-4">
               Quick Links
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="hover:text-primary transition-colors duration-200">
+                <Link to="/" className="text-gray-300 hover:text-white transition-colors duration-200">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-primary transition-colors duration-200">
+                <Link to="/about" className="text-gray-300 hover:text-white transition-colors duration-200">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-primary transition-colors duration-200">
+                <Link to="/services" className="text-gray-300 hover:text-white transition-colors duration-200">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/portfolio" className="hover:text-primary transition-colors duration-200">
+                <Link to="/portfolio" className="text-gray-300 hover:text-white transition-colors duration-200">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-primary transition-colors duration-200">
+                <Link to="/Careers" className="text-gray-300 hover:text-white transition-colors duration-200">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors duration-200">
                   Contact US
                 </Link>
               </li>
@@ -48,17 +53,17 @@ const Footer = () => {
 
           {/* Legal Information */}
           <div>
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">
+            <h4 className="text-xl font-semibold text-white mb-4">
               Legal Information
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/terms" className="hover:text-primary transition-colors duration-200">
+                <Link to="/terms" className="text-gray-300 hover:text-white transition-colors duration-200">
                   Terms of Services
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="hover:text-primary transition-colors duration-200">
+                <Link to="/privacy" className="text-gray-300 hover:text-white transition-colors duration-200">
                   Privacy Policy
                 </Link>
               </li>
@@ -67,38 +72,38 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">
+            <h4 className="text-xl font-semibold text-white mb-4">
               Contact Info
             </h4>
             <ul className="space-y-2">
               <li>
                 <a
                   href="mailto:support@Beyond.com"
-                  className="hover:text-primary transition-colors duration-200"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
                 >
                   support@Beyond.com
                 </a>
               </li>
               <li>
-                <a href="tel:+91 8304826261" className="hover:text-primary transition-colors duration-200">
+                <a href="tel:+91 8304826261" className="text-gray-300 hover:text-white transition-colors duration-200">
                   +91 8304826261
                 </a>
               </li>
-              <li>Kochi, Kerala, India</li>
+              <li className="text-gray-300">Kochi, Kerala, India</li>
             </ul>
           </div>
         </div>
 
         {/* Brand Name */}
-        <div className="text-center mt-12 py-8 md:py-18 border-t border-b border-gray-200">
-          <h1 className="text-2xl md:text-7xl font-semibold text-gray-800">
-            Unlock Your <span className="text-primary">Success</span>
+        <div className="text-center mt-12 py-8 md:py-18 border-t border-b border-white/30">
+          <h1 className="font-title text-2xl md:text-7xl font-bold text-white">
+            Unlock Your <span className="text-white">Success</span>
           </h1>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Copyright Notice */}
-          <div className="text-center md:text-left mt-8 text-sm text-gray-500">
+          <div className="text-center md:text-left mt-8 text-sm text-gray-300">
             <p>&copy; Copyright 2025, Beyond</p>
           </div>
 
@@ -106,21 +111,21 @@ const Footer = () => {
           <div className="flex justify-center gap-2 md:gap-4 mt-8">
             <a 
               href="https://www.instagram.com/velvet_byte?igsh=MWFlZXZlMnlnaXM4bw==" 
-              className="hover:text-primary transition-colors duration-200"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="Instagram"
             >
               <FaInstagram size={24} />
             </a>
             <a 
               href="https://www.facebook.com/profile.php?id=61570463492944" 
-              className="hover:text-primary transition-colors duration-200"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="Facebook"
             >
               <FaFacebook size={24} />
             </a>
             <a
               href="https://www.linkedin.com/company/Beyond/posts/?feedView=all"
-              className="hover:text-primary transition-colors duration-200"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="LinkedIn"
             >
               <FaLinkedin size={24} />

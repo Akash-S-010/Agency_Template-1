@@ -20,7 +20,6 @@ const Portfolio = () => {
         title="Ready to elevate your next launch?"
         description="Partner with our multidisciplinary team to bring clarity, polish, and measurable outcomes to your digital initiatives."
         buttonText="Start a Project"
-        secondaryText="Let’s build momentum together."
       />
     </main>
   );
