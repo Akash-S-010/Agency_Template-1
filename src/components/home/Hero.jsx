@@ -4,19 +4,30 @@ import Button from "../ui/Button";
 
 const phrases = ["Limitations.", "Expectations.", "Boundaries."];
 
-export default function Hero() {
-  const [phase, setPhase] = useState("preloader");
+export default function Hero({ showPreloader = true, onPreloaderComplete }) {
+  const [phase, setPhase] = useState(showPreloader ? "preloader" : "hero");
   const [phraseIndex, setPhraseIndex] = useState(0);
 
   /* ────── PRELOADER (unchanged) ────── */
   useEffect(() => {
+    if (!showPreloader) {
+      setPhase("hero");
+      return undefined;
+    }
+
     const zoomTimeout = setTimeout(() => setPhase("zoom"), 5000);
     const heroTimeout = setTimeout(() => setPhase("hero"), 5600);
     return () => {
       clearTimeout(zoomTimeout);
       clearTimeout(heroTimeout);
     };
-  }, []);
+  }, [showPreloader]);
+
+  useEffect(() => {
+    if (phase === "hero" && showPreloader) {
+      onPreloaderComplete?.();
+    }
+  }, [phase, showPreloader, onPreloaderComplete]);
 
   useEffect(() => {
     if (phase === "hero" || phase === "zoom") return;
@@ -125,7 +136,7 @@ export default function Hero() {
       )}
 
       {/* ────── HERO SECTION ────── */}
-      <section className="relative flex min-h-screen flex-col justify-between gap-16 overflow-hidden bg-primary px-6 pt-20 text-white md:gap-20 md:px-12">
+      <section className="relative flex min-h-screen flex-col justify-between gap-16 overflow-hidden bg-primary px-6 pt-26 text-white md:gap-20 md:px-12">
         {/* Top-left heading */}
         <motion.div
           key="top-heading"
@@ -134,7 +145,7 @@ export default function Hero() {
           animate={phase === "hero" ? "visible" : "hidden"}
           className="max-w-[95vw] text-left"
         >
-          <h1 className="font-black uppercase leading-[0.9] tracking-tight text-[15vw] sm:text-[13vw] md:text-[10vw]">
+          <h1 className="font-black font-title uppercase leading-[0.9] tracking-tight text-[15vw] sm:text-[13vw] md:text-[10vw]">
             Best Digital
             <br />
             Marketing
@@ -183,7 +194,7 @@ export default function Hero() {
               />
             </div>
           </motion.div>
-          <h2 className="font-black uppercase leading-[0.9] tracking-tight text-[18vw] sm:text-[14vw] md:text-[11vw] text-white">
+          <h2 className="font-black font-title uppercase leading-[0.9] tracking-tight text-[18vw] sm:text-[14vw] md:text-[11vw] text-white">
             Company
             <br />
             in Dubai
