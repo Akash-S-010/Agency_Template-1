@@ -69,7 +69,7 @@ const values = [
 
 const Careers = () => {
   return (
-    <main className="bg-white text_black">
+    <main className="bg-white text-black">
       <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-5xl space-y-8 pt-24">
