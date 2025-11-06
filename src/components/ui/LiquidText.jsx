@@ -84,16 +84,16 @@ const useMorphingText = (texts) => {
   return { text1Ref, text2Ref };
 };
 
-const Texts = ({ texts }) => {
+const Texts = ({ texts, textClassName = "" }) => {
   const { text1Ref, text2Ref } = useMorphingText(texts);
   return (
     <>
       <span
-        className="absolute inset-x-0 top-0 m-auto inline-block w-full"
+        className={`absolute left-0 top-0 inline-block w-auto whitespace-nowrap ${textClassName}`.trim()}
         ref={text1Ref}
       />
       <span
-        className="absolute inset-x-0 top-0 m-auto inline-block w-full"
+        className={`absolute left-0 top-0 inline-block w-auto whitespace-nowrap ${textClassName}`.trim()}
         ref={text2Ref}
       />
     </>
@@ -117,13 +117,17 @@ const SvgFilters = () => (
   </svg>
 );
 
-const LiquidText = ({ texts, className = "" }) => (
-  <div
-    className={`relative mx-auto h-16 w-full max-w-screen text-center font-title text-[40pt] font-bold leading-none [filter:url(#threshold)_blur(0.6px)] md:h-24 lg:text-[6rem] ${className}`}
-  >
-    <Texts texts={texts} />
-    <SvgFilters />
-  </div>
-);
+const LiquidText = ({ texts, className = "", wrapperClassName, textClassName = "" }) => {
+  const baseClassName =
+    wrapperClassName ??
+    "relative mx-auto h-16 w-full max-w-screen text-center font-title text-[40pt] font-bold leading-none [filter:url(#threshold)_blur(0.6px)] md:h-24 lg:text-[6rem]";
+
+  return (
+    <div className={`${baseClassName} ${className}`.trim()}>
+      <Texts texts={texts} textClassName={textClassName} />
+      <SvgFilters />
+    </div>
+  );
+};
 
 export default LiquidText;

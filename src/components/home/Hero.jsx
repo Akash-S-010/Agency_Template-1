@@ -1,77 +1,195 @@
-import React from "react";
-import { MoveRight } from "lucide-react";
-import BlurText from "../ui/BlurText";
-import heroVideo from "../../assets/globe.mp4";
-const Hero = () => {
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useMemo, useState } from "react";
+import Button from "../ui/Button";
+
+const phrases = ["Limitations.", "Expectations.", "Boundaries."];
+
+export default function Hero() {
+  const [phase, setPhase] = useState("preloader");
+  const [phraseIndex, setPhraseIndex] = useState(0);
+
+  /* ────── PRELOADER (unchanged) ────── */
+  useEffect(() => {
+    const zoomTimeout = setTimeout(() => setPhase("zoom"), 5000);
+    const heroTimeout = setTimeout(() => setPhase("hero"), 5600);
+    return () => {
+      clearTimeout(zoomTimeout);
+      clearTimeout(heroTimeout);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (phase === "hero" || phase === "zoom") return;
+    const cycle = setInterval(() => {
+      setPhraseIndex((prev) => (prev + 1) % phrases.length);
+    }, 1800);
+    return () => clearInterval(cycle);
+  }, [phase]);
+
+  const currentPhrase = useMemo(() => phrases[phraseIndex], [phraseIndex]);
+
+  const circleTransition =
+    phase === "zoom"
+      ? { duration: 1.2, ease: "easeInOut" }
+      : { duration: 0.4, ease: "easeOut" };
+
+  /* ────── Variants for reveal animation ────── */
+  const topTextVariants = {
+    hidden: { opacity: 0, x: 80 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 1.2, ease: "easeOut" },
+    },
+  };
+
+  const midContentVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut", delay: 0.3 },
+    },
+  };
+
+  const bottomTextVariants = {
+    hidden: { opacity: 0, x: -80 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 1.2, ease: "easeOut", delay: 0.2 },
+    },
+  };
+
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-primary">
-      {" "}
-      <video
-        className="absolute inset-0 h-full w-full object-cover opacity-60"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        {" "}
-        <source src={heroVideo} type="video/mp4" />{" "}
-      </video>{" "}
-      <div className="absolute inset-0 z-0 bg-primary mix-blend-multiply" />{" "}
-      {/* Content - Higher z-index with pointer events */}{" "}
-      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center px-6 md:px-12 lg:px-20">
-        {" "}
-        <div className="text-center font-heading text-white w-full max-w-6xl">
-          {" "}
-          <BlurText
-            as="h1"
-            text="The Best Digital Marketing Company in Dubai"
-            animateBy="words"
-            direction="center"
-            delay={120}
-            className="text-4xl md:text-6xl text-center lg:text-7xl font-title font-bold leading-tight mb-6"
-          />{" "}
-          <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed font-normal">
-            {" "}
-            Transform your online presence with innovative strategies and
-            measurable results. We craft marketing solutions that connect
-            audiences, drive engagement, and accelerate business growth.{" "}
-          </p>{" "}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            {" "}
-            <button
-              type="button"
-              className="group font-medium flex items-center justify-center px-6 py-3 text-md bg-primary text-white border border-white hover:bg-blue-700 hover:border-white transition-all duration-300 cursor-pointer min-w-[200px] relative z-20"
-            >
-              {" "}
-              Request a Quote{" "}
-              <span className="inline-block ml-4 group-hover:translate-x-1 transition">
-                {" "}
-                <MoveRight size={22} className="text-white" />{" "}
-              </span>{" "}
-            </button>{" "}
-            <button
-              type="button"
-              className="group font-medium flex items-center justify-center px-6 py-3 text-md bg-white text-blue-600 border border-white hover:bg-gray-100 hover:text-blue-700 transition-all duration-300 cursor-pointer min-w-[200px] relative z-20"
-              onClick={() =>
-                document
-                  .getElementById("why-us-section")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              {" "}
-              Why Us{" "}
-              <span className="inline-block ml-4 group-hover:translate-x-1 transition">
-                {" "}
-                <MoveRight
-                  size={22}
-                  className="text-blue-600 group-hover:text-blue-700"
-                />{" "}
-              </span>{" "}
-            </button>{" "}
-          </div>{" "}
-        </div>{" "}
-      </div>{" "}
-    </section>
+    <>
+      {/* ────── PRELOADER (unchanged) ────── */}
+      {phase !== "hero" && (
+        <motion.div className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-white">
+          <div className="relative flex items-center justify-center px-6 text-3xl font-semibold tracking-tight text-black md:text-6xl">
+            <div className="flex items-baseline gap-2 md:gap-4">
+              <motion.span
+                animate={{ opacity: phase === "zoom" ? 0 : 1 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="whitespace-nowrap leading-none"
+              >
+                We are
+              </motion.span>
+              <span className="relative inline-flex items-baseline leading-none">
+                <motion.span
+                  className="relative z-10 -mr-1 mb-1 block h-2 w-2 rounded-full bg-primary md:mb-2 md:h-3 md:w-3"
+                  initial={{ scale: 1 }}
+                  animate={{ scale: phase === "zoom" ? 520 : 1 }}
+                  transition={circleTransition}
+                  style={{ transformOrigin: "center" }}
+                />
+                <motion.span
+                  className="absolute -left-1 bottom-1 h-2 w-2 rounded-full bg-primary md:bottom-2 md:h-3 md:w-3"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: phase === "zoom" ? 520 : 0 }}
+                  transition={circleTransition}
+                  style={{ transformOrigin: "center" }}
+                />
+                <motion.span
+                  className="font-black text-primary"
+                  animate={{ opacity: phase === "zoom" ? 0 : 1 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
+                  beyond
+                </motion.span>
+              </span>
+              <motion.div
+                animate={{ opacity: phase === "zoom" ? 0 : 1 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="relative inline-flex w-[200px] items-baseline leading-none md:w-[420px]"
+              >
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={currentPhrase}
+                    initial={{ opacity: 0, y: "0.2em" }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: "-0.2em" }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="whitespace-nowrap text-3xl font-semibold tracking-tight text-black md:text-6xl"
+                    style={{ position: "absolute", left: 0, top: 0 }}
+                  >
+                    {currentPhrase}
+                  </motion.span>
+                </AnimatePresence>
+                <span className="invisible whitespace-nowrap text-3xl font-semibold tracking-tight text-black md:text-6xl">
+                  {currentPhrase}
+                </span>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      )}
+
+      {/* ────── HERO SECTION ────── */}
+      <section className="relative flex min-h-screen flex-col justify-between gap-16 overflow-hidden bg-primary px-6 pt-20 text-white md:gap-20 md:px-12">
+        {/* Top-left heading */}
+        <motion.div
+          key="top-heading"
+          variants={topTextVariants}
+          initial="hidden"
+          animate={phase === "hero" ? "visible" : "hidden"}
+          className="max-w-[95vw] text-left"
+        >
+          <h1 className="font-black uppercase leading-[0.9] tracking-tight text-[15vw] sm:text-[13vw] md:text-[10vw]">
+            Best Digital
+            <br />
+            Marketing
+          </h1>
+        </motion.div>
+
+        {/* Bottom-right heading */}
+        <motion.div
+          key="bottom-heading"
+          variants={bottomTextVariants}
+          initial="hidden"
+          animate={phase === "hero" ? "visible" : "hidden"}
+          className="flex w-full flex-col items-center gap-10 text-center md:flex-row md:items-start md:justify-between md:gap-12 md:text-right"
+        >
+          {/* Mid content (paragraph + buttons) */}
+          <motion.div
+            key="mid-content"
+            variants={midContentVariants}
+            initial="hidden"
+            animate={phase === "hero" ? "visible" : "hidden"}
+            className="flex flex-col items-center md:items-start justify-center w-full"
+          >
+            <p className="max-w-2xl text-center md:text-left text-white/80 text-sm sm:text-base md:text-lg lg:text-xl mb-8">
+              Transform your online presence with innovative strategies and
+              measurable results. We craft marketing solutions that connect
+              audiences, drive engagement, and accelerate business growth.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
+              <Button
+                text="Request a quote"
+                variant="inverted"
+                className="min-w-[200px] !px-8 !py-3 text-sm font-semibold uppercase tracking-wider md:!py-4 md:text-base"
+                onClick={() => {
+                  const contactSection = document.querySelector("#contact");
+                  contactSection?.scrollIntoView({ behavior: "smooth" });
+                }}
+              />
+              <Button
+                text="Why us"
+                variant="primary"
+                className="min-w-[200px] border border-white/50 bg-transparent text-sm font-semibold uppercase tracking-wider text-white !px-8 !py-3 transition hover:border-white hover:bg-white/10 md:!py-4 md:text-base"
+                onClick={() => {
+                  const whySection = document.querySelector("#why-us");
+                  whySection?.scrollIntoView({ behavior: "smooth" });
+                }}
+              />
+            </div>
+          </motion.div>
+          <h2 className="font-black uppercase leading-[0.9] tracking-tight text-[18vw] sm:text-[14vw] md:text-[11vw] text-white">
+            Company
+            <br />
+            in Dubai
+          </h2>
+        </motion.div>
+      </section>
+    </>
   );
-};
-export default React.memo(Hero);
+}
