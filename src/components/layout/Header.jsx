@@ -85,7 +85,7 @@ const Header = () => {
       <motion.header
         animate={{ y: isVisible ? 0 : -100 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-between px-2 md:px-6 py-4 ${
+        className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-between px-2 md:px-8 py-4 ${
           isMenuOpen
             ? "bg-transparent"
             : hasScrolled

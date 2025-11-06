@@ -89,7 +89,7 @@ const Footer = () => {
                   +91 8304826261
                 </a>
               </li>
-              <li className="text-gray-300">Kochi, Kerala, India</li>
+              <li className="text-gray-300">Dubai</li>
             </ul>
           </div>
         </div>
