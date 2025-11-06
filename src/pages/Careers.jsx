@@ -69,29 +69,31 @@ const values = [
 
 const Careers = () => {
   return (
-    <main className="bg-white text-black">
-      <section className="pt-32 pb-24 px-6 md:px-12 lg:px-20 bg-white">
-        <div className="max-w-6xl mx-auto space-y-8">
-          <span className="inline-block px-4 py-2 text-primary text-xs uppercase font-light rounded-full">
-            /-- Careers at Beyond Agency
-          </span>
-          <h1 className="font-title text-3xl md:text-6xl font-normal leading-tight text-black">
-            <BlurText
-              as="span"
-              text="Do the best work of your career in Dubai’s most agile marketing team"
-              animateBy="words"
-              direction="bottom"
-              delay={60}
-              className="block"
-            />
-          </h1>
-          <div className="space-y-4 max-w-3xl text-base md:text-lg leading-relaxed text-slate-600">
-            <p>
-              We’re a remote-first collective of strategists, creatives, and growth specialists who love helping brands move beyond expectations. If you thrive in fast-paced environments and value meaningful collaboration, you’ll feel at home here.
-            </p>
-            <p>
-              Explore our open roles or send a speculative application to <a className="text-primary font-medium" href="mailto:careers@beyondagency.ae">careers@beyondagency.ae</a>.
-            </p>
+    <main className="bg-white text_black">
+      <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-5xl space-y-8 pt-24">
+            <span className="inline-block px-4 py-2 text-primary text-xs uppercase font-light rounded-full">
+              /-- Careers at Beyond Agency
+            </span>
+            <h1 className="font-title text-3xl md:text-6xl font-bold leading-tight text-primary">
+              <BlurText
+                as="span"
+                text="Do the best work of your career in Dubai’s most agile marketing team"
+                animateBy="words"
+                direction="bottom"
+                delay={60}
+                className="block"
+              />
+            </h1>
+            <div className="space-y-4 max-w-3xl text-base md:text-lg leading-relaxed text-slate-600">
+              <p>
+                We’re a remote-first collective of strategists, creatives, and growth specialists who love helping brands move beyond expectations. If you thrive in fast-paced environments and value meaningful collaboration, you’ll feel at home here.
+              </p>
+              <p>
+                Explore our open roles or send a speculative application to <a className="text-primary font-medium" href="mailto:careers@beyondagency.ae">careers@beyondagency.ae</a>.
+              </p>
+            </div>
           </div>
         </div>
       </section>

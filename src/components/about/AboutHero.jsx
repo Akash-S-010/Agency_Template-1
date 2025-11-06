@@ -14,7 +14,7 @@ const AboutHero = () => {
               <span className="inline-block px-4 py-2 text-primary text-xs uppercase font-light rounded-full">
                 /-- About us
               </span>
-              <h1 className="font-title text-5xl md:text-7xl font-light leading-tight text-black">
+              <h1 className="font-title text-5xl md:text-7xl font-semibold leading-tight text-primary">
                 <BlurText
                   as="span"
                   text="Digital Marketing"
