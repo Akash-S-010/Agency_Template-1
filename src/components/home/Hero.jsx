@@ -101,7 +101,7 @@ export default function Hero({ showPreloader = true, onPreloaderComplete }) {
                   style={{ transformOrigin: "center" }}
                 />
                 <motion.span
-                  className="font-black text-primary"
+                  className="font-black text-primary pl-1 sm:pl-2"
                   animate={{ opacity: phase === "zoom" ? 0 : 1 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 >
