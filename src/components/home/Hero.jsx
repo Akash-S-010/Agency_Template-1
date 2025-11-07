@@ -146,7 +146,7 @@ export default function Hero({ showPreloader = true, onPreloaderComplete }) {
             animate={phase === "hero" ? "visible" : "hidden"}
             className="max-w-[95vw] text-left"
           >
-            <h1 className="font-black font-title uppercase leading-[0.9] tracking-tight text-[15vw] sm:text-[13vw] md:text-[10vw]">
+            <h1 className="font-black font-title uppercase leading-[0.9] tracking-tight text-[14vw] sm:text-[13vw] md:text-[10vw]">
               Best Digital
               <br />
               Marketing
@@ -168,18 +168,18 @@ export default function Hero({ showPreloader = true, onPreloaderComplete }) {
                 variants={midContentVariants}
                 initial="hidden"
                 animate={phase === "hero" ? "visible" : "hidden"}
-                className="flex w-full max-w-2xl flex-col items-center justify-center text-center md:items-start md:text-left"
+                className="order-2 flex w-full max-w-2xl flex-col items-center justify-center text-center md:order-1 md:items-start md:text-left"
               >
                 <p className="mb-8 text-sm text-white/80 sm:text-base md:text-lg lg:text-xl md:mb-10">
                   Transform your online presence with innovative strategies and
                   measurable results. We craft marketing solutions that connect
                   audiences, drive engagement, and accelerate business growth.
                 </p>
-                <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
+                <div className="flex w-full flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center md:items-start md:justify-start">
                   <Button
                     text="Request a quote"
                     variant="inverted"
-                    className="min-w-[200px] !px-8 !py-3 text-sm font-semibold uppercase tracking-wider md:!py-4 md:text-base"
+                    className="w-full sm:w-auto sm:min-w-[200px] !px-8 !py-3 text-sm font-semibold uppercase tracking-wider md:!py-4 md:text-base"
                     onClick={() => {
                       const contactSection = document.querySelector("#contact");
                       contactSection?.scrollIntoView({ behavior: "smooth" });
@@ -188,7 +188,7 @@ export default function Hero({ showPreloader = true, onPreloaderComplete }) {
                   <Button
                     text="Why us"
                     variant="primary"
-                    className="min-w-[200px] border border-white/50 bg-transparent text-sm font-semibold uppercase tracking-wider text-white !px-8 !py-3 transition hover:border-white hover:bg-white/10 md:!py-4 md:text-base"
+                    className="w-full sm:w-auto sm:min-w-[200px] border border-white/50 bg-transparent text-sm font-semibold uppercase tracking-wider text-white !px-8 !py-3 transition hover:border-white hover:bg-white/10 md:!py-4 md:text-base"
                     onClick={() => {
                       const whySection = document.querySelector("#why-us");
                       whySection?.scrollIntoView({ behavior: "smooth" });
@@ -198,8 +198,8 @@ export default function Hero({ showPreloader = true, onPreloaderComplete }) {
               </motion.div>
 
               {/* Right-aligned title */}
-              <div className="flex w-full justify-center md:w-auto md:justify-end">
-                <h2 className="font-black font-title uppercase leading-[0.9] tracking-tight text-[18vw] sm:text-[14vw] md:text-[11vw] text-white">
+              <div className="order-1 flex w-full justify-center md:order-2 md:w-auto md:justify-end md:pb-0">
+                <h2 className="font-black font-title uppercase leading-[0.9] tracking-tight text-left sm:text-right text-6xl sm:text-[14vw] md:text-[11vw] text-white">
                   Company
                   <br />
                   in Dubai
