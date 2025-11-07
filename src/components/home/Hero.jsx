@@ -136,70 +136,78 @@ export default function Hero({ showPreloader = true, onPreloaderComplete }) {
       )}
 
       {/* ────── HERO SECTION ────── */}
-      <section className="relative flex min-h-screen flex-col justify-between gap-16 overflow-hidden bg-primary px-6 pt-26 text-white md:gap-20 md:px-12">
-        {/* Top-left heading */}
-        <motion.div
-          key="top-heading"
-          variants={topTextVariants}
-          initial="hidden"
-          animate={phase === "hero" ? "visible" : "hidden"}
-          className="max-w-[95vw] text-left"
-        >
-          <h1 className="font-black font-title uppercase leading-[0.9] tracking-tight text-[15vw] sm:text-[13vw] md:text-[10vw]">
-            Best Digital
-            <br />
-            Marketing
-          </h1>
-        </motion.div>
-
-        {/* Bottom-right heading */}
-        <motion.div
-          key="bottom-heading"
-          variants={bottomTextVariants}
-          initial="hidden"
-          animate={phase === "hero" ? "visible" : "hidden"}
-          className="flex w-full flex-col items-center gap-10 text-center md:flex-row md:items-start md:justify-between md:gap-12 md:text-right"
-        >
-          {/* Mid content (paragraph + buttons) */}
+      <section className="relative flex min-h-screen flex-col overflow-hidden bg-primary px-6 pb-16 pt-26 text-white md:px-12 md:pb-20">
+        <div className="flex flex-1 flex-col justify-center gap-12 md:gap-16">
+          {/* Top-left heading */}
           <motion.div
-            key="mid-content"
-            variants={midContentVariants}
+            key="top-heading"
+            variants={topTextVariants}
             initial="hidden"
             animate={phase === "hero" ? "visible" : "hidden"}
-            className="flex flex-col items-center md:items-start justify-center w-full"
+            className="max-w-[95vw] text-left"
           >
-            <p className="max-w-2xl text-center md:text-left text-white/80 text-sm sm:text-base md:text-lg lg:text-xl mb-8">
-              Transform your online presence with innovative strategies and
-              measurable results. We craft marketing solutions that connect
-              audiences, drive engagement, and accelerate business growth.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
-              <Button
-                text="Request a quote"
-                variant="inverted"
-                className="min-w-[200px] !px-8 !py-3 text-sm font-semibold uppercase tracking-wider md:!py-4 md:text-base"
-                onClick={() => {
-                  const contactSection = document.querySelector("#contact");
-                  contactSection?.scrollIntoView({ behavior: "smooth" });
-                }}
-              />
-              <Button
-                text="Why us"
-                variant="primary"
-                className="min-w-[200px] border border-white/50 bg-transparent text-sm font-semibold uppercase tracking-wider text-white !px-8 !py-3 transition hover:border-white hover:bg-white/10 md:!py-4 md:text-base"
-                onClick={() => {
-                  const whySection = document.querySelector("#why-us");
-                  whySection?.scrollIntoView({ behavior: "smooth" });
-                }}
-              />
+            <h1 className="font-black font-title uppercase leading-[0.9] tracking-tight text-[15vw] sm:text-[13vw] md:text-[10vw]">
+              Best Digital
+              <br />
+              Marketing
+            </h1>
+          </motion.div>
+
+          {/* Main content layout */}
+          <motion.div
+            key="content-layout"
+            variants={bottomTextVariants}
+            initial="hidden"
+            animate={phase === "hero" ? "visible" : "hidden"}
+            className="flex w-full flex-col gap-10"
+          >
+            <div className="flex flex-col items-center gap-10 text-center md:flex-row md:items-start md:justify-between md:gap-12 md:text-right">
+              {/* Paragraph + buttons */}
+              <motion.div
+                key="mid-content"
+                variants={midContentVariants}
+                initial="hidden"
+                animate={phase === "hero" ? "visible" : "hidden"}
+                className="flex w-full max-w-2xl flex-col items-center justify-center text-center md:items-start md:text-left"
+              >
+                <p className="mb-8 text-sm text-white/80 sm:text-base md:text-lg lg:text-xl md:mb-10">
+                  Transform your online presence with innovative strategies and
+                  measurable results. We craft marketing solutions that connect
+                  audiences, drive engagement, and accelerate business growth.
+                </p>
+                <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
+                  <Button
+                    text="Request a quote"
+                    variant="inverted"
+                    className="min-w-[200px] !px-8 !py-3 text-sm font-semibold uppercase tracking-wider md:!py-4 md:text-base"
+                    onClick={() => {
+                      const contactSection = document.querySelector("#contact");
+                      contactSection?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                  />
+                  <Button
+                    text="Why us"
+                    variant="primary"
+                    className="min-w-[200px] border border-white/50 bg-transparent text-sm font-semibold uppercase tracking-wider text-white !px-8 !py-3 transition hover:border-white hover:bg-white/10 md:!py-4 md:text-base"
+                    onClick={() => {
+                      const whySection = document.querySelector("#why-us");
+                      whySection?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                  />
+                </div>
+              </motion.div>
+
+              {/* Right-aligned title */}
+              <div className="flex w-full justify-center md:w-auto md:justify-end">
+                <h2 className="font-black font-title uppercase leading-[0.9] tracking-tight text-[18vw] sm:text-[14vw] md:text-[11vw] text-white">
+                  Company
+                  <br />
+                  in Dubai
+                </h2>
+              </div>
             </div>
           </motion.div>
-          <h2 className="font-black font-title uppercase leading-[0.9] tracking-tight text-[18vw] sm:text-[14vw] md:text-[11vw] text-white">
-            Company
-            <br />
-            in Dubai
-          </h2>
-        </motion.div>
+        </div>
       </section>
     </>
   );
