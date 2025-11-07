@@ -137,16 +137,16 @@ export default function Hero({ showPreloader = true, onPreloaderComplete }) {
 
       {/* ────── HERO SECTION ────── */}
       <section className="relative flex min-h-screen flex-col overflow-hidden bg-primary px-6 pb-16 pt-26 text-white md:px-12 md:pb-20">
-        <div className="flex flex-1 flex-col justify-center gap-12 md:gap-16">
+        <div className="flex flex-1 flex-col justify-center gap-4 md:gap-16">
           {/* Top-left heading */}
           <motion.div
             key="top-heading"
             variants={topTextVariants}
             initial="hidden"
             animate={phase === "hero" ? "visible" : "hidden"}
-            className="max-w-[95vw] text-left"
+            className="max-w-[95vw] text-center"
           >
-            <h1 className="font-black font-title uppercase leading-[0.9] tracking-tight text-[14vw] sm:text-[13vw] md:text-[10vw]">
+            <h1 className="font-black font-title uppercase leading-[1.1] md:leading-[0.9] tracking-tight text-[14vw] sm:text-[13vw] md:text-[10vw]">
               Best Digital
               <br />
               Marketing
@@ -199,7 +199,7 @@ export default function Hero({ showPreloader = true, onPreloaderComplete }) {
 
               {/* Right-aligned title */}
               <div className="order-1 flex w-full justify-center md:order-2 md:w-auto md:justify-end md:pb-0">
-                <h2 className="font-black font-title uppercase leading-[0.9] tracking-tight text-left sm:text-right text-6xl sm:text-[14vw] md:text-[11vw] text-white">
+                <h2 className="font-black font-title uppercase leading-[1] md:leading-[0.9] tracking-tight text-center sm:text-right text-6xl sm:text-[14vw] md:text-[11vw] text-white">
                   Company
                   <br />
                   in Dubai
