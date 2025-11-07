@@ -86,14 +86,16 @@ const useMorphingText = (texts) => {
 
 const Texts = ({ texts, textClassName = "" }) => {
   const { text1Ref, text2Ref } = useMorphingText(texts);
+  const baseTextClasses =
+    "absolute inset-0 flex items-center justify-center px-2 text-center whitespace-normal break-words text-balance";
   return (
     <>
       <span
-        className={`absolute left-0 top-0 inline-block w-auto whitespace-nowrap ${textClassName}`.trim()}
+        className={`${baseTextClasses} ${textClassName}`.trim()}
         ref={text1Ref}
       />
       <span
-        className={`absolute left-0 top-0 inline-block w-auto whitespace-nowrap ${textClassName}`.trim()}
+        className={`${baseTextClasses} ${textClassName}`.trim()}
         ref={text2Ref}
       />
     </>
@@ -120,11 +122,13 @@ const SvgFilters = () => (
 const LiquidText = ({ texts, className = "", wrapperClassName, textClassName = "" }) => {
   const baseClassName =
     wrapperClassName ??
-    "relative mx-auto h-16 w-full max-w-screen text-center font-title text-[40pt] font-bold leading-none [filter:url(#threshold)_blur(0.6px)] md:h-24 lg:text-[6rem]";
+    "relative mx-auto w-full max-w-8xl px-4 text-center font-title font-bold leading-tight text-[clamp(2.25rem,7vw,4rem)] md:text-[clamp(3.5rem,6vw,5.5rem)] lg:text-[6rem] min-h-[3.5rem] md:min-h-[5rem] [filter:url(#threshold)_blur(0.6px)]";
+
+  const combinedTextClassName = `whitespace-normal break-words text-balance ${textClassName}`.trim();
 
   return (
     <div className={`${baseClassName} ${className}`.trim()}>
-      <Texts texts={texts} textClassName={textClassName} />
+      <Texts texts={texts} textClassName={combinedTextClassName} />
       <SvgFilters />
     </div>
   );

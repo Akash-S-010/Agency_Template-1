@@ -98,17 +98,17 @@ const About = () => {
         className="pt-24 px-6 md:px-12 lg:px-20 "
         {...sectionRevealProps}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-auto">
           <div className="relative w-full h-48 md:h-64 lg:h-80">
             <motion.div
-              className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-center text-primary leading-tight"
+              className=" font-extrabold text-center text-primary leading-tight"
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.2 }}
             >
-              <p className="text-muted text-xl font-medium mb-10">We are</p>
-              <LiquidText texts={["Beyond Expectations", "Beyond Goals", "Beyond Limits"]} />
+              <p className="text-muted text-xl font-medium mb-14">We are</p>
+              <LiquidText texts={["Beyond Expectations", "Beyond Goals", "Beyond Limits", "Beyond Boundaries"]} />
             </motion.div>
           </div>
         </div>
