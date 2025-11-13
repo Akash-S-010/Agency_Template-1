@@ -8,13 +8,10 @@ import FaqSection from "../components/home/FaqSection";
 import StackingCardSection from "../components/home/StackingCardSection";
 import MarqueeImage from "../components/ui/MarqueeImage";
 
-const Home = ({ showPreloader, onPreloaderComplete }) => {
+const Home = () => {
   return (
     <div className="bg-white relative">
-      <Hero
-        showPreloader={showPreloader}
-        onPreloaderComplete={onPreloaderComplete}
-      />
+      <Hero />
       <AboutSection />
       <ServiceSection />
       <PortfolioSection />
