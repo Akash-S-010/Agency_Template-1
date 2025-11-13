@@ -7,6 +7,7 @@ import ServiceDetail from './pages/ServiceDetail.jsx'
 import Portfolio from './pages/Portfolio.jsx'
 import Contact from './pages/Contact.jsx'
 import Careers from './pages/Careers.jsx'
+import NotFound from './pages/NotFound.jsx'
 import Header from './components/layout/Header.jsx'
 import Footer from './components/layout/Footer.jsx'
 import ScrollToTop from './components/ui/ScrollToTop.jsx'
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/careers" element={<Careers />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>
