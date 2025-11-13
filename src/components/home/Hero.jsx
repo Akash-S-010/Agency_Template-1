@@ -1,24 +1,83 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Button from "../ui/Button";
 import BlurText from "../ui/BlurText";
+import { Highlighter } from "../ui/Highlighter";
+import { Particles, initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
-const image =
-  "https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&w=1200";
+// const image =
+  // "https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&w=1200";
 
 const Hero = () => {
   const [contentVisible, setContentVisible] = useState(false);
+  const [particlesReady, setParticlesReady] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => setParticlesReady(true));
+  }, []);
+
+  const particlesOptions = useMemo(
+    () => ({
+      background: { color: "transparent" },
+      fullScreen: { enable: false },
+      fpsLimit: 50,
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "grab" },
+          onClick: { enable: true, mode: "push" },
+        },
+        modes: {
+          grab: { distance: 180, links: { opacity: 0.6 } },
+          push: { quantity: 3 },
+        },
+      },
+      particles: {
+        number: { value: 35, density: { enable: false } },
+        color: { value: "#d7e7ff" },
+        opacity: { value: 0.75, random: { enable: true, minimumValue: 0.5 } },
+        size: { value: { min: 2, max: 4.5 } },
+        move: {
+          enable: true,
+          speed: 3.3,
+          direction: "none",
+          center: { x: 88, y: 50, mode: "percent" },
+          random: true,
+          outModes: { default: "bounce" },
+        },
+        links: {
+          enable: true,
+          distance: 130,
+          color: "#bcd8ff",
+          opacity: 1.5,
+          width: 1.2,
+        },
+        shadow: {
+          enable: true,
+          blur: 3,
+          color: "#5a7bd6",
+          offset: {
+            x: 0,
+            y: 0,
+          },
+        },
+      },
+      detectRetina: true,
+    }),
+    []
+  );
 
   return (
     <section className="relative flex h-screen w-full items-center overflow-hidden bg-primary text-white">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <img
-          src={image}
-          alt="Background"
-          className="h-full w-full object-cover"
+      {particlesReady && contentVisible && (
+        <Particles
+          id="hero-particles"
+          className="absolute inset-0"
+          options={particlesOptions}
         />
-        <div className="absolute inset-0 bg-primary/70" />
-      </div>
+      )}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/40 to-transparent" />
 
       {/* Main Content */}
       <div className="relative z-10 mx-auto flex min-h-screen w-full items-center px-6 md:px-20 py-24">
@@ -51,8 +110,7 @@ const Hero = () => {
                     : "opacity-0 translate-y-6"
                 }`}
               >
-                Company
-                in Dubai
+                Company in Dubai
               </span>
             </h1>
             <p
@@ -62,9 +120,25 @@ const Hero = () => {
                   : "opacity-0 translate-y-6"
               }`}
             >
-              Transform your online presence with innovative strategies and
-              measurable results. We craft marketing solutions that connect
-              audiences, drive engagement, and accelerate business growth.
+              Transform your online presence with{' '}
+              <Highlighter
+                action="highlight"
+                color="#030c8e"
+                active={contentVisible}
+                delay={1000}
+              >
+                 innovative strategies
+              </Highlighter>{" "}
+              and measurable results. We craft marketing solutions that connect
+              audiences , drive engagement, and accelerate {' '}
+              <Highlighter
+                action="highlight"
+                color="#030c8e"
+                active={contentVisible}
+                delay={2000}
+              >
+                business growth.
+              </Highlighter>
             </p>
           </div>
 
@@ -95,6 +169,10 @@ const Hero = () => {
             />
           </div>
         </div>
+      </div>
+
+      <div className="absolute bottom-[-20%]">
+        <h1 className="text-white/10 font-black text-[20vw]">Marketing</h1>
       </div>
     </section>
   );

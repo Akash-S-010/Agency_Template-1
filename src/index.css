@@ -20,3 +20,8 @@ body{
     --color-muted: #51565b;
     --font-title: "Mersad", sans-serif;  
 }
+
+
+.color{
+  color: #030c8e;
+}
