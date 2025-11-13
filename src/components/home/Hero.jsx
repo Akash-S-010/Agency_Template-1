@@ -90,7 +90,7 @@ const Hero = () => {
             <Button
               text="Request a quote"
               variant="secondary"
-              className="w-full !px-4 !py-3 text-sm font-semibold uppercase border border-white/50 sm:w-auto"
+              className="w-full !px-4 !py-3 text-sm font-semibold uppercase border border-white/50 sm:w-56"
               onClick={() => {
                 const contactSection = document.querySelector("#contact");
                 contactSection?.scrollIntoView({ behavior: "smooth" });
@@ -99,7 +99,7 @@ const Hero = () => {
             <Button
               text="Why us"
               variant="secondary"
-              className="w-full  !px-4 !py-3 text-sm font-semibold uppercase border border-white/50 sm:w-auto"
+              className="w-full  !px-4 !py-3 text-sm font-semibold uppercase border border-white/50 sm:w-56"
               onClick={() => {
                 const whySection = document.querySelector("#why-us");
                 whySection?.scrollIntoView({ behavior: "smooth" });
