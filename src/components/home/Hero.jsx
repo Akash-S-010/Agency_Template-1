@@ -1,89 +1,27 @@
-import { useEffect, useMemo, useState } from "react";
+import { useRef, useState } from "react";
 import Button from "../ui/Button";
 import BlurText from "../ui/BlurText";
 import { Highlighter } from "../ui/Highlighter";
-import { Particles, initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
+import { SplashCursor } from "../ui/SplashCursor";
 
 // const image =
-  // "https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&w=1200";
+// "https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&w=1200";
 
 const Hero = () => {
   const [contentVisible, setContentVisible] = useState(false);
-  const [particlesReady, setParticlesReady] = useState(false);
-
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => setParticlesReady(true));
-  }, []);
-
-  const particlesOptions = useMemo(
-    () => ({
-      background: { color: "transparent" },
-      fullScreen: { enable: false },
-      fpsLimit: 50,
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: "grab" },
-          onClick: { enable: true, mode: "push" },
-        },
-        modes: {
-          grab: { distance: 180, links: { opacity: 0.6 } },
-          push: { quantity: 3 },
-        },
-      },
-      particles: {
-        number: { value: 35, density: { enable: false } },
-        color: { value: "#d7e7ff" },
-        opacity: { value: 0.75, random: { enable: true, minimumValue: 0.5 } },
-        size: { value: { min: 2, max: 4.5 } },
-        move: {
-          enable: true,
-          speed: 3.3,
-          direction: "none",
-          center: { x: 88, y: 50, mode: "percent" },
-          random: true,
-          outModes: { default: "bounce" },
-        },
-        links: {
-          enable: true,
-          distance: 130,
-          color: "#bcd8ff",
-          opacity: 1.5,
-          width: 1.2,
-        },
-        shadow: {
-          enable: true,
-          blur: 3,
-          color: "#5a7bd6",
-          offset: {
-            x: 0,
-            y: 0,
-          },
-        },
-      },
-      detectRetina: true,
-    }),
-    []
-  );
+  const heroRef = useRef(null);
 
   return (
-    <section className="relative flex h-screen w-full items-center overflow-hidden bg-primary text-white">
-      {particlesReady && contentVisible && (
-        <Particles
-          id="hero-particles"
-          className="absolute inset-0"
-          options={particlesOptions}
-        />
-      )}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/40 to-transparent" />
+    <section ref={heroRef} className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-primary text-white">
+      <div className="absolute inset-0 z-0">
+        <SplashCursor targetRef={heroRef} />
+      </div>
 
       {/* Main Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen w-full items-center px-6 md:px-20 py-24">
-        <div className="flex w-full flex-col gap-12">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full items-center justify-center px-6 py-24 md:px-20">
+        <div className="flex w-full flex-col items-center gap-12 text-center">
           <div className="space-y-4">
-            <h1 className="font-title text-6xl font-normal md:leading-tight text-white md:text-7xl mt-10">
+            <h1 className="mt-10 font-title text-6xl font-light text-white md:text-7xl md:leading-tight">
               <span
                 className={`block transition-all duration-700 ${
                   contentVisible
@@ -99,7 +37,7 @@ const Hero = () => {
                 animateBy="words"
                 direction="bottom"
                 delay={120}
-                className="block font-bold leading-tight text-7xl md:text-9xl"
+                className="block font-extrabold leading-tight text-7xl md:text-9xl"
                 wordClassName="text-white"
                 onAnimationComplete={() => setContentVisible(true)}
               />
@@ -114,26 +52,26 @@ const Hero = () => {
               </span>
             </h1>
             <p
-              className={`max-w-3xl text-lg leading-tight md:leading-relaxed text-white/70 md:text-xl transition-all duration-700 ${
+              className={`mx-auto max-w-3xl text-lg leading-tight text-white/70 transition-all duration-700 md:text-xl md:leading-relaxed ${
                 contentVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-6"
               }`}
             >
-              Transform your online presence with{' '}
+              Transform your online presence with innovative strategies and
+              measurable results. We craft{" "}
               <Highlighter
                 action="highlight"
                 color="#030c8e"
                 active={contentVisible}
                 delay={1000}
               >
-                 innovative strategies
+                marketing solutions
               </Highlighter>{" "}
-              and measurable results. We craft marketing solutions that connect
-              audiences , drive engagement, and accelerate {' '}
+              that connect audiences , drive engagement, and accelerate{" "}
               <Highlighter
-                action="highlight"
-                color="#030c8e"
+                action="underline"
+                color="#ccfe00"
                 active={contentVisible}
                 delay={2000}
               >
@@ -143,7 +81,7 @@ const Hero = () => {
           </div>
 
           <div
-            className={`flex flex-col items-start gap-4 sm:flex-row sm:items-center transition-all duration-700 ${
+            className={`flex flex-col items-center gap-4 transition-all duration-700 sm:flex-row sm:justify-center ${
               contentVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-6"
@@ -152,7 +90,7 @@ const Hero = () => {
             <Button
               text="Request a quote"
               variant="secondary"
-              className="w-full sm:w-auto !px-4 !py-3 text-sm font-semibold uppercase border border-white/50"
+              className="w-full !px-4 !py-3 text-sm font-semibold uppercase border border-white/50 sm:w-auto"
               onClick={() => {
                 const contactSection = document.querySelector("#contact");
                 contactSection?.scrollIntoView({ behavior: "smooth" });
@@ -161,7 +99,7 @@ const Hero = () => {
             <Button
               text="Why us"
               variant="secondary"
-              className="w-full sm:w-auto  !px-4 !py-3 text-sm font-semibold uppercase border border-white/50"
+              className="w-full  !px-4 !py-3 text-sm font-semibold uppercase border border-white/50 sm:w-auto"
               onClick={() => {
                 const whySection = document.querySelector("#why-us");
                 whySection?.scrollIntoView({ behavior: "smooth" });
@@ -171,8 +109,10 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-[-20%]">
-        <h1 className="text-white/10 font-black text-[20vw]">Marketing</h1>
+      <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2">
+        <h1 className="text-center font-black text-[20vw] text-white/10">
+          Marketing
+        </h1>
       </div>
     </section>
   );
