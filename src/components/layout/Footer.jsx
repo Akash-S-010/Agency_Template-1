@@ -110,21 +110,21 @@ const Footer = () => {
           {/* Social Media Icons */}
           <div className="flex justify-center gap-2 md:gap-4 mt-8">
             <a 
-              href="https://www.instagram.com/velvet_byte?igsh=MWFlZXZlMnlnaXM4bw==" 
+              href="#" 
               className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="Instagram"
             >
               <FaInstagram size={24} />
             </a>
             <a 
-              href="https://www.facebook.com/profile.php?id=61570463492944" 
+              href="#" 
               className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="Facebook"
             >
               <FaFacebook size={24} />
             </a>
             <a
-              href="https://www.linkedin.com/company/Beyond/posts/?feedView=all"
+              href="#"
               className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="LinkedIn"
             >
