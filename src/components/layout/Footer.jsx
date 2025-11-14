@@ -81,12 +81,12 @@ const Footer = () => {
                   href="mailto:support@Beyond.com"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                 >
-                  support@Beyond.com
+                  support@beyond.com
                 </a>
               </li>
               <li>
                 <a href="tel:+91 8304826261" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  +91 8304826261
+                  +91 9999999999
                 </a>
               </li>
               <li className="text-gray-300">Dubai</li>
@@ -104,7 +104,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Copyright Notice */}
           <div className="text-center md:text-left mt-8 text-sm text-gray-300">
-            <p>&copy; Copyright 2025, Beyond</p>
+            <p>&copy; Copyright 2025, .beyond</p>
           </div>
 
           {/* Social Media Icons */}
