@@ -81,7 +81,7 @@ const Hero = () => {
           </div>
 
           <div
-            className={`flex flex-col items-center gap-4 transition-all duration-700 sm:flex-row sm:justify-center ${
+            className={`w-full flex flex-col items-center gap-4 transition-all duration-700 md:flex-row md:justify-center ${
               contentVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-6"
@@ -90,7 +90,7 @@ const Hero = () => {
             <Button
               text="Request a quote"
               variant="secondary"
-              className="w-full !px-4 !py-3 text-sm font-semibold uppercase border border-white/50 sm:w-56"
+              className="w-full !px-4 !py-3 text-sm font-semibold uppercase border border-white/50 md:w-56"
               onClick={() => {
                 const contactSection = document.querySelector("#contact");
                 contactSection?.scrollIntoView({ behavior: "smooth" });
@@ -99,7 +99,7 @@ const Hero = () => {
             <Button
               text="Why us"
               variant="secondary"
-              className="w-full  !px-4 !py-3 text-sm font-semibold uppercase border border-white/50 sm:w-56"
+              className="w-full !px-4 !py-3 text-sm font-semibold uppercase border border-white/50 md:w-56"
               onClick={() => {
                 const whySection = document.querySelector("#why-us");
                 whySection?.scrollIntoView({ behavior: "smooth" });
