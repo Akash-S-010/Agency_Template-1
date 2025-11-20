@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -169,7 +170,7 @@ const Header = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[60] flex items-center justify-center px-6 md:px-20"
+          className="fixed inset-0 z-[60] overflow-y-auto px-6 md:px-20 py-24 lg:py-0 flex items-center justify-center"
           style={{
             backgroundColor: "#111dbf",
           }}
@@ -205,16 +206,16 @@ const Header = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="hidden lg:flex flex-col space-y-12 pl-12 border-l border-white/10 py-12"
+              className="flex flex-col space-y-8 lg:space-y-12 mt-12 lg:mt-0 lg:pl-12 lg:border-l border-white/20 py-4 lg:py-12"
             >
               <div>
-                <h3 className="text-white/60 text-sm uppercase tracking-[0.2em]">
+                <h3 className="text-white/60 text-xs tracking-wider uppercase  mb-2">
                   Contact
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-2">
                   <a
                     href="tel:+971501234567"
-                    className="block text-3xl font-light text-white hover:text-white/80 transition-colors"
+                    className="block text-2xl lg:text-3xl font-light text-white hover:text-white/80 transition-colors"
                   >
                     +971 50 123 4567
                   </a>
@@ -222,24 +223,53 @@ const Header = () => {
               </div>
 
               <div>
-                <h3 className="text-white/60 text-sm uppercase tracking-[0.2em]">
+                <h3 className="text-white/60 text-xs tracking-wider uppercase  mb-2">
                   Email
                 </h3>
                 <a
                   href="mailto:hello@beyond.agency"
-                  className="block text-3xl font-light text-white hover:text-white/80 transition-colors"
+                  className="block text-2xl lg:text-3xl font-light text-white hover:text-white/80 transition-colors"
                 >
                   hello@beyond.agency
                 </a>
               </div>
-              
+
               <div>
-                <h3 className="text-white/60 text-sm uppercase tracking-[0.2em]">
+                <h3 className="text-white/60 text-xs tracking-wider uppercase  mb-2">
                   Address
                 </h3>
-                <span className="block text-3xl font-light text-white hover:text-white/80 transition-colors">
+                <span className="block text-2xl lg:text-3xl font-light text-white hover:text-white/80 transition-colors">
                   Dubai, UAE
                 </span>
+              </div>
+
+              <div>
+                <h3 className="text-white/60 text-xs tracking-wider uppercase  mb-2">
+                  Follow Us
+                </h3>
+                <div className="flex gap-6">
+                  <a
+                    href="#"
+                    className="text-white hover:text-white/80 transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <FaInstagram className="text-2xl" />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-white hover:text-white/80 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <FaLinkedin className="text-2xl" />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-white hover:text-white/80 transition-colors"
+                    aria-label="Twitter"
+                  >
+                    <FaTwitter className="text-2xl" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>
