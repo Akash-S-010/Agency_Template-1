@@ -169,34 +169,76 @@ const Header = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[60] flex items-center justify-start px-6 md:px-18"
+          className="fixed inset-0 z-[60] flex items-center justify-center px-6 md:px-20"
           style={{
             backgroundColor: "#111dbf",
           }}
         >
-          {/* Menu Links */}
-          <div className="relative z-10 flex flex-col justify-center items-start space-y-6 max-w-4xl w-full">
-            {menuItems.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Link
-                  to={item.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center group"
+          <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full lg:h-auto">
+            {/* Left: Navigation */}
+            <div className="flex flex-col justify-center items-start space-y-6">
+              {menuItems.map((item, index) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <span className="text-white/70 text-sm font-medium">
-                    0{item.id} ----
-                  </span>
-                  <div className="text-4xl md:text-6xl font-normal ml-4 text-white hover:text-white/80 hover:scale-105 transition duration-300 ease-in-out">
-                    {item.label}
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    to={item.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center group"
+                  >
+                    <span className="text-white/70 text-sm font-medium">
+                      0{item.id} ----
+                    </span>
+                    <div className="text-4xl md:text-6xl font-normal ml-4 text-white hover:text-white/80 hover:scale-105 transition duration-300 ease-in-out">
+                      {item.label}
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Right: Contact Information */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="hidden lg:flex flex-col space-y-12 pl-12 border-l border-white/10 py-12"
+            >
+              <div>
+                <h3 className="text-white/60 text-sm uppercase tracking-[0.2em]">Contact</h3>
+                <div className="space-y-4">
+                  <a 
+                    href="tel:+971501234567" 
+                    className="block text-3xl font-light text-white hover:text-white/80 transition-colors"
+                  >
+                    +971 50 123 4567
+                  </a>
+                  
+                </div>
+              </div>
+
+              <div >
+                <h3 className="text-white/60 text-sm uppercase tracking-[0.2em]">Address</h3>
+                <span
+                  className="block text-3xl font-light text-white hover:text-white/80 transition-colors"
+                >
+                  Dubai, UAE
+                </span>
+              </div>
+
+              <div>
+                <h3 className="text-white/60 text-sm uppercase tracking-[0.2em]">Email</h3>
+                <a 
+                  href="mailto:hello@beyond.agency" 
+                  className="block text-3xl font-light text-white hover:text-white/80 transition-colors"
+                >
+                  hello@beyond.agency
+                </a>
+              </div>
+            </motion.div>
           </div>
 
           {/* Click Outside to Close */}

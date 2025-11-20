@@ -27,8 +27,8 @@ const FeaturedWorks = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-20 bg-slate-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24 px-6 md:px-12 lg:px-20">
+      <div className="mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -37,10 +37,7 @@ const FeaturedWorks = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <span className="inline-block px-4 py-2 text-primary text-xs uppercase font-light rounded-full mb-4">
-            /-- Featured Works
-          </span>
-          <h2 className="font-title text-3xl md:text-5xl font-normal text-black mb-4">
+          <h2 className="text-3xl md:text-5xl font-normal text-black mb-4">
             Recent Projects We're Proud Of
           </h2>
           <p className="text-lg text-slate-600 max-w-3xl">
@@ -58,7 +55,7 @@ const FeaturedWorks = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="group bg-white cursor-pointer overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
             >
               {/* Project Image */}
               <div className="relative h-64 md:h-80 overflow-hidden">
@@ -95,10 +92,10 @@ const FeaturedWorks = () => {
                 </div>
 
                 {/* View Project Link */}
-                <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-4 transition-all duration-300">
+                {/* <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-4 transition-all duration-300">
                   <span>View Project</span>
                   <ArrowRight className="w-5 h-5" />
-                </div>
+                </div> */}
               </div>
             </motion.div>
           ))}
