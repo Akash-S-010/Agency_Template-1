@@ -180,7 +180,7 @@ const Card = memo(function Card({
           {/* LEFT: Text */}
           <div className="flex flex-col max-w-2xl justify-center">
             <div className="space-y-6 lg:space-y-8">
-              <div className="inline-flex items-center gap-2 bg-white backdrop-blur-sm px-4 py-2 rounded-full text-sm font-light border border-gray-400 text-black">
+              <div className="hidden sm:inline-flex items-center gap-2 bg-white backdrop-blur-sm px-4 py-2 rounded-full text-sm font-light border border-gray-400 text-black">
                 <Award size={16} className="text-primary" />
                 {category}
               </div>
