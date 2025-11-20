@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 import BlurText from "../ui/BlurText";
 import { Highlighter } from "../ui/Highlighter";
@@ -10,6 +11,7 @@ import { SplashCursor } from "../ui/SplashCursor";
 const Hero = () => {
   const [contentVisible, setContentVisible] = useState(false);
   const heroRef = useRef(null);
+  const navigate = useNavigate();
 
   return (
     <section ref={heroRef} className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-primary text-white">
@@ -21,7 +23,7 @@ const Hero = () => {
       <div className="relative z-10 mx-auto flex min-h-screen w-full items-center justify-center px-6 py-24 md:px-20">
         <div className="flex w-full flex-col items-center gap-12 text-center">
           <div className="space-y-4">
-            <h1 className="mt-10 font-title text-6xl font-light text-white md:text-7xl md:leading-tight">
+            <h1 className="mt-6 font-title text-6xl font-light text-white md:text-7xl md:leading-tight">
               <span
                 className={`block transition-all duration-700 ${
                   contentVisible
@@ -91,10 +93,7 @@ const Hero = () => {
               text="Request a quote"
               variant="secondary"
               className="w-full !px-4 !py-3 text-sm font-semibold uppercase border border-white/50 md:w-56"
-              onClick={() => {
-                const contactSection = document.querySelector("#contact");
-                contactSection?.scrollIntoView({ behavior: "smooth" });
-              }}
+              onClick={() => navigate('/contact')}
             />
             <Button
               text="Why us"

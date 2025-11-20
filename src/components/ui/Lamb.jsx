@@ -98,7 +98,7 @@ const LampDemo = () => {
           {/* 10+ - Years crafting digital experiences */}
           <div className="flex items-center justify-between border-b border-primary/30 pb-12">
             <div className="text-7xl md:text-8xl font-light">
-              10+
+              1+
             </div>
             <div className="text-2xl md:text-3xl font-light text-right">
               Years crafting digital
@@ -110,7 +110,7 @@ const LampDemo = () => {
           {/* 150+ - Happy clients */}
           <div className="flex items-center justify-between pb-12">
             <div className="text-7xl md:text-8xl font-light">
-              150+
+              100+
             </div>
             <div className="text-2xl md:text-3xl font-light text-right">
               Happy clients
