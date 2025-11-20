@@ -78,13 +78,13 @@ const IntroCard = memo(function IntroCard({ progress, range, targetScale }) {
         style={{ scale, willChange: "transform" }}
         className="relative w-full h-full overflow-hidden bg-white [transform:translateZ(0)] border-t border-b border-gray-300"
       >
-        <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 lg:p-12 xl:p-16 text-center max-w-4xl mx-auto">
-          <h1 className="font-title text-3xl md:text-7xl font-bold text-primary mb-6">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center p-6 md:p-8 lg:p-12 xl:p-16 text-center max-w-4xl mx-auto">
+          <h1 className="font-title text-4xl md:text-6xl lg:text-7xl font-bold text-primary mb-4 md:mb-6">
             What We've Done
           </h1>
 
-          <p className="text-lg md:text-3xl font-light text-muted leading-relaxed max-w-3xl mb-8">
-            A curated selection of projects where I turned complex problems into intuitive,
+          <p className="text-base md:text-xl lg:text-2xl xl:text-3xl font-light text-muted leading-relaxed max-w-3xl mb-6 md:mb-8">
+            A curated selection of projects where we turned complex problems into intuitive,
             high-impact digital experiences. Scroll down to explore the case studies.
           </p>
 
@@ -176,7 +176,7 @@ const Card = memo(function Card({
         className={`relative w-full h-full overflow-hidden ${bgColor} [transform:translateZ(0)] border-t border-b border-gray-300`}
       >
         {/* Content Grid */}
-        <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 p-8 lg:p-12 xl:p-16">
+        <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 p-6 md:p-8 lg:p-12 xl:p-16">
           {/* LEFT: Text */}
           <div className="flex flex-col max-w-2xl justify-center">
             <div className="space-y-6 lg:space-y-8">
@@ -185,19 +185,19 @@ const Card = memo(function Card({
                 {category}
               </div>
 
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-black leading-tight">
                 {title}
               </h2>
 
-              <p className="text-lg md:text-xl font-normal text-muted leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl font-normal text-muted leading-relaxed">
                 {description}
               </p>
 
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-3 md:gap-4">
                 {Object.entries(metrics).map(([key, value]) => (
                   <div key={key} className="space-y-1">
-                    <div className="text-2xl md:text-3xl font-light text-black">{value}</div>
-                    <div className="text-sm text-muted capitalize">{key}</div>
+                    <div className="text-xl md:text-2xl lg:text-3xl font-light text-black">{value}</div>
+                    <div className="text-xs md:text-sm text-muted capitalize">{key}</div>
                   </div>
                 ))}
               </div>
@@ -222,7 +222,7 @@ const Card = memo(function Card({
 
           {/* RIGHT: Image Grid */}
           <div className="flex items-center justify-center lg:justify-end">
-            <div className="grid grid-cols-2 gap-6 max-w-lg w-full">
+            <div className="grid grid-cols-2 gap-x-3 gap-y-6 max-w-xl w-full">
               {images.map((src, idx) => {
                 return (
                   <div
