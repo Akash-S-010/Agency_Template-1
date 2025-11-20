@@ -7,7 +7,7 @@ const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [hasScrolled, setHasScrolled] = useState(false);
   const location = useLocation();
-  
+
   // Check if we're on homepage (has hero section)
   const isHomepage = location.pathname === "/";
 
@@ -89,11 +89,11 @@ const Header = () => {
           isMenuOpen
             ? "bg-transparent"
             : hasScrolled
-              ? "bg-white/95 shadow-md backdrop-blur"
-              : "bg-transparent"
+            ? "bg-white/95 shadow-md backdrop-blur"
+            : "bg-transparent"
         }`}
         style={{
-          transition: "background-color 0.4s ease, box-shadow 0.4s ease"
+          transition: "background-color 0.4s ease, box-shadow 0.4s ease",
         }}
       >
         <Link to="/" className="flex items-center">
@@ -125,11 +125,11 @@ const Header = () => {
                 d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
                 style={{
                   fill: "none",
-                  stroke: isMenuOpen 
-                    ? "white" 
-                    : isHomepage && !hasScrolled 
-                      ? "white" 
-                      : "#111dbf",
+                  stroke: isMenuOpen
+                    ? "white"
+                    : isHomepage && !hasScrolled
+                    ? "white"
+                    : "#111dbf",
                   strokeLinecap: "round",
                   strokeLinejoin: "round",
                   strokeWidth: 3,
@@ -145,11 +145,11 @@ const Header = () => {
                 d="M7 16 27 16"
                 style={{
                   fill: "none",
-                  stroke: isMenuOpen 
-                    ? "white" 
-                    : isHomepage && !hasScrolled 
-                      ? "white" 
-                      : "#111dbf",
+                  stroke: isMenuOpen
+                    ? "white"
+                    : isHomepage && !hasScrolled
+                    ? "white"
+                    : "#111dbf",
                   strokeLinecap: "round",
                   strokeLinejoin: "round",
                   strokeWidth: 3,
@@ -208,35 +208,38 @@ const Header = () => {
               className="hidden lg:flex flex-col space-y-12 pl-12 border-l border-white/10 py-12"
             >
               <div>
-                <h3 className="text-white/60 text-sm uppercase tracking-[0.2em]">Contact</h3>
+                <h3 className="text-white/60 text-sm uppercase tracking-[0.2em]">
+                  Contact
+                </h3>
                 <div className="space-y-4">
-                  <a 
-                    href="tel:+971501234567" 
+                  <a
+                    href="tel:+971501234567"
                     className="block text-3xl font-light text-white hover:text-white/80 transition-colors"
                   >
                     +971 50 123 4567
                   </a>
-                  
                 </div>
               </div>
 
-              <div >
-                <h3 className="text-white/60 text-sm uppercase tracking-[0.2em]">Address</h3>
-                <span
-                  className="block text-3xl font-light text-white hover:text-white/80 transition-colors"
-                >
-                  Dubai, UAE
-                </span>
-              </div>
-
               <div>
-                <h3 className="text-white/60 text-sm uppercase tracking-[0.2em]">Email</h3>
-                <a 
-                  href="mailto:hello@beyond.agency" 
+                <h3 className="text-white/60 text-sm uppercase tracking-[0.2em]">
+                  Email
+                </h3>
+                <a
+                  href="mailto:hello@beyond.agency"
                   className="block text-3xl font-light text-white hover:text-white/80 transition-colors"
                 >
                   hello@beyond.agency
                 </a>
+              </div>
+              
+              <div>
+                <h3 className="text-white/60 text-sm uppercase tracking-[0.2em]">
+                  Address
+                </h3>
+                <span className="block text-3xl font-light text-white hover:text-white/80 transition-colors">
+                  Dubai, UAE
+                </span>
               </div>
             </motion.div>
           </div>
