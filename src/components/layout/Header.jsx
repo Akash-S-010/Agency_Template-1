@@ -175,7 +175,7 @@ const Header = () => {
             backgroundColor: "#111dbf",
           }}
         >
-          <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full lg:h-auto">
+          <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center h-full lg:h-auto">
             {/* Left: Navigation */}
             <div className="flex flex-col justify-center items-start space-y-6">
               {menuItems.map((item, index) => (
@@ -206,7 +206,7 @@ const Header = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col space-y-8 lg:space-y-12 mt-12 lg:mt-0 lg:pl-12 lg:border-l border-white/20 py-4 lg:py-12"
+              className="flex flex-col space-y-6 lg:space-y-12 mt-4 lg:mt-0 lg:pl-12 lg:border-l border-white/20 py-4 lg:py-12"
             >
               <div>
                 <h3 className="text-white/60 text-xs tracking-wider uppercase  mb-2">
