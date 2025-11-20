@@ -25,7 +25,7 @@ const contactDetails = [
   {
     icon: <MapPin className="w-6 h-6 text-primary" />,
     title: "Office",
-    description: "3rd Floor, Tech Park, Bengaluru, India",
+    description: "Dubai",
   },
 ];
 
