@@ -38,7 +38,7 @@ const PortfolioGallery = () => {
               key={project.title}
               className="group relative overflow-hidden border border-gray-200 shadow-sm bg-white"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden cursor-pointer">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -54,7 +54,7 @@ const PortfolioGallery = () => {
                 <p className="text-gray-600 leading-relaxed">{project.description}</p>
               </div>
 
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="pointer-events-none absolute bottom-6 left-6 right-6 flex items-center justify-between opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                 <span className="text-sm uppercase tracking-[0.3em] text-white font-medium">View Case</span>
                 <span className="text-sm text-white/80">↗</span>
