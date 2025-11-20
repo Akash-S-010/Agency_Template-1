@@ -185,11 +185,6 @@ const Card = memo(function Card({
                 {category}
               </div>
 
-              <div className="inline-flex items-center gap-2 bg-white backdrop-blur-sm px-4 py-2 rounded-full text-sm font-light border border-gray-400 text-black">
-                <Award size={16} className="text-primary" />
-                {category}
-              </div>
-
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black leading-tight">
                 {title}
               </h2>
