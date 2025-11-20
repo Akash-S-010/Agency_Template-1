@@ -116,7 +116,7 @@ const About = () => {
 
       {/* FAQ Section */}
       <motion.section
-        className="pb-24 px-6 md:px-12 lg:px-20 bg-white"
+        className="bg-white"
         {...sectionRevealProps}
       >
         <div className="max-w-7xl mx-auto">
