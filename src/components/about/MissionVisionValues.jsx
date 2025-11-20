@@ -31,7 +31,7 @@ const pillars = [
 const MissionVisionValues = () => {
   return (
     <section className="relative overflow-hidden rounded-[40px] bg-white text-muted">
-      <div className="relative px-8">
+      <div className="relative">
         <div className="max-w-3xl space-y-4">
           <h2 className="text-3xl font-light leading-tight md:text-5xl text-black">
             The beliefs that power every partnership at Beyond Agency.
