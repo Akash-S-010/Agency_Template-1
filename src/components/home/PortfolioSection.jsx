@@ -32,7 +32,7 @@ const projects = [
     images: [
       "https://i.pinimg.com/1200x/a5/9f/77/a59f7703faef0d07c99b89909b5343c7.jpg",
       "https://i.pinimg.com/736x/bd/cb/59/bdcb59330b04884ed3a141d517443c39.jpg",
-      "https://i.pinimg.com/736x/3a/cd/fe/3acdfe44f29d72bcf748e4cdca7b6d57c.jpg",
+      "https://i.pinimg.com/1200x/18/87/ac/1887acda47f5d02d2d7f87d1a2030d32.jpg",
       "https://i.pinimg.com/736x/2d/f5/8a/2df58a6fd1aeac33a1b828e2c3f5d05d.jpg",
     ],
   },
@@ -180,6 +180,11 @@ const Card = memo(function Card({
           {/* LEFT: Text */}
           <div className="flex flex-col max-w-2xl justify-center">
             <div className="space-y-6 lg:space-y-8">
+              <div className="inline-flex items-center gap-2 bg-white backdrop-blur-sm px-4 py-2 rounded-full text-sm font-light border border-gray-400 text-black">
+                <Award size={16} className="text-primary" />
+                {category}
+              </div>
+
               <div className="inline-flex items-center gap-2 bg-white backdrop-blur-sm px-4 py-2 rounded-full text-sm font-light border border-gray-400 text-black">
                 <Award size={16} className="text-primary" />
                 {category}
