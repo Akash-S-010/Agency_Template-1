@@ -54,9 +54,9 @@ const PortfolioGallery = () => {
                 <p className="text-gray-600 leading-relaxed">{project.description}</p>
               </div>
 
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="pointer-events-none absolute bottom-6 left-6 right-6 flex items-center justify-between opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <span className="text-sm uppercase tracking-[0.3em] text-white">View Case</span>
+                <span className="text-sm uppercase tracking-[0.3em] text-white font-medium">View Case</span>
                 <span className="text-sm text-white/80">↗</span>
               </div>
             </article>
