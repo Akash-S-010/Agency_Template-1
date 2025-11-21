@@ -21,7 +21,7 @@ const Hero = () => {
 
       {/* Main Content */}
       <div className="relative z-10 mx-auto flex min-h-screen select-none w-full  items-center justify-center px-6 py-24 md:px-20">
-        <div className="flex w-full flex-col items-center gap-12 text-center">
+        <div className="flex w-full flex-col items-center gap-12 text-center mt-10">
           <div className="space-y-4">
             <h1 className="mt-6 font-title text-6xl font-light text-white md:text-7xl md:leading-tight">
               <span

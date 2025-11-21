@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaTwitter, FaPhone, FaEnvelope } from "react-icons/fa6";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,22 +71,13 @@ const Header = () => {
   /* ---------- CLOSE MENU ON ROUTE CHANGE ---------- */
   useEffect(() => setIsMenuOpen(false), [location]);
 
-  /* ---------- ESC KEY CLOSE ---------- */
-  useEffect(() => {
-    const onEsc = (e) => {
-      if (e.key === "Escape" && isMenuOpen) setIsMenuOpen(false);
-    };
-    window.addEventListener("keydown", onEsc);
-    return () => window.removeEventListener("keydown", onEsc);
-  }, [isMenuOpen]);
-
   return (
     <>
       {/* ==== NAVBAR ==== */}
       <motion.header
-        animate={{ y: isVisible ? 0 : -100 }}
+        animate={{ y: isVisible ? "0%" : "-100%" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-between px-4 md:px-8 py-4 ${
+        className={`fixed top-0 left-0 right-0 z-[70] flex flex-col border border-b-white/20 ${
           isMenuOpen
             ? "bg-transparent"
             : hasScrolled
@@ -97,179 +88,200 @@ const Header = () => {
           transition: "background-color 0.4s ease, box-shadow 0.4s ease",
         }}
       >
-        <Link to="/" className="flex items-center">
-          <img
-            src={logoSrc}
-            alt="Beyond"
-            className="h-6 w-auto transition-opacity duration-300"
-          />
-          <span className="sr-only">Beyond</span>
-        </Link>
-
-        {/* ==== HAMBURGER ICON (Light Theme Version) ==== */}
-        <div className="relative z-[80]">
-          <label className="hamburger cursor-pointer block">
-            <input
-              type="checkbox"
-              checked={isMenuOpen}
-              onChange={() => setIsMenuOpen(!isMenuOpen)}
-              className="hidden"
-            />
-            <svg
-              viewBox="0 0 32 32"
-              className="h-12 transition-transform duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-              style={{ transform: isMenuOpen ? "rotate(-45deg)" : "none" }}
+        {/* ==== TOP HEADER (Desktop Only) ==== */}
+        <div className=" w-full hidden md:flex justify-center gap-20 items-center px-8 py-3 bg-blue-950 text-white text-sm font-medium tracking-wide">
+          <div className="flex items-center gap-10">
+            <a
+              href="tel:#"
+              className="hover:text-white/70 transition-colors flex items-center"
             >
-              {/* Top & Bottom Lines → X */}
-              <path
-                className="line line-top-bottom"
-                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
-                style={{
-                  fill: "none",
-                  stroke: isMenuOpen
-                    ? "white"
-                    : isHomepage && !hasScrolled
-                    ? "white"
-                    : "#111dbf",
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  strokeWidth: 3,
-                  strokeDasharray: isMenuOpen ? "20 300" : "12 63",
-                  strokeDashoffset: isMenuOpen ? "-32.42" : "0",
-                  transition:
-                    "stroke-dasharray 600ms cubic-bezier(0.4,0,0.2,1), stroke-dashoffset 600ms cubic-bezier(0.4,0,0.2,1), stroke 300ms ease",
-                }}
+              <FaPhone className="mr-2" />+971 50 123 4567
+            </a>
+            <a
+              href="mailto:hello@beyond.agency"
+              className="hover:text-white/70 transition-colors flex items-center"
+            >
+              <FaEnvelope className="mr-2" />hello@beyond.agency
+            </a>
+            <span>Dubai, UAE</span>
+            <div className="flex gap-2">
+              <a href="#" className="hover:text-white/70 transition-colors">
+                <FaInstagram size={17}/>
+              </a>
+              <a href="#" className="hover:text-white/70 transition-colors">
+                <FaLinkedin size={17}/>
+              </a>
+              <a href="#" className="hover:text-white/70 transition-colors">
+                <FaTwitter size={17}/>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* ==== MAIN HEADER CONTENT ==== */}
+        <div className="flex items-center justify-between px-4 md:px-8 py-4">
+          <Link to="/" className="flex items-center">
+            <img
+              src={logoSrc}
+              alt="Beyond"
+              className="h-6 w-auto transition-opacity duration-300"
+            />
+            <span className="sr-only">Beyond</span>
+          </Link>
+
+          {/* ==== DESKTOP NAVIGATION ==== */}
+          <nav className="hidden md:flex items-center gap-8">
+            {menuItems.map((item) => (
+              <Link
+                key={item.id}
+                to={item.path}
+                className={`relative text-sm font-medium transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-yellow-300 after:transition-all after:duration-300 after:w-0 hover:after:w-full ${
+                  isHomepage && !hasScrolled
+                    ? "text-white hover:text-white/70"
+                    : "text-gray-900 hover:text-[#111dbf]"
+                }`}
+              >
+                <span>{item.label}</span>
+              </Link>
+            ))}
+          </nav>
+
+          {/* ==== HAMBURGER ICON (Mobile Only) ==== */}
+          <div className="relative z-[80] md:hidden">
+            <label className="hamburger cursor-pointer block">
+              <input
+                type="checkbox"
+                checked={isMenuOpen}
+                onChange={() => setIsMenuOpen(!isMenuOpen)}
+                className="hidden"
               />
-              {/* Middle Line → Disappears */}
-              <path
-                className="line"
-                d="M7 16 27 16"
-                style={{
-                  fill: "none",
-                  stroke: isMenuOpen
-                    ? "white"
-                    : isHomepage && !hasScrolled
-                    ? "white"
-                    : "#111dbf",
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  strokeWidth: 3,
-                  transition:
-                    "stroke-dasharray 600ms cubic-bezier(0.4,0,0.2,1), stroke-dashoffset 600ms cubic-bezier(0.4,0,0.2,1), stroke 300ms ease",
-                }}
-              />
-            </svg>
-          </label>
+              <svg
+                viewBox="0 0 32 32"
+                className="h-12 transition-transform duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+                style={{ transform: isMenuOpen ? "rotate(-45deg)" : "none" }}
+              >
+                {/* Top & Bottom Lines → X */}
+                <path
+                  className="line line-top-bottom"
+                  d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+                  style={{
+                    fill: "none",
+                    stroke: isMenuOpen
+                      ? "white"
+                      : isHomepage && !hasScrolled
+                      ? "white"
+                      : "#111dbf",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    strokeWidth: 3,
+                    strokeDasharray: isMenuOpen ? "20 300" : "12 63",
+                    strokeDashoffset: isMenuOpen ? "-32.42" : "0",
+                    transition:
+                      "stroke-dasharray 600ms cubic-bezier(0.4,0,0.2,1), stroke-dashoffset 600ms cubic-bezier(0.4,0,0.2,1), stroke 300ms ease",
+                  }}
+                />
+                {/* Middle Line → Disappears */}
+                <path
+                  className="line"
+                  d="M7 16 27 16"
+                  style={{
+                    fill: "none",
+                    stroke: isMenuOpen
+                      ? "white"
+                      : isHomepage && !hasScrolled
+                      ? "white"
+                      : "#111dbf",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    strokeWidth: 3,
+                    transition:
+                      "stroke-dasharray 600ms cubic-bezier(0.4,0,0.2,1), stroke-dashoffset 600ms cubic-bezier(0.4,0,0.2,1), stroke 300ms ease",
+                  }}
+                />
+              </svg>
+            </label>
+          </div>
         </div>
       </motion.header>
 
-      {/* ==== FULL-SCREEN MENU ==== */}
+      {/* ==== FULL-SCREEN MENU (Mobile Only) ==== */}
       {isMenuOpen && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[60] overflow-y-auto px-6 md:px-20 py-24 lg:py-0 flex items-center justify-center"
+          className="fixed inset-0 z-[60] overflow-y-auto px-6 py-24 flex items-center justify-center md:hidden"
           style={{
             backgroundColor: "#111dbf",
           }}
         >
-          <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center h-full lg:h-auto">
-            {/* Left: Navigation */}
-            <div className="flex flex-col justify-center items-start space-y-6">
+          <div className="relative z-10 w-full max-w-lg flex flex-col items-center space-y-8">
+            {/* Navigation */}
+            <div className="flex flex-col items-center space-y-6 w-full">
               {menuItems.map((item, index) => (
                 <motion.div
                   key={item.id}
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="w-full text-center"
                 >
                   <Link
                     to={item.path}
                     onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center group"
+                    className="block text-3xl font-normal text-white hover:text-white/70 transition duration-300"
                   >
-                    <span className="text-white/70 text-sm font-medium">
-                      0{item.id} ----
-                    </span>
-                    <div className="text-4xl md:text-6xl font-normal ml-4 text-white hover:text-white/80 hover:scale-105 transition duration-300 ease-in-out">
-                      {item.label}
-                    </div>
+                    {item.label}
                   </Link>
                 </motion.div>
               ))}
             </div>
 
-            {/* Right: Contact Information */}
+            {/* Contact Information */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col space-y-6 lg:space-y-12 mt-4 lg:mt-0 lg:pl-12 lg:border-l border-white/20 py-4 lg:py-12"
+              className="flex flex-col items-center space-y-6 pt-8 border-t border-white/20 w-full"
             >
-              <div>
-                <h3 className="text-white/60 text-xs tracking-wider uppercase  mb-2">
-                  Contact
-                </h3>
-                <div className="space-y-2">
-                  <a
-                    href="tel:+971501234567"
-                    className="block text-2xl lg:text-3xl font-light text-white hover:text-white/80 transition-colors"
-                  >
-                    +971 50 123 4567
-                  </a>
-                </div>
+              <div className="text-center">
+                <a
+                  href="tel:+971501234567"
+                  className="block text-xl font-light text-white hover:text-white/70 transition-colors"
+                >
+                  +971 50 123 4567
+                </a>
               </div>
 
-              <div>
-                <h3 className="text-white/60 text-xs tracking-wider uppercase  mb-2">
-                  Email
-                </h3>
+              <div className="text-center">
                 <a
                   href="mailto:hello@beyond.agency"
-                  className="block text-2xl lg:text-3xl font-light text-white hover:text-white/80 transition-colors"
+                  className="block text-xl font-light text-white hover:text-white/70 transition-colors"
                 >
                   hello@beyond.agency
                 </a>
               </div>
 
-              <div>
-                <h3 className="text-white/60 text-xs tracking-wider uppercase  mb-2">
-                  Address
-                </h3>
-                <span className="block text-2xl lg:text-3xl font-light text-white hover:text-white/80 transition-colors">
-                  Dubai, UAE
-                </span>
-              </div>
-
-              <div>
-                <h3 className="text-white/60 text-xs tracking-wider uppercase  mb-2">
-                  Follow Us
-                </h3>
-                <div className="flex gap-6">
-                  <a
-                    href="#"
-                    className="text-white hover:text-white/80 transition-colors"
-                    aria-label="Instagram"
-                  >
-                    <FaInstagram className="text-2xl" />
-                  </a>
-                  <a
-                    href="#"
-                    className="text-white hover:text-white/80 transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <FaLinkedin className="text-2xl" />
-                  </a>
-                  <a
-                    href="#"
-                    className="text-white hover:text-white/80 transition-colors"
-                    aria-label="Twitter"
-                  >
-                    <FaTwitter className="text-2xl" />
-                  </a>
-                </div>
+              <div className="flex gap-6">
+                <a
+                  href="#"
+                  className="text-white hover:text-white/70 transition-colors"
+                >
+                  <FaInstagram className="text-2xl" />
+                </a>
+                <a
+                  href="#"
+                  className="text-white hover:text-white/70 transition-colors"
+                >
+                  <FaLinkedin className="text-2xl" />
+                </a>
+                <a
+                  href="#"
+                  className="text-white hover:text-white/70 transition-colors"
+                >
+                  <FaTwitter className="text-2xl" />
+                </a>
               </div>
             </motion.div>
           </div>
