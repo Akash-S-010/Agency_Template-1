@@ -218,21 +218,24 @@ const Header = () => {
         >
           <div className="relative z-10 w-full max-w-lg flex flex-col items-center space-y-8">
             {/* Navigation */}
-            <div className="flex flex-col items-center space-y-6 w-full">
+            <div className="flex flex-col items-center space-y-6 w">
               {menuItems.map((item, index) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="w-full text-center"
+                  className="w-full text-left"
                 >
                   <Link
                     to={item.path}
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-3xl font-normal text-white hover:text-white/70 transition duration-300"
                   >
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm text-slate-400">/---</span>
                     {item.label}
+                    </div>
                   </Link>
                 </motion.div>
               ))}
