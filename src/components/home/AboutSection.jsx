@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import CardSwap, { Card } from "../ui/StackCardAnime";
 import Button from "../ui/Button";
 import video from "../../assets/marketing_video.mp4";
+import creativeFirstImg from "../../assets/creative-first.jpg";
+import data_driven_img from "../../assets/data-driven.jpg";
+import passionate_img from "../../assets/passionate-team.jpg";
+import remote_img from "../../assets/remote-first.jpg";
 
 const AboutSection = () => {
   const navigate = useNavigate();
@@ -258,7 +262,7 @@ const AboutSection = () => {
           <div className="w-full md:w-1/2">
             <div className="relative rounded-2xl overflow-hidden shadow-xl h-[350px] md:h-[400px]">
               <img
-                src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80"
+                src={creativeFirstImg}
                 alt="Creative design workspace"
                 className="w-full h-full object-cover"
               />
@@ -284,7 +288,7 @@ const AboutSection = () => {
           <div className="w-full md:w-1/2">
             <div className="relative rounded-2xl overflow-hidden shadow-xl h-[350px] md:h-[400px]">
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                src={data_driven_img}
                 alt="Data analytics dashboard"
                 className="w-full h-full object-cover"
               />
@@ -310,7 +314,7 @@ const AboutSection = () => {
           <div className="w-full md:w-1/2">
             <div className="relative rounded-2xl overflow-hidden shadow-xl h-[350px] md:h-[400px]">
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                src={remote_img}
                 alt="Remote team collaboration"
                 className="w-full h-full object-cover"
               />
@@ -336,7 +340,7 @@ const AboutSection = () => {
           <div className="w-full md:w-1/2">
             <div className="relative rounded-2xl overflow-hidden shadow-xl h-[350px] md:h-[400px]">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                src={passionate_img}
                 alt="Passionate marketing team"
                 className="w-full h-full object-cover"
               />
