@@ -4,32 +4,29 @@ const cards = [
   {
     title: "Highly Rated",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum illum aspernatur ipsam consequatur, enim provident corrupti quam, aliquid odio!",
-    video:"https://www.pexels.com/download/video/4199353/",
+      "Our clients consistently praise our quality and service. With hundreds of five-star reviews, we deliver exceptional results that exceed expectations every time.",
+    video: "https://www.pexels.com/download/video/4199353/",
     color: "from-blue-500 to-purple-600",
   },
   {
     title: "Fully Accredited",
     description:
       "With quality standard certifications like ISO and Google Partner, we're a trusted partner you can rely on.",
-    video:
-      "https://www.pexels.com/download/video/8971250/",
+    video: "https://www.pexels.com/download/video/8971250/",
     color: "from-emerald-500 to-teal-600",
   },
   {
     title: "Fully Bespoke",
     description:
       "Everything we create is custom-designed and developed by our team, tailored specifically to your needs. No templates, no generic designs, just something unique and made for you!",
-    video:
-      "https://www.pexels.com/download/video/19197449/",
+    video: "https://www.pexels.com/download/video/19197449/",
     color: "from-pink-500 to-rose-600",
   },
   {
     title: "Guaranteed Service",
     description:
       "Leading brands rely on us. Our service is fully guaranteed and backed by a warranty, ensuring complete support for every project we take on.",
-    video:
-      "https://www.pexels.com/download/video/7579950/",
+    video: "https://www.pexels.com/download/video/7579950/",
     color: "from-orange-500 to-red-600",
   },
 ];
@@ -89,7 +86,7 @@ function StackCard({ card, index, totalCards, activeIndex }) {
               muted
               playsInline
               className="w-full h-full object-cover block"
-              style={{ display: 'block' }}
+              style={{ display: "block" }}
             />
           </div>
 
