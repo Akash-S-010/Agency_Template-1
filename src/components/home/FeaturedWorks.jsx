@@ -30,11 +30,7 @@ const FeaturedWorks = () => {
     <section className="py-24 px-6 md:px-12 lg:px-20">
       <div className="mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <div
           className="mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-normal text-black mb-4">
@@ -44,17 +40,13 @@ const FeaturedWorks = () => {
             Explore our latest work showcasing innovative solutions, creative
             excellence, and measurable results for our clients.
           </p>
-        </motion.div>
+        </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {featuredProjects.map((project, index) => (
-            <motion.div
+            <div
               key={project.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
               className="group bg-white cursor-pointer overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
             >
               {/* Project Image */}
@@ -97,16 +89,12 @@ const FeaturedWorks = () => {
                   <ArrowRight className="w-5 h-5" />
                 </div> */}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* View All Link */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
+        <div
           className="text-center"
         >
           <Button 
@@ -114,7 +102,7 @@ const FeaturedWorks = () => {
             onClick={() => navigate('/portfolio')}
             className={"mx-auto"}
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );
