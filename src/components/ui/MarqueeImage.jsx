@@ -1,14 +1,10 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const ImageCard = ({ url, label }) => {
   return (
     <div className="flex-shrink-0 w-[350px] h-[250px] rounded-3xl overflow-hidden shadow-lg">
-      <img 
-        src={url}
-        alt={label}
-        className="w-full h-full object-cover"
-      />
+      <img src={url} alt={label} className="w-full h-full object-cover" />
     </div>
   );
 };
@@ -17,13 +13,13 @@ const ParallaxRow = ({ images, speed, direction, baseOffset }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    [baseOffset + (direction * -200), baseOffset + (direction * speed)]
+    [baseOffset + direction * -200, baseOffset + direction * speed]
   );
 
   return (
@@ -62,16 +58,16 @@ export default function MarqueeImage() {
 
   const row2Images = [
     {
-      url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
-      label: "Web development",
+      url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80",
+      label: "Team meeting tech",
     },
     {
-      url: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=900&q=80",
-      label: "Coding workspace",
+      url: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=900&q=80",
+      label: "Professional developer",
     },
     {
-      url: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=900&q=80",
-      label: "SEO analytics",
+      url: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
+      label: "Startup meeting",
     },
     {
       url: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
@@ -120,25 +116,45 @@ export default function MarqueeImage() {
   return (
     <div className="bg-white overflow-hidden h-screen">
       {/* Wrapper with slanted edges */}
-      <div 
+      <div
         className="relative w-full h-full"
         style={{
-          clipPath: 'polygon(0 4%, 100% 0, 100% 96%, 0 100%)',
+          clipPath: "polygon(0 4%, 100% 0, 100% 96%, 0 100%)",
         }}
       >
         {/* Parallax Section with Diagonal Slope */}
-        <div 
-          className="w-full h-full flex flex-col justify-center" 
-          style={{ 
-            transform: 'rotate(-18deg) scale(1.15)', 
-            transformOrigin: 'center center',
-            overflow: 'visible'
+        <div
+          className="w-full h-full flex flex-col justify-center"
+          style={{
+            transform: "rotate(-18deg) scale(1.15)",
+            transformOrigin: "center center",
+            overflow: "visible",
           }}
         >
-          <ParallaxRow images={row1Images} speed={50} direction={1} baseOffset={-300} />
-          <ParallaxRow images={row2Images} speed={60} direction={-1} baseOffset={100} />
-          <ParallaxRow images={row3Images} speed={55} direction={1} baseOffset={-200} />
-          <ParallaxRow images={row4Images} speed={65} direction={-1} baseOffset={50} />
+          <ParallaxRow
+            images={row1Images}
+            speed={50}
+            direction={1}
+            baseOffset={-300}
+          />
+          <ParallaxRow
+            images={row2Images}
+            speed={60}
+            direction={-1}
+            baseOffset={100}
+          />
+          <ParallaxRow
+            images={row3Images}
+            speed={55}
+            direction={1}
+            baseOffset={-200}
+          />
+          <ParallaxRow
+            images={row4Images}
+            speed={65}
+            direction={-1}
+            baseOffset={50}
+          />
         </div>
       </div>
     </div>
