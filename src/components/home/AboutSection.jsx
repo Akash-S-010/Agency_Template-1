@@ -72,7 +72,7 @@ const AboutSection = () => {
                   <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black/80 to-transparent"></div>
                 </div>
 
-                <div className="relative z-10 px-8 py-14 text-left">
+                <div className="relative z-10 pl-8 pr-20 md:px-8 py-14 text-left">
                   <h3 className="text-3xl text-gray-200 font-normal mb-2">
                     SEO Services
                   </h3>
