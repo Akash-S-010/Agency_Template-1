@@ -218,7 +218,7 @@ const Header = () => {
         >
           <div className="relative z-10 w-full max-w-lg flex flex-col items-center space-y-8">
             {/* Navigation */}
-            <div className="flex flex-col items-center space-y-6 w">
+            <div className="flex flex-col items-center space-y-6 w-full">
               {menuItems.map((item, index) => (
                 <motion.div
                   key={item.id}
@@ -232,8 +232,8 @@ const Header = () => {
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-3xl font-normal text-white hover:text-white/70 transition duration-300"
                   >
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm text-slate-400">/---</span>
+                    <div className="text-5xl flex items-center gap-2">
+                      <span className="text-sm text-slate-500">/---</span>
                     {item.label}
                     </div>
                   </Link>
@@ -246,7 +246,7 @@ const Header = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col items-center space-y-6 pt-8 border-t border-white/20 w-full"
+              className="flex flex-col items-start space-y-6 pt-8 border-t border-white/20 w-full"
             >
               <div className="text-center">
                 <a
