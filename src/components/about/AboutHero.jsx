@@ -6,7 +6,7 @@ const bannerImage =
 
 const AboutHero = () => {
   return (
-    <div className="pt-40">
+    <div className="pt-40 px-4 lg:px-6">
       <div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-7xl mx-auto">
           <div className="lg:col-span-7 space-y-8">
