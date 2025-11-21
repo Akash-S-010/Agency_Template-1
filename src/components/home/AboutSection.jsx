@@ -29,8 +29,8 @@ const AboutSection = () => {
               Who We Are.
             </h1>
             <p className="text-lg md:text-2xl leading-relaxed font-normal text-muted">
-              <span className="text-black font-normal">Beyond Agency</span> stands as the{" "}
-              <span className="text-black font-normal">best digital marketing agency in Dubai</span>, 
+              <span className="text-black font-semibold">Beyond Agency</span> stands as the{" "}
+              <span className="text-black font-semibold">best digital marketing agency in Dubai</span>, 
               helping brands transform their online presence through innovative strategies and measurable results.
             </p>
             <p className="text-lg md:text-2xl leading-relaxed font-normal text-muted mt-4">
@@ -215,15 +215,15 @@ const AboutSection = () => {
               Excellence in Action.
             </h2> */}
             <p className="text-lg md:text-2xl leading-relaxed font-normal text-muted">
-              As the <span className="text-black font-normal">best marketing agency in Dubai</span>, 
+              As the <span className="text-black font-semibold">best marketing agency in Dubai</span>, 
               our digital experts blend data, design, and strategy to deliver campaigns that convert. 
-              With our <span className="text-black font-normal">top marketing services in Dubai</span>, 
+              With our <span className="text-black font-semibold">top marketing services in Dubai</span>, 
               we empower businesses to reach the right audience, strengthen visibility, and scale with confidence.
             </p>
             <p className="text-lg md:text-2xl leading-relaxed font-normal text-muted mt-6">
               Going beyond ordinary marketing, we focus on building meaningful connections and lasting impact. 
               Every project is powered by insight, innovation, and a clear goal to take your brand 
-              <span className="text-black font-normal"> further, faster, and beyond expectations.</span>
+              <span className="text-black font-semibold"> further, faster, and beyond expectations.</span>
             </p>
 
             <div className="mt-8">
