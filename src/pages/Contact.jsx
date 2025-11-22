@@ -242,9 +242,10 @@ const Contact = () => {
 
             <div className="flex flex-col gap-3">
               <Button
-                text={isSubmitting ? "Submitting..." : "Submit Inquiry"}
+                text="Submit Inquiry"
                 type="submit"
                 width="full"
+                isLoading={isSubmitting}
                 disabled={isSubmitting}
               />
               <p className="text-sm text-slate-500">
@@ -290,9 +291,7 @@ const Contact = () => {
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
                     Message Received!
                   </h3>
-                  <p className="text-lg text-gray-600">
-                    We'll catch you soon! 
-                  </p>
+                  <p className="text-lg text-gray-600">We'll catch you soon!</p>
                 </div>
 
                 <p className="text-base text-gray-500 leading-relaxed">
