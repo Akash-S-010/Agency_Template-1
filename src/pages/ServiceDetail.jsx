@@ -26,7 +26,7 @@ const ServiceDetail = () => {
 
   return (
     <main className="bg-white text-black">
-      <section className="pt-30 pb-24 px-6 md:px-12 lg:px-20 bg-white">
+      <section className="pt-40 pb-24 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-6xl space-y-6">
             <span className="inline-block px-4 py-2 text-primary text-xs uppercase font-light rounded-full">
@@ -66,7 +66,7 @@ const ServiceDetail = () => {
                 className="space-y-8 border-t border-slate-200 pt-12"
               >
                 <div className="space-y-6 text-black">
-                  <h2 className="text-2xl md:text-4xl font-normal leading-tight">
+                  <h2 className="text-2xl md:text-4xl font-normal leading-tight text-primary">
                     {section.heading}
                   </h2>
                   <div className="space-y-4 text-base md:text-lg leading-relaxed text-slate-600">
@@ -85,7 +85,7 @@ const ServiceDetail = () => {
                           className="space-y-2 border-l-2 border-primary/40 pl-5"
                         >
                           {item.title && (
-                            <p className="text-sm md:text-base font-medium text-black">
+                            <p className="text-sm md:text-base font-semibold text-black">
                               {item.title}
                             </p>
                           )}
