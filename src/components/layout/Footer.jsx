@@ -130,7 +130,7 @@ const Footer = () => {
                   +971 56 364 8546
                 </a>
               </li>
-              <li className="text-gray-300">Dubai</li>
+              <li className="text-gray-300">Dubai, UAE</li>
             </ul>
           </div>
         </div>
