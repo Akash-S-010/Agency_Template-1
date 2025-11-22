@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaInstagram, FaLinkedin, FaTwitter, FaPhone, FaEnvelope } from "react-icons/fa6";
+import {
+  FaInstagram,
+  FaLinkedinIn,
+  FaPhone,
+  FaEnvelope,
+  FaFacebook,
+} from "react-icons/fa6";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -92,27 +98,38 @@ const Header = () => {
         <div className=" w-full hidden md:flex justify-center gap-20 items-center px-8 py-3 bg-blue-950 text-white text-sm font-medium tracking-wide">
           <div className="flex items-center gap-10">
             <a
-              href="tel:#"
+              href="tel:+971563648546"
               className="hover:text-white/70 transition-colors flex items-center"
             >
-              <FaPhone className="mr-2" />+971 50 123 4567
+              <FaPhone className="mr-2" />
+              +971 56 364 8546
             </a>
             <a
-              href="mailto:hello@beyond.agency"
+              href="mailto:info@beyondagency.ae"
               className="hover:text-white/70 transition-colors flex items-center"
             >
-              <FaEnvelope className="mr-2" />hello@beyond.agency
+              <FaEnvelope className="mr-2" />
+              info@beyondagency.ae
             </a>
             <span>Dubai, UAE</span>
             <div className="flex gap-2">
-              <a href="#" className="hover:text-white/70 transition-colors">
-                <FaInstagram size={17}/>
+              <a
+                href="https://www.instagram.com/beyondagency.ae/"
+                className="hover:text-white/70 transition-colors"
+              >
+                <FaInstagram size={17} />
               </a>
-              <a href="#" className="hover:text-white/70 transition-colors">
-                <FaLinkedin size={17}/>
+              <a
+                href="https://www.linkedin.com/company/beyondae/"
+                className="hover:text-white/70 transition-colors"
+              >
+                <FaLinkedinIn size={17} />
               </a>
-              <a href="#" className="hover:text-white/70 transition-colors">
-                <FaTwitter size={17}/>
+              <a
+                href="https://www.facebook.com/share/16ZFDmdHUi/?mibextid=wwXIfr"
+                className="hover:text-white/70 transition-colors"
+              >
+                <FaFacebook size={17} />
               </a>
             </div>
           </div>
@@ -234,7 +251,7 @@ const Header = () => {
                   >
                     <div className="text-5xl flex items-center gap-2">
                       <span className="text-sm text-slate-500">/---</span>
-                    {item.label}
+                      {item.label}
                     </div>
                   </Link>
                 </motion.div>

@@ -1,5 +1,6 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaYoutube, FaFacebookF } from "react-icons/fa";
+import { FaThreads } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -9,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Tagline */}
           <div>
-            <img src="../logo_white.png" alt="logo" className="h-10 w-auto"/>
+            <img src="../logo_white.png" alt="logo" className="h-10 w-auto" />
           </div>
 
           {/* Quick Links */}
@@ -19,32 +20,50 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <Link
+                  to="/"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <Link
+                  to="/about"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <Link
+                  to="/services"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/portfolio" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <Link
+                  to="/portfolio"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                >
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link to="/Careers" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <Link
+                  to="/Careers"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                >
                   Careers
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <Link
+                  to="/contact"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                >
                   Contact US
                 </Link>
               </li>
@@ -58,17 +77,26 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/terms" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <Link
+                  to="/terms"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                >
                   Terms of Services
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <Link
+                  to="/privacy"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/sitemap" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <Link
+                  to="/sitemap"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                >
                   Sitemap
                 </Link>
               </li>
@@ -83,15 +111,18 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="mailto:support@Beyond.com"
+                  href="mailto:info@beyondagency.ae"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                 >
-                  support@beyond.com
+                  info@beyondagency.ae
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  +91 9999999999
+                <a
+                  href="tel:+971563648546"
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                >
+                  +971 56 364 8546
                 </a>
               </li>
               <li className="text-gray-300">Dubai</li>
@@ -113,27 +144,42 @@ const Footer = () => {
           </div>
 
           {/* Social Media Icons */}
-          <div className="flex justify-center gap-2 md:gap-4 mt-8">
-            <a 
-              href="#" 
-              className="text-gray-300 hover:text-white transition-colors duration-200"
-              aria-label="Instagram"
-            >
-              <FaInstagram size={24} />
-            </a>
-            <a 
-              href="#" 
-              className="text-gray-300 hover:text-white transition-colors duration-200"
-              aria-label="Facebook"
-            >
-              <FaFacebook size={24} />
-            </a>
+          <div className="flex justify-center gap-3 mt-8">
             <a
-              href="#"
+              href="https://www.linkedin.com/company/beyondae/"
               className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="LinkedIn"
             >
-              <FaLinkedin size={24} />
+              <FaLinkedinIn size={24} />
+            </a>
+            <a
+              href="https://www.instagram.com/beyondagency.ae/"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
+              aria-label="Instagram"
+            >
+              <FaInstagram size={24} className=""/>
+            </a>
+
+            <a
+              href="https://www.facebook.com/share/16ZFDmdHUi/?mibextid=wwXIfr"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
+              aria-label="Facebook"
+            >
+              <FaFacebookF size={24} />
+            </a>
+            <a
+              href="https://www.threads.com/@beyondagency.ae?xmt=AQF0NY6sTklRatCHsXClxBBieagc8pE17lVq4L1ObWPVMCo"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
+              aria-label="Threads"
+            >
+              <FaThreads size={24} />
+            </a>
+            <a
+              href="https://www.youtube.com/@beyondagency_ae/"
+              className="text-gray-300 hover:text-white transition-colors duration-200"
+              aria-label="YouTube"
+            >
+              <FaYoutube size={25} />
             </a>
           </div>
         </div>
