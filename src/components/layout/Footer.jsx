@@ -1,5 +1,10 @@
 import React from "react";
-import { FaInstagram, FaLinkedinIn, FaYoutube, FaFacebookF } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+  FaFacebookF,
+} from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
@@ -111,10 +116,10 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="mailto:info@beyondagency.ae"
+                  href="mailto:Connect@beyondagency.ae"
                   className="text-gray-300 hover:text-white transition-colors duration-200"
                 >
-                  info@beyondagency.ae
+                  Connect@beyondagency.ae
                 </a>
               </li>
               <li>
@@ -157,7 +162,7 @@ const Footer = () => {
               className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="Instagram"
             >
-              <FaInstagram size={24} className=""/>
+              <FaInstagram size={24} className="" />
             </a>
 
             <a

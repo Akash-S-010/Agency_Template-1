@@ -79,7 +79,7 @@ const Careers = () => {
             <h1 className="font-title text-3xl md:text-6xl font-bold leading-tight text-primary">
               <BlurText
                 as="span"
-                text="Do the best work of your career in Dubai’s most agile marketing team"
+                text="Do the best work of your career in Dubai's most agile marketing team"
                 animateBy="words"
                 direction="bottom"
                 delay={60}
@@ -88,10 +88,20 @@ const Careers = () => {
             </h1>
             <div className="space-y-4 max-w-3xl text-base md:text-lg leading-relaxed text-slate-600">
               <p>
-                We’re a remote-first collective of strategists, creatives, and growth specialists who love helping brands move beyond expectations. If you thrive in fast-paced environments and value meaningful collaboration, you’ll feel at home here.
+                We're a remote-first collective of strategists, creatives, and
+                growth specialists who love helping brands move beyond
+                expectations. If you thrive in fast-paced environments and value
+                meaningful collaboration, you'll feel at home here.
               </p>
               <p>
-                Explore our open roles or send a speculative application to <a className="text-primary font-medium" href="mailto:careers@beyondagency.ae">careers@beyondagency.ae</a>.
+                Explore our open roles or send a speculative application to{" "}
+                <a
+                  className="text-primary font-medium"
+                  href="mailto:Connect@beyondagency.ae"
+                >
+                  Connect@beyondagency.ae
+                </a>
+                .
               </p>
             </div>
           </div>
@@ -105,7 +115,10 @@ const Careers = () => {
           </h2>
           <ul className="grid gap-8 md:grid-cols-2">
             {benefits.map((item, index) => (
-              <li key={index} className="space-y-2 border-l-2 border-primary/40 pl-5">
+              <li
+                key={index}
+                className="space-y-2 border-l-2 border-primary/40 pl-5"
+              >
                 <p className="text-base md:text-lg font-medium text-black">
                   {item.title}
                 </p>
@@ -125,7 +138,10 @@ const Careers = () => {
           </h2>
           <div className="space-y-8">
             {values.map((item, index) => (
-              <article key={index} className="space-y-3 border-t border-slate-200 pt-6">
+              <article
+                key={index}
+                className="space-y-3 border-t border-slate-200 pt-6"
+              >
                 <h3 className="text-xl md:text-2xl font-medium text-black">
                   {item.title}
                 </h3>
@@ -145,12 +161,23 @@ const Careers = () => {
               Open positions
             </h2>
             <p className="text-base md:text-lg leading-relaxed text-slate-600 max-w-3xl">
-              Don’t see the exact role you were hoping for? We’re always keen to meet talented people. Email your portfolio, case studies, or CV to <a className="text-primary font-medium" href="mailto:careers@beyondagency.ae">careers@beyondagency.ae</a>.
+              Don't see the exact role you were hoping for? We're always keen to
+              meet talented people. Email your portfolio, case studies, or CV to{" "}
+              <a
+                className="text-primary font-medium"
+                href="mailto:Connect@beyondagency.ae"
+              >
+                Connect@beyondagency.ae
+              </a>
+              .
             </p>
           </div>
           <div className="space-y-10">
             {roles.map((role, index) => (
-              <article key={index} className="space-y-4 border-t border-slate-200 pt-6">
+              <article
+                key={index}
+                className="space-y-4 border-t border-slate-200 pt-6"
+              >
                 <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                   <div>
                     <h3 className="text-xl md:text-2xl font-medium text-black">
@@ -159,11 +186,17 @@ const Careers = () => {
                   </div>
                   <div className="text-sm md:text-base text-slate-500 flex flex-wrap gap-3">
                     <span className="inline-flex items-center gap-2">
-                      <span className="h-2 w-2 rounded-full bg-primary" aria-hidden="true" />
+                      <span
+                        className="h-2 w-2 rounded-full bg-primary"
+                        aria-hidden="true"
+                      />
                       {role.location}
                     </span>
                     <span className="inline-flex items-center gap-2">
-                      <span className="h-2 w-2 rounded-full bg-primary/60" aria-hidden="true" />
+                      <span
+                        className="h-2 w-2 rounded-full bg-primary/60"
+                        aria-hidden="true"
+                      />
                       {role.type}
                     </span>
                   </div>
@@ -174,7 +207,7 @@ const Careers = () => {
                 <div>
                   <a
                     className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition"
-                    href="mailto:careers@beyondagency.ae?subject=Application%20-%20"
+                    href="mailto:Connect@beyondagency.ae?subject=Application%20-%20"
                   >
                     Apply by email →
                   </a>
@@ -191,7 +224,7 @@ const Careers = () => {
         buttonText="Send your profile"
         buttonProps={{
           as: "a",
-          href: "mailto:careers@beyondagency.ae",
+          href: "mailto:Connect@beyondagency.ae",
         }}
       />
     </main>

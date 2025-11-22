@@ -105,11 +105,11 @@ const Header = () => {
               +971 56 364 8546
             </a>
             <a
-              href="mailto:info@beyondagency.ae"
+              href="mailto:Connect@beyondagency.ae"
               className="hover:text-white/70 transition-colors flex items-center"
             >
               <FaEnvelope className="mr-2" />
-              info@beyondagency.ae
+              Connect@beyondagency.ae
             </a>
             <span>Dubai, UAE</span>
             <div className="flex gap-2">
@@ -267,19 +267,19 @@ const Header = () => {
             >
               <div className="text-center">
                 <a
-                  href="tel:+971501234567"
+                  href="tel:+971563648546"
                   className="block text-xl font-light text-white hover:text-white/70 transition-colors"
                 >
-                  +971 50 123 4567
+                  +971 56 364 8546
                 </a>
               </div>
 
               <div className="text-center">
                 <a
-                  href="mailto:hello@beyond.agency"
+                  href="mailto:Connect@beyondagency.ae"
                   className="block text-xl font-light text-white hover:text-white/70 transition-colors"
                 >
-                  hello@beyond.agency
+                  Connect@beyondagency.ae
                 </a>
               </div>
 

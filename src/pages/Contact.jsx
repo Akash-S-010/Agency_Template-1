@@ -15,17 +15,17 @@ const contactDetails = [
   {
     icon: <Mail className="w-6 h-6 text-primary" />,
     title: "Email",
-    description: "hello@Beyond.com",
+    description: "Connect@beyondagency.ae",
   },
   {
     icon: <Phone className="w-6 h-6 text-primary" />,
     title: "Phone",
-    description: "+91 98000 12345",
+    description: "+971 56 364 8546",
   },
   {
     icon: <MapPin className="w-6 h-6 text-primary" />,
     title: "Office",
-    description: "Dubai",
+    description: "Dubai, UAE",
   },
 ];
 
@@ -50,9 +50,9 @@ const Contact = () => {
               />
             </h1>
             <p className="max-w-3xl text-base md:text-xl text-slate-600 leading-relaxed">
-              Share your vision and we’ll co-create a roadmap that links business
-              goals with measurable outcomes. Expect a thoughtful response from
-              our team within one business day.
+              Share your vision and we’ll co-create a roadmap that links
+              business goals with measurable outcomes. Expect a thoughtful
+              response from our team within one business day.
             </p>
           </div>
         </div>
