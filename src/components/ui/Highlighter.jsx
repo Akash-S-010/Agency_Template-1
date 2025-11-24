@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react"
-import { useInView } from "framer-motion"
-import { annotate } from "rough-notation"
+import { useEffect, useRef } from "react";
+import { useInView } from "framer-motion";
+import { annotate } from "rough-notation";
 
 export function Highlighter({
   children,
@@ -15,20 +15,20 @@ export function Highlighter({
   active = true,
   delay = 0, // 👈 new delay prop (in ms)
 }) {
-  const elementRef = useRef(null)
-  const annotationRef = useRef(null)
+  const elementRef = useRef(null);
+  const annotationRef = useRef(null);
 
   const isInView = useInView(elementRef, {
     once: true,
     margin: "-10%",
-  })
+  });
 
-  const shouldShow = active && (!isView || isInView)
+  const shouldShow = active && (!isView || isInView);
 
   useEffect(() => {
-    if (!shouldShow) return
-    const element = elementRef.current
-    if (!element) return
+    if (!shouldShow) return;
+    const element = elementRef.current;
+    if (!element) return;
 
     const timeout = setTimeout(() => {
       const annotation = annotate(element, {
@@ -39,26 +39,26 @@ export function Highlighter({
         iterations,
         padding,
         multiline,
-      })
+      });
 
-      annotationRef.current = annotation
-      annotationRef.current.show()
+      annotationRef.current = annotation;
+      annotationRef.current.show();
 
       const resizeObserver = new ResizeObserver(() => {
-        annotation.hide()
-        annotation.show()
-      })
+        annotation.hide();
+        annotation.show();
+      });
 
-      resizeObserver.observe(element)
-      resizeObserver.observe(document.body)
+      resizeObserver.observe(element);
+      resizeObserver.observe(element);
 
       return () => {
-        annotationRef.current?.remove()
-        resizeObserver.disconnect()
-      }
-    }, delay) // 👈 delay before showing highlight
+        annotationRef.current?.remove();
+        resizeObserver.disconnect();
+      };
+    }, delay); // 👈 delay before showing highlight
 
-    return () => clearTimeout(timeout)
+    return () => clearTimeout(timeout);
   }, [
     shouldShow,
     action,
@@ -69,11 +69,11 @@ export function Highlighter({
     padding,
     multiline,
     delay,
-  ])
+  ]);
 
   return (
     <span ref={elementRef} className="relative inline-block bg-transparent">
       {children}
     </span>
-  )
+  );
 }

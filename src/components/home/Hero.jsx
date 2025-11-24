@@ -5,8 +5,6 @@ import BlurText from "../ui/BlurText";
 import { Highlighter } from "../ui/Highlighter";
 import { SplashCursor } from "../ui/SplashCursor";
 
-// const image =
-// "https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&w=1200";
 
 const Hero = () => {
   const [contentVisible, setContentVisible] = useState(false);
