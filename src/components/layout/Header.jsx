@@ -300,7 +300,7 @@ const Header = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col items-start space-y-6 pt-8 border-t border-white/20 w-full"
+              className="flex flex-col items-start space-y-5 pt-8 border-t border-white/20 w-full"
             >
               <div className="text-center">
                 <a
@@ -320,24 +320,50 @@ const Header = () => {
                 </a>
               </div>
 
-              <div className="flex gap-6">
+              <div className="text-center text-xl font-light text-white hover:text-white/70 transition-colors">
+                  Dubai, UAE
+              </div>
+
+              <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/beyondae/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-white/70 transition-colors"
                 >
-                  <FaInstagram className="text-2xl" />
+                  <FaLinkedinIn size={20} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/beyondagency.ae/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-white/70 transition-colors"
                 >
-                  <FaLinkedin className="text-2xl" />
+                  <FaInstagram size={20} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/share/16ZFDmdHUi/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-white/70 transition-colors"
                 >
-                  <FaTwitter className="text-2xl" />
+                  <FaFacebookF size={20} />
+                </a>
+                <a
+                  href="https://www.threads.com/@beyondagency.ae?xmt=AQF0NY6sTklRatCHsXClxBBieagc8pE17lVq4L1ObWPVMCo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-white/70 transition-colors"
+                >
+                  <FaThreads size={20} />
+                </a>
+                <a
+                  href="https://www.youtube.com/@beyondagency_ae/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-white/70 transition-colors"
+                >
+                  <FaYoutube size={20} />
                 </a>
               </div>
             </motion.div>
