@@ -154,6 +154,8 @@ const Footer = () => {
               href="https://www.linkedin.com/company/beyondae/"
               className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaLinkedinIn size={24} />
             </a>
@@ -161,6 +163,8 @@ const Footer = () => {
               href="https://www.instagram.com/beyondagency.ae/"
               className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaInstagram size={24} className="" />
             </a>
@@ -169,6 +173,8 @@ const Footer = () => {
               href="https://www.facebook.com/share/16ZFDmdHUi/?mibextid=wwXIfr"
               className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaFacebookF size={24} />
             </a>
@@ -176,6 +182,8 @@ const Footer = () => {
               href="https://www.threads.com/@beyondagency.ae?xmt=AQF0NY6sTklRatCHsXClxBBieagc8pE17lVq4L1ObWPVMCo"
               className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="Threads"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaThreads size={24} />
             </a>
@@ -183,6 +191,8 @@ const Footer = () => {
               href="https://www.youtube.com/@beyondagency_ae/"
               className="text-gray-300 hover:text-white transition-colors duration-200"
               aria-label="YouTube"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaYoutube size={25} />
             </a>

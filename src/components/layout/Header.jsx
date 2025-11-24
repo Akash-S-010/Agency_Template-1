@@ -118,30 +118,40 @@ const Header = () => {
               <a
                 href="https://www.linkedin.com/company/beyondae/"
                 className="hover:text-white/70 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaLinkedinIn size={17} />
               </a>
               <a
                 href="https://www.instagram.com/beyondagency.ae/"
                 className="hover:text-white/70 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaInstagram size={17} />
               </a>
               <a
                 href="https://www.facebook.com/share/16ZFDmdHUi/?mibextid=wwXIfr"
                 className="hover:text-white/70 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaFacebookF size={17} />
               </a>
-               <a
+              <a
                 href="https://www.threads.com/@beyondagency.ae?xmt=AQF0NY6sTklRatCHsXClxBBieagc8pE17lVq4L1ObWPVMCo"
                 className="hover:text-white/70 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaThreads size={17} />
               </a>
-               <a
+              <a
                 href="https://www.youtube.com/@beyondagency_ae/"
                 className="hover:text-white/70 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaYoutube size={17} />
               </a>
