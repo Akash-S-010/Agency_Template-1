@@ -54,7 +54,7 @@ const Contact = () => {
     try {
       // Using FormSubmit.co - a free form submission service
       const response = await fetch(
-        "https://formsubmit.co/ajax/akash727349@gmail.com",
+        "https://formsubmit.co/ajax/connect@beyondagency.ae",
         {
           method: "POST",
           headers: {
