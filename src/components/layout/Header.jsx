@@ -178,7 +178,7 @@ const Header = () => {
                 to={item.path}
                 className={`relative text-sm font-medium transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-yellow-300 after:transition-all after:duration-300 after:w-0 hover:after:w-full ${
                   isHomepage && !hasScrolled
-                    ? "text-white hover:text-white/70"
+                    ? "text-white/80 hover:text-white"
                     : "text-gray-900 hover:text-[#111dbf]"
                 }`}
               >
