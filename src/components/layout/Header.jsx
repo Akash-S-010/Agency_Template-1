@@ -97,18 +97,18 @@ const Header = () => {
         }}
       >
         {/* ==== TOP HEADER (Desktop Only) ==== */}
-        <div className=" w-full hidden md:flex justify-center gap-20 items-center px-8 py-3 bg-blue-950 text-white text-sm font-medium tracking-wide">
+        <div className=" w-full hidden md:flex justify-center gap-20 items-center px-8 py-3 bg-blue-950 text-white/70 text-sm font-medium tracking-wide">
           <div className="flex items-center gap-10">
             <a
               href="tel:+971563648546"
-              className="hover:text-white/70 transition-colors flex items-center"
+              className="hover:text-white transition-colors flex items-center"
             >
               <FaPhone className="mr-2" />
               +971 56 364 8546
             </a>
             <a
               href="mailto:connect@beyondagency.ae"
-              className="hover:text-white/70 transition-colors flex items-center"
+              className="hover:text-white transition-colors flex items-center"
             >
               <FaEnvelope className="mr-2" />
               connect@beyondagency.ae
@@ -117,7 +117,7 @@ const Header = () => {
             <div className="flex gap-2">
               <a
                 href="https://www.linkedin.com/company/beyondae/"
-                className="hover:text-white/70 transition-colors"
+                className="hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -125,7 +125,7 @@ const Header = () => {
               </a>
               <a
                 href="https://www.instagram.com/beyondagency.ae/"
-                className="hover:text-white/70 transition-colors"
+                className="hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -133,7 +133,7 @@ const Header = () => {
               </a>
               <a
                 href="https://www.facebook.com/share/16ZFDmdHUi/?mibextid=wwXIfr"
-                className="hover:text-white/70 transition-colors"
+                className="hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -141,7 +141,7 @@ const Header = () => {
               </a>
               <a
                 href="https://www.threads.com/@beyondagency.ae?xmt=AQF0NY6sTklRatCHsXClxBBieagc8pE17lVq4L1ObWPVMCo"
-                className="hover:text-white/70 transition-colors"
+                className="hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -149,7 +149,7 @@ const Header = () => {
               </a>
               <a
                 href="https://www.youtube.com/@beyondagency_ae/"
-                className="hover:text-white/70 transition-colors"
+                className="hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
