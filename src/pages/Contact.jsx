@@ -15,7 +15,7 @@ const contactDetails = [
   {
     icon: <Mail className="w-6 h-6 text-primary" />,
     title: "Email",
-    description: "Connect@beyondagency.ae",
+    description: "connect@beyondagency.ae",
   },
   {
     icon: <Phone className="w-6 h-6 text-primary" />,

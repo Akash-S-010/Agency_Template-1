@@ -97,9 +97,9 @@ const Careers = () => {
                 Explore our open roles or send a speculative application to{" "}
                 <a
                   className="text-primary font-medium"
-                  href="mailto:Connect@beyondagency.ae"
+                  href="mailto:connect@beyondagency.ae"
                 >
-                  Connect@beyondagency.ae
+                  connect@beyondagency.ae
                 </a>
                 .
               </p>
@@ -165,9 +165,9 @@ const Careers = () => {
               meet talented people. Email your portfolio, case studies, or CV to{" "}
               <a
                 className="text-primary font-medium"
-                href="mailto:Connect@beyondagency.ae"
+                href="mailto:connect@beyondagency.ae"
               >
-                Connect@beyondagency.ae
+                connect@beyondagency.ae
               </a>
               .
             </p>
@@ -207,7 +207,7 @@ const Careers = () => {
                 <div>
                   <a
                     className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition"
-                    href="mailto:Connect@beyondagency.ae?subject=Application%20-%20"
+                    href="mailto:connect@beyondagency.ae?subject=Application%20-%20"
                   >
                     Apply by email →
                   </a>
@@ -224,7 +224,7 @@ const Careers = () => {
         buttonText="Send your profile"
         buttonProps={{
           as: "a",
-          href: "mailto:Connect@beyondagency.ae",
+          href: "mailto:connect@beyondagency.ae",
         }}
       />
     </main>
