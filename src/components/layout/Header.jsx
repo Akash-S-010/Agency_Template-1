@@ -6,7 +6,9 @@ import {
   FaLinkedinIn,
   FaPhone,
   FaEnvelope,
-  FaFacebook,
+  FaFacebookF,
+  FaYoutube,
+  FaThreads,
 } from "react-icons/fa6";
 
 const Header = () => {
@@ -114,22 +116,34 @@ const Header = () => {
             <span>Dubai, UAE</span>
             <div className="flex gap-2">
               <a
-                href="https://www.instagram.com/beyondagency.ae/"
-                className="hover:text-white/70 transition-colors"
-              >
-                <FaInstagram size={17} />
-              </a>
-              <a
                 href="https://www.linkedin.com/company/beyondae/"
                 className="hover:text-white/70 transition-colors"
               >
                 <FaLinkedinIn size={17} />
               </a>
               <a
+                href="https://www.instagram.com/beyondagency.ae/"
+                className="hover:text-white/70 transition-colors"
+              >
+                <FaInstagram size={17} />
+              </a>
+              <a
                 href="https://www.facebook.com/share/16ZFDmdHUi/?mibextid=wwXIfr"
                 className="hover:text-white/70 transition-colors"
               >
-                <FaFacebook size={17} />
+                <FaFacebookF size={17} />
+              </a>
+               <a
+                href="https://www.threads.com/@beyondagency.ae?xmt=AQF0NY6sTklRatCHsXClxBBieagc8pE17lVq4L1ObWPVMCo"
+                className="hover:text-white/70 transition-colors"
+              >
+                <FaThreads size={17} />
+              </a>
+               <a
+                href="https://www.youtube.com/@beyondagency_ae/"
+                className="hover:text-white/70 transition-colors"
+              >
+                <FaYoutube size={17} />
               </a>
             </div>
           </div>
