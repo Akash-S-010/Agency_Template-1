@@ -172,19 +172,32 @@ const Header = () => {
 
           {/* ==== DESKTOP NAVIGATION ==== */}
           <nav className="hidden md:flex items-center gap-8">
-            {menuItems.map((item) => (
-              <Link
-                key={item.id}
-                to={item.path}
-                className={`relative text-sm font-medium transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-yellow-300 after:transition-all after:duration-300 after:w-0 hover:after:w-full ${
-                  isHomepage && !hasScrolled
-                    ? "text-white/80 hover:text-white"
-                    : "text-gray-900 hover:text-[#111dbf]"
-                }`}
-              >
-                <span>{item.label}</span>
-              </Link>
-            ))}
+            {menuItems.map((item) => {
+              const isActive =
+                item.path === "/"
+                  ? location.pathname === "/"
+                  : location.pathname.startsWith(item.path);
+
+              return (
+                <Link
+                  key={item.id}
+                  to={item.path}
+                  className={`relative text-sm transition-colors duration-300 font-medium after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-yellow-300 after:transition-all after:duration-300 ${
+                    isActive ? "after:w-full" : "after:w-0 hover:after:w-full"
+                  } ${
+                    isHomepage && !hasScrolled
+                      ? isActive
+                        ? "text-white"
+                        : "text-white/80 hover:text-white"
+                      : isActive
+                      ? "text-[#111dbf]"
+                      : "text-gray-900 hover:text-[#111dbf]"
+                  }`}
+                >
+                  <span className={isActive ? "font-semibold" : ""}>{item.label}</span>
+                </Link>
+              );
+            })}
           </nav>
 
           {/* ==== HAMBURGER ICON (Mobile Only) ==== */}
