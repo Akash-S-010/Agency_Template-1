@@ -7,7 +7,7 @@ import Button from "../ui/Button";
 const featuredProjects = [
   {
     id: 1,
-    title: "Pets Website",
+    title: "Pets Gallery Website",
     category: "Website Development",
     description: "A comprehensive e-commerce platform for pet products with seamless user experience, custom CMS integration, and responsive design optimized for conversions.",
     image: "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=800&q=80",
@@ -15,7 +15,7 @@ const featuredProjects = [
   },
   {
     id: 2,
-    title: "VM Website",
+    title: "Vittorio Milano Website",
     category: "Website Development",
     description: "Modern corporate website featuring dynamic content management, interactive UI elements, and performance-optimized architecture for enterprise-level scalability.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",

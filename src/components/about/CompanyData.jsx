@@ -109,7 +109,7 @@ const CompanyData = () => {
             </div>
 
             <div className="text-left">
-              <div className="text-5xl md:text-6xl font-light">50+</div>
+              <div className="text-5xl md:text-6xl font-light">100+</div>
               <div className="text-xs tracking-widest text-gray-500 uppercase mt-2">
                 Happy Clients
               </div>
