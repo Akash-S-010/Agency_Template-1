@@ -4,19 +4,19 @@ import { IoCall } from "react-icons/io5";
 
 const StickyContact = () => {
   return (
-    <div className="fixed bottom-10 right-10 z-50 flex flex-col gap-3">
+    <div className="fixed bottom-5 md:bottom-10 right-2 md:right-10 z-50 flex-col space-y-2">
       <a
         href="tel:+971563648546"
-        className="bg-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer"
+        className="bg-white size-10 md:size-12 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer"
       >
-        <IoCall className="text-primary text-2xl" />
+        <IoCall size={22} className="text-primary"/>
       </a>
       <a
         href="https://wa.me/971563648546"
         target="_blank"
-        className="bg-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer"
+        className="bg-white size-10 md:size-12 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer"
       >
-        <FaWhatsapp className="text-primary text-2xl" />
+        <FaWhatsapp size={24} className="text-primary" />
       </a>
     </div>
   );
