@@ -33,7 +33,7 @@ const FeaturedWorks = () => {
         <div
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-normal text-black mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold font-title text-primary mb-4">
             Recent Projects We're Proud Of
           </h2>
           <p className="text-lg text-slate-600 max-w-3xl">
